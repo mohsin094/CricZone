@@ -1,9 +1,9 @@
-    @extends('layouts.app')
+@extends('layouts.app')
 
-    @section('title', 'Live Cricket Scores - CricZone.pk')
-    @section('description', 'Get real-time live cricket scores and updates from matches happening around the world.')
+@section('title', 'Live Cricket Scores - CricZone.pk')
+@section('description', 'Get real-time live cricket scores and updates from matches happening around the world.')
 
-    @section('content')
+@section('content')
 
 <style>
 @keyframes blink {
@@ -42,8 +42,8 @@
                         CricZone
                     </div>
                     <div class="text-xs text-gray-500 mt-1">Cricket Live Scores & Updates</div>
-                </div>
-                
+    </div>
+
                 <!-- Loading text -->
                 <div class="text-gray-600 text-base font-medium">Loading live scores...</div>
             </div>
