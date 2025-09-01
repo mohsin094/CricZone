@@ -14,62 +14,20 @@ class CricketApiService
 
     public function __construct()
     {
-        $this->apiKey = config('services.cricket.api_key');
-        $this->baseUrl = 'https://apiv2.api-cricket.com/cricket/?';
-        $this->cacheTtl = 60; // 1 minute cache for live data
-    }
-
-    public function getLeagues()
-    {
-        $cacheKey = 'cricket_leagues';
+        $this->apiKey = config('services.cricbuzz.api_key');
+        $this->baseUrl = 'https://cricbuzz-cricket.p.rapidapi.com';
+        $this->cacheTtl = 300; // 5 minutes cache for API data
         
-        return Cache::remember($cacheKey, 3600, function () { // Cache for 1 hour
-            try {
-                Log::info('Fetching leagues from Cricket API', [
-                    'url' => $this->baseUrl,
-                    'api_key' => substr($this->apiKey, 0, 10) . '...',
-                    'method' => 'get_leagues'
-                ]);
-                
-                $response = Http::timeout(30)->get($this->baseUrl, [
-                    'method' => 'get_leagues',
-                    'APIkey' => $this->apiKey
-                ]);
-
-                Log::info('Leagues API response received', [
-                    'status' => $response->status(),
-                    'success' => $response->successful(),
-                    'body_length' => strlen($response->body())
-                ]);
-
-                if ($response->successful()) {
-                    $data = $response->json();
-                    Log::info('Leagues API response parsed', [
-                        'success' => $data['success'] ?? 'not_set',
-                        'result_count' => isset($data['result']) ? count($data['result']) : 'not_set',
-                        'full_response' => $data
-                    ]);
-                    
-                    if ($data['success'] == 1) {
-                        return $data['result'];
-                    }
-                }
-                
-                Log::error('Failed to fetch leagues from Cricket API', [
-                    'response' => $response->body(),
-                    'status' => $response->status(),
-                    'headers' => $response->headers()
-                ]);
-                
-                return [];
-            } catch (\Exception $e) {
-                Log::error('Exception while fetching leagues', [
-                    'error' => $e->getMessage(),
-                    'trace' => $e->getTraceAsString()
-                ]);
-                return [];
-            }
-        });
+        // Log API configuration for debugging
+        Log::info('Cricbuzz API Service Initialized', [
+            'base_url' => $this->baseUrl,
+            'api_key_set' => !empty($this->apiKey),
+            'api_key_length' => strlen($this->apiKey),
+            'headers' => [
+                'X-RapidAPI-Key' => $this->apiKey,
+                'X-RapidAPI-Host' => 'cricbuzz-cricket.p.rapidapi.com'
+            ]
+        ]);
     }
 
     public function getLiveScores($leagueKey = null, $matchKey = null)
@@ -78,36 +36,43 @@ class CricketApiService
         
         return Cache::remember($cacheKey, $this->cacheTtl, function () use ($leagueKey, $matchKey) {
             try {
-                $params = [
-                    'method' => 'get_livescore',
-                    'APIkey' => $this->apiKey
-                ];
-
-                if ($leagueKey) {
-                    $params['league_key'] = $leagueKey;
-                }
-
-                if ($matchKey) {
-                    $params['match_key'] = $matchKey;
-                }
-
-                $response = Http::timeout(30)->get($this->baseUrl, $params);
-
-                if ($response->successful()) {
-                    $data = $response->json();
-                    if ($data['success'] == 1) {
-                        return $data['result'];
-                    }
-                }
+                // Use the actual Cricbuzz API endpoint for live matches
+                $endpoint = '/matches/v1/live';
                 
-                Log::error('Failed to fetch live scores from Cricket API', [
+                $response = Http::timeout(30)
+                    ->withHeaders([
+                        'X-RapidAPI-Key' => $this->apiKey,
+                        'X-RapidAPI-Host' => 'cricbuzz-cricket.p.rapidapi.com'
+                    ])
+                    ->get($this->baseUrl . $endpoint);
+
+                Log::info('Cricbuzz Live Matches API call', [
+                    'endpoint' => $endpoint,
+                    'status' => $response->status(),
+                    'response_length' => strlen($response->body())
+                ]);
+
+                            if ($response->successful()) {
+                $data = $response->json();
+                
+                // Log API response for future mock data
+                $this->logApiResponse('live_matches', $data);
+                
+                Log::info('Cricbuzz Live Matches API response', [
+                    'total_matches' => count($data['typeMatches'] ?? []),
+                    'response_structure' => array_keys($data)
+                ]);
+                return $data;
+            }
+                
+                Log::error('Failed to fetch live scores from Cricbuzz API', [
                     'response' => $response->body(),
                     'status' => $response->status()
                 ]);
                 
                 return [];
             } catch (\Exception $e) {
-                Log::error('Exception while fetching live scores', ['error' => $e->getMessage()]);
+                Log::error('Exception while fetching live scores from Cricbuzz API', ['error' => $e->getMessage()]);
                 return [];
             }
         });
@@ -119,56 +84,38 @@ class CricketApiService
         
         return Cache::remember($cacheKey, 300, function () use ($dateStart, $dateStop, $leagueKey, $eventKey) { // Cache for 5 minutes
             try {
-                $params = [
-                    'method' => 'get_events',
-                    'APIkey' => $this->apiKey
-                ];
-
-                if ($dateStart) {
-                    $params['date_start'] = $dateStart;
-                }
-
-                if ($dateStop) {
-                    $params['date_stop'] = $dateStop;
-                }
-
-                if ($leagueKey) {
-                    $params['league_key'] = $leagueKey;
-                }
-
-                if ($eventKey) {
-                    $params['event_key'] = $eventKey;
-                }
-
-                $response = Http::timeout(30)->get($this->baseUrl, $params);
-
-                Log::info('Events API response received', [
-                    'status' => $response->status(),
-                    'success' => $response->successful(),
-                    'body_length' => strlen($response->body())
-                ]);
-
-                if ($response->successful()) {
-                    $data = $response->json();
-                    Log::info('Events API response parsed', [
-                        'success' => $data['success'] ?? 'not_set',
-                        'result_count' => isset($data['result']) ? count($data['result']) : 'not_set',
-                        'full_response' => $data
-                    ]);
-                    
-                    if (isset($data['success']) && $data['success'] == 1) {
-                        return $data['result'];
-                    }
+                // Use Cricbuzz API endpoints based on the request
+                $allMatches = [];
+                
+                // Get live matches
+                $liveMatches = $this->getLiveMatches();
+                if (!empty($liveMatches)) {
+                    $allMatches = array_merge($allMatches, $this->extractMatchesFromCricbuzzResponse($liveMatches));
                 }
                 
-                Log::error('Failed to fetch events from Cricket API', [
-                    'response' => $response->body(),
-                    'status' => $response->status()
+                // Get upcoming matches
+                $upcomingMatches = $this->getUpcomingMatches();
+                if (!empty($upcomingMatches)) {
+                    $allMatches = array_merge($allMatches, $this->extractMatchesFromCricbuzzResponse($upcomingMatches));
+                }
+                
+                // Get recent matches
+                $recentMatches = $this->getRecentMatches();
+                if (!empty($recentMatches)) {
+                    $allMatches = array_merge($allMatches, $this->extractMatchesFromCricbuzzResponse($recentMatches));
+                }
+                
+                Log::info('Cricbuzz Events API response', [
+                    'total_matches' => count($allMatches),
+                    'live_count' => count($this->extractMatchesFromCricbuzzResponse($liveMatches)),
+                    'upcoming_count' => count($this->extractMatchesFromCricbuzzResponse($upcomingMatches)),
+                    'recent_count' => count($this->extractMatchesFromCricbuzzResponse($recentMatches))
                 ]);
                 
-                return [];
+                return $allMatches;
+                
             } catch (\Exception $e) {
-                Log::error('Exception while fetching events', ['error' => $e->getMessage()]);
+                Log::error('Exception while fetching events from Cricbuzz API', ['error' => $e->getMessage()]);
                 return [];
             }
         });
@@ -966,5 +913,167 @@ class CricketApiService
     public function getRawSeriesWithResultsAndStandings($leagueKey = null, $dateStart = null, $dateStop = null)
     {
         return $this->getSeriesWithResultsAndStandings($leagueKey, $dateStart, $dateStop);
+    }
+
+    /**
+     * Get live matches from Cricbuzz API
+     */
+    public function getLiveMatches()
+    {
+        try {
+            $endpoint = '/matches/v1/live';
+            
+            $response = Http::timeout(30)
+                ->withHeaders([
+                    'X-RapidAPI-Key' => $this->apiKey,
+                    'X-RapidAPI-Host' => 'cricbuzz-cricket.p.rapidapi.com'
+                ])
+                ->get($this->baseUrl . $endpoint);
+            
+            if ($response->successful()) {
+                return $response->json();
+            }
+            
+            return [];
+        } catch (\Exception $e) {
+            Log::error('Failed to fetch live matches from Cricbuzz API', ['error' => $e->getMessage()]);
+            return [];
+        }
+    }
+
+    /**
+     * Get upcoming matches from Cricbuzz API
+     */
+    public function getUpcomingMatches()
+    {
+        try {
+            $endpoint = '/matches/v1/upcoming';
+            
+            $response = Http::timeout(30)
+                ->withHeaders([
+                    'X-RapidAPI-Key' => $this->apiKey,
+                    'X-RapidAPI-Host' => 'cricbuzz-cricket.p.rapidapi.com'
+                ])
+                ->get($this->baseUrl . $endpoint);
+
+            if ($response->successful()) {
+                $data = $response->json();
+                
+                // Log API response for future mock data
+                $this->logApiResponse('upcoming_matches', $data);
+                
+                return $data;
+            }
+            
+            return [];
+        } catch (\Exception $e) {
+            Log::error('Failed to fetch upcoming matches from Cricbuzz API', ['error' => $e->getMessage()]);
+            return [];
+        }
+    }
+
+    /**
+     * Get recent matches from Cricbuzz API
+     */
+    public function getRecentMatches()
+    {
+        try {
+            $endpoint = '/matches/v1/recent';
+            
+            $response = Http::timeout(30)
+                ->withHeaders([
+                    'X-RapidAPI-Key' => $this->apiKey,
+                    'X-RapidAPI-Host' => 'cricbuzz-cricket.p.rapidapi.com'
+                ])
+                ->get($this->baseUrl . $endpoint);
+
+            if ($response->successful()) {
+                $data = $response->json();
+                
+                // Log API response for future mock data
+                $this->logApiResponse('recent_matches', $data);
+                
+                return $data;
+            }
+            
+            return [];
+        } catch (\Exception $e) {
+            Log::error('Failed to fetch recent matches from Cricbuzz API', ['error' => $e->getMessage()]);
+            return [];
+        }
+    }
+
+    /**
+     * Extract matches from Cricbuzz API response
+     */
+    private function extractMatchesFromCricbuzzResponse($cricbuzzData)
+    {
+        if (empty($cricbuzzData)) {
+            return [];
+        }
+
+        $matches = [];
+        
+        // Handle the actual Cricbuzz API response structure
+        if (isset($cricbuzzData['typeMatches'])) {
+            // If data has typeMatches structure (from some endpoints)
+            foreach ($cricbuzzData['typeMatches'] as $typeMatch) {
+                if (isset($typeMatch['seriesMatches'])) {
+                    foreach ($typeMatch['seriesMatches'] as $seriesMatch) {
+                        if (isset($seriesMatch['seriesAdWrapper']['matches'])) {
+                            foreach ($seriesMatch['seriesAdWrapper']['matches'] as $match) {
+                                $matches[] = $match;
+                            }
+                        }
+                    }
+                }
+            }
+        } else {
+            // If data is already a flat array of matches (like from /matches/v1/live)
+            if (is_array($cricbuzzData)) {
+                foreach ($cricbuzzData as $item) {
+                    if (isset($item['matchInfo'])) {
+                        $matches[] = $item;
+                    }
+                }
+            }
+        }
+        
+        return $matches;
+    }
+
+    /**
+     * Log API response for future mock data
+     */
+    private function logApiResponse($endpoint, $data)
+    {
+        try {
+            $logDir = storage_path('logs/api_responses');
+            if (!is_dir($logDir)) {
+                mkdir($logDir, 0755, true);
+            }
+            
+            $filename = $endpoint . '_' . date('Y-m-d_H-i-s') . '.json';
+            $filepath = $logDir . '/' . $filename;
+            
+            $logData = [
+                'timestamp' => now()->toISOString(),
+                'endpoint' => $endpoint,
+                'data' => $data
+            ];
+            
+            file_put_contents($filepath, json_encode($logData, JSON_PRETTY_PRINT));
+            
+            Log::info('API response logged for mock data', [
+                'endpoint' => $endpoint,
+                'filepath' => $filepath,
+                'data_size' => strlen(json_encode($data))
+            ]);
+        } catch (\Exception $e) {
+            Log::error('Failed to log API response', [
+                'endpoint' => $endpoint,
+                'error' => $e->getMessage()
+            ]);
+        }
     }
 }

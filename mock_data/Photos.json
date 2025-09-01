@@ -1,0 +1,95 @@
+{
+  "photoGalleryInfoList": [
+    {
+      "photoGalleryInfo": {
+        "galleryId": 5920,
+        "headline": "T20 World Cup 2024: South Africa vs India, Final",
+        "imageId": 509274,
+        "publishedTime": "1719678328043"
+      }
+    },
+    {
+      "photoGalleryInfo": {
+        "galleryId": 5919,
+        "headline": "T20 World Cup 2024: India vs Bangladesh, Match 47",
+        "imageId": 506580,
+        "publishedTime": "1719152143643"
+      }
+    },
+    {
+      "ad": {
+        "name": "native_photos",
+        "layout": "native_large",
+        "position": 2
+      }
+    },
+    {
+      "photoGalleryInfo": {
+        "galleryId": 5918,
+        "headline": "T20 World Cup 2024: Afghanistan vs India, Match 43",
+        "imageId": 504312,
+        "publishedTime": "1718908493866"
+      }
+    },
+    {
+      "photoGalleryInfo": {
+        "galleryId": 5917,
+        "headline": "T20 World Cup 2024: USA vs India, Match 25",
+        "imageId": 499333,
+        "publishedTime": "1718216824767"
+      }
+    },
+    {
+      "photoGalleryInfo": {
+        "galleryId": 5916,
+        "headline": "T20 World Cup 2024: India vs Pakistan, Match 19",
+        "imageId": 498257,
+        "publishedTime": "1717964150567"
+      }
+    },
+    {
+      "photoGalleryInfo": {
+        "galleryId": 5915,
+        "headline": "T20 World Cup 2024: Australia vs England, Match 17",
+        "imageId": 497073,
+        "publishedTime": "1717880756793"
+      }
+    },
+    {
+      "photoGalleryInfo": {
+        "galleryId": 5914,
+        "headline": "T20 World Cup 2024: USA vs Pakistan, Match 11",
+        "imageId": 495196,
+        "publishedTime": "1717694187907"
+      }
+    },
+    {
+      "photoGalleryInfo": {
+        "galleryId": 5913,
+        "headline": "T20 World Cup 2024: India vs Ireland, Match 8",
+        "imageId": 494306,
+        "publishedTime": "1717604420879"
+      }
+    },
+    {
+      "photoGalleryInfo": {
+        "galleryId": 5912,
+        "headline": "IPL 2024: Final, KKR vs SRH",
+        "imageId": 491112,
+        "publishedTime": "1716750286993"
+      }
+    },
+    {
+      "photoGalleryInfo": {
+        "galleryId": 5911,
+        "headline": "IPL 2024: Qualifier 2, SRH vs RR",
+        "imageId": 489597,
+        "publishedTime": "1716574124357"
+      }
+    }
+  ],
+  "appIndex": {
+    "seoTitle": "Cricket Photos - Matches galleries, best pictures | Cricbuzz.com",
+    "webURL": "http://www.cricbuzz.com/cricket-photo-gallery"
+  }
+}     

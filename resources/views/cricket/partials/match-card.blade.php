@@ -6,8 +6,60 @@ $homeRuns = $homeScore ? (int) explode('/', $homeScore)[0] : 0;
 $awayRuns = $awayScore ? (int) explode('/', $awayScore)[0] : 0;
 
 $matchType = $match['event_type'] ?? '';
+$matchFormat = $match['matchFormatDisplay'] ?? $match['matchFormat'] ?? $matchType;
+$matchDesc = $match['matchDesc'] ?? '';
+
 $isHundredBall = strpos(strtolower($matchType), 'hundred') !== false;
 $isOversBased = strpos(strtolower($matchType), 'odi') !== false || strpos(strtolower($matchType), 't20') !== false || strpos(strtolower($matchType), 'test') !== false;
+
+// Get team images/logos
+$homeTeamLogo = $match['event_home_team_logo'] ?? '';
+$awayTeamLogo = $match['event_away_team_logo'] ?? '';
+
+// Get start and end dates for completed matches
+$startDate = null;
+$endDate = null;
+
+// Try to get dates from multiple possible sources
+$startDateStr = $match['startDate'] ?? $match['event_date_start'] ?? '';
+$endDateStr = $match['endDate'] ?? $match['event_date_end'] ?? '';
+
+// Use human-readable dates if available
+$startDate = $match['startDateHuman'] ?? '';
+$endDate = $match['endDateHuman'] ?? '';
+
+// If human-readable dates are not available, try to format them
+if (!$startDate && $startDateStr) {
+    try {
+        if (is_numeric($startDateStr)) {
+            // This is a timestamp, convert it
+            $startTimestamp = intval($startDateStr) / 1000;
+            $startDate = date('M d, Y H:i', $startTimestamp);
+        } else {
+            // This is already a formatted date, format it nicely
+            $startCarbon = \Carbon\Carbon::parse($startDateStr);
+            $startDate = $startCarbon->format('M d, Y H:i');
+        }
+    } catch (\Exception $e) {
+        $startDate = $startDateStr;
+    }
+}
+
+if (!$endDate && $endDateStr) {
+    try {
+        if (is_numeric($endDateStr)) {
+            // This is a timestamp, convert it
+            $endTimestamp = intval($endDateStr) / 1000;
+            $endDate = date('M d, Y H:i', $endTimestamp);
+        } else {
+            // This is already a formatted date, format it nicely
+            $endCarbon = \Carbon\Carbon::parse($endDateStr);
+            $endDate = $endCarbon->format('M d, Y H:i');
+        }
+    } catch (\Exception $e) {
+        $endDate = $endDateStr;
+    }
+}
 
 $isFirstInningsComplete = false;
 $isSecondInningsStarted = false;
@@ -78,7 +130,7 @@ if ($isFirstInningsComplete) {
 // Determine winner for completed matches
 $winner = null;
 $result = '';
-if ($type === 'today' && $homeScore && $awayScore) {
+if ($homeScore && $awayScore) {
     if ($homeRuns > $awayRuns) {
         $winner = 'home';
         $margin = $homeRuns - $awayRuns;
@@ -113,57 +165,47 @@ $isCompleted = $homeScore && $awayScore &&
 // Check if match is upcoming (no scores yet)
 $isUpcoming = !$homeScore && !$awayScore;
 
-// Format match date and time
-$matchDateTime = '';
-$matchDate = '';
-$matchTime = '';
-
-// For upcoming matches, use event_date_start to get both date and time
-if ($type === 'upcoming' && isset($match['event_date_start'])) {
-    try {
-        $dateString = $match['event_date_start'];
-        
-        // If it's already a timestamp or ISO format
-        if (is_numeric($dateString)) {
-            $date = new DateTime('@' . $dateString);
-        } else {
-            $date = new DateTime($dateString);
+// Format date and time based on match type
+$dateTimeDisplay = '';
+if ($type === 'today') {
+    // Today matches: show only time
+    $dateTimeDisplay = $match['event_time'] ?? 'Time TBD';
+} elseif ($type === 'upcoming') {
+    // Upcoming matches: show date + time
+    $dateStr = $match['event_date_start'] ?? '';
+    $timeStr = $match['event_time'] ?? '';
+    if ($dateStr && $timeStr) {
+        try {
+            $date = \Carbon\Carbon::parse($dateStr);
+            $dateTimeDisplay = $date->format('M d') . ', ' . $timeStr;
+        } catch (\Exception $e) {
+            $dateTimeDisplay = $dateStr . ', ' . $timeStr;
         }
-        
-        // Format both date and time for upcoming matches
-        $matchDate = $date->format('M d');
-        $matchTime = $date->format('g:i A');
-        $matchDateTime = $matchDate . ', ' . $matchTime;
-        
-        // Store UTC time for JavaScript conversion to local time
-        $utcTime = $date->format('Y-m-d H:i:s');
-        
-    } catch (Exception $e) {
-        // Fallback to original string if parsing fails
-        $matchDateTime = $dateString;
+    } else {
+        $dateTimeDisplay = $dateStr ?: 'Date TBD';
     }
-} elseif (isset($match['event_time'])) {
-    try {
-        // Handle different time formats for other match types
-        $timeString = $match['event_time'];
-        
-        // If it's already a timestamp or ISO format
-        if (is_numeric($timeString)) {
-            $date = new DateTime('@' . $timeString);
-        } else {
-            $date = new DateTime($timeString);
+} elseif ($type === 'finished') {
+    // Completed matches: show only date
+    $dateStr = $match['endDate'] ?? $match['event_date_end'] ?? $match['event_date_stop'] ?? $match['event_date'] ?? '';
+    if ($dateStr) {
+        try {
+            $date = \Carbon\Carbon::parse($dateStr);
+            $dateTimeDisplay = $date->format('M d, Y');
+        } catch (\Exception $e) {
+            $dateTimeDisplay = $dateStr;
         }
-        
-        // Format the time only (since it's event_time)
-        $matchDateTime = $date->format('g:i A');
-        
-        // Store UTC time for JavaScript conversion to local time
-        $utcTime = $date->format('Y-m-d H:i:s');
-    } catch (Exception $e) {
-        // Fallback to original string if parsing fails
-        $matchDateTime = $timeString;
+    } else {
+        $dateTimeDisplay = 'Date Unknown';
     }
 }
+
+// Check if match is completed (has final scores for both teams)
+$isCompleted = $homeScore && $awayScore && 
+               strpos($homeScore, '/') !== false && 
+               strpos($awayScore, '/') !== false;
+
+// Check if match is upcoming (no scores yet)
+$isUpcoming = !$homeScore && !$awayScore;
 @endphp
 
 <div class="match-card {{ $type === 'upcoming' ? '' : 'cursor-pointer transform transition-all duration-300 hover:scale-[1.02] hover:shadow-lg' }}"
@@ -189,17 +231,22 @@ if ($type === 'upcoming' && isset($match['event_date_start'])) {
         @endif
 
         <div class="p-2 sm:p-3">
-            <!-- Match Header - Compact -->
+            <!-- Match Header - Enhanced -->
             <div class="flex items-center justify-between mb-2">
-                <span class="text-xs font-semibold px-1 sm:px-2 py-1 rounded-full
-                    @if($type === 'live') text-red-700 bg-red-100
-                    @elseif($type === 'today') text-blue-700 bg-blue-100
-                    @else text-purple-700 bg-purple-100 @endif">
-                    @if($type === 'live') <span class="blink-dot"></span> @elseif($type === 'today') 📅 @else ⏰ @endif
-                    <span>{{ $match['event_type'] ?? 'Match' }}</span>
-                </span>
+                <div class="flex flex-col space-y-1">
+                    <span class="text-xs font-semibold px-1 sm:px-2 py-1 rounded-full
+                        @if($type === 'live') text-red-700 bg-red-100
+                        @elseif($type === 'today') text-blue-700 bg-blue-100
+                        @else text-purple-700 bg-purple-100 @endif">
+                        @if($type === 'live') <span class="blink-dot"></span> @elseif($type === 'today') 📅 @else ⏰ @endif
+                        <span>{{ $matchFormat ?? 'Match' }}</span>
+                    </span>
+                    @if($matchDesc)
+                    <span class="text-xs text-gray-600">{{ $matchDesc }}</span>
+                    @endif
+                </div>
                 <div class="text-right text-xs">
-                    <div class="text-gray-800 hidden sm:block">{{ $match['event_stadium'] ?? 'Venue TBD' }}</div>
+                    <div class="text-gray-800 hidden sm:block">{{ $match['venue'] ?? 'Venue TBD' }}</div>
                     <div class="text-gray-500">{{ $match['league_name'] ?? '' }}</div>
                 </div>
             </div>
@@ -209,12 +256,14 @@ if ($type === 'upcoming' && isset($match['event_date_start'])) {
                 <!-- Home Team -->
                 <div class="flex items-center justify-between bg-gray-50 rounded p-1 sm:p-2 {{ $winner === 'home' ? 'bg-green-100 border border-green-200' : '' }}">
                     <div class="flex items-center space-x-1 sm:space-x-2">
-                        @if(isset($match['event_home_team_logo']))
-                        <img src="{{ $match['event_home_team_logo'] }}"
+                        @if($homeTeamLogo)
+                        <img src="{{ $homeTeamLogo }}"
                             alt="{{ $match['event_home_team'] }}"
-                            class="w-6 h-6 sm:w-8 sm:h-8 rounded-full border">
+                            class="w-6 h-6 sm:w-8 sm:h-8 rounded-full border object-cover">
                         @else
-                        <div class="w-6 h-6 sm:w-8 sm:h-8 bg-gray-200 rounded-full flex items-center justify-center text-xs">🏏</div>
+                        <div class="w-6 h-6 sm:w-8 sm:h-8 bg-gray-200 rounded-full flex items-center justify-center text-xs font-bold text-gray-600">
+                            {{ strtoupper(substr($match['event_home_team'] ?? 'T', 0, 1)) }}
+                        </div>
                         @endif
                         <div>
                             <span class="text-xs sm:text-sm font-semibold text-gray-900">{{ $match['event_home_team'] }}</span>
@@ -242,12 +291,14 @@ if ($type === 'upcoming' && isset($match['event_date_start'])) {
                 <!-- Away Team -->
                 <div class="flex items-center justify-between bg-gray-50 rounded p-1 sm:p-2 {{ $winner === 'away' ? 'bg-green-100 border border-green-200' : '' }}">
                     <div class="flex items-center space-x-1 sm:space-x-2">
-                        @if(isset($match['event_away_team_logo']))
-                        <img src="{{ $match['event_away_team_logo'] }}"
+                        @if($awayTeamLogo)
+                        <img src="{{ $awayTeamLogo }}"
                             alt="{{ $match['event_away_team'] }}"
-                            class="w-6 h-6 sm:w-8 sm:h-8 rounded-full border">
+                            class="w-6 h-6 sm:w-8 sm:h-8 rounded-full border object-cover">
                         @else
-                        <div class="w-6 h-6 sm:w-8 sm:h-8 bg-gray-200 rounded-full flex items-center justify-center text-xs">🏏</div>
+                        <div class="w-6 h-6 sm:w-8 sm:h-8 bg-gray-200 rounded-full flex items-center justify-center text-xs font-bold text-gray-600">
+                            {{ strtoupper(substr($match['event_away_team'] ?? 'T', 0, 1)) }}
+                        </div>
                         @endif
                         <div>
                             <span class="text-xs sm:text-sm font-semibold text-gray-900">{{ $match['event_away_team'] }}</span>
@@ -281,8 +332,8 @@ if ($type === 'upcoming' && isset($match['event_date_start'])) {
                         @endif
                     @else
                                 <!-- Show match time for matches that haven't started yet -->
-        <span class="text-blue-600">⏰ {{ $matchDateTime ?: 'Time TBD' }}</span>
-        @if(!$matchDateTime)
+        <span class="text-blue-600">⏰ {{ $dateTimeDisplay ?: 'Time TBD' }}</span>
+        @if(!$dateTimeDisplay)
                                 <div class="text-xs text-gray-500 mt-1">⏰ <span class="local-time" data-utc="{{ $utcTime ?? '' }}">{{ $match['event_time'] ?? 'No time' }}</span></div>
         @endif
                     @endif
@@ -290,96 +341,53 @@ if ($type === 'upcoming' && isset($match['event_date_start'])) {
             </div>
             @endif
 
-            <!-- Match Info - Different content based on match type -->
-            @if($type === 'live')
-            <!-- Live Match Info - Show progress and match details -->
-            <div class="hidden sm:block bg-gray-50 rounded p-1 sm:p-2 border border-gray-200 mb-2">
-                <div class="grid grid-cols-3 gap-1 text-xs">
-                    <!-- Match Detail / Current Balls/Overs -->
-                    @if($isHundredBall && !$isFirstInningsComplete)
-                    <div class="text-center">
-                        <div class="font-semibold text-gray-500">Balls</div>
-                        <div class="text-gray-400">
-                            @if($remainingBalls !== null)
-                            {{ 100 - $remainingBalls }}
-                            @else
-                            In Progress
-                            @endif
-                        </div>
-                    </div>
-                    @elseif($isOversBased && !$isFirstInningsComplete)
-                    <div class="text-center">
-                        <div class="font-semibold text-gray-500">Overs</div>
-                        <div class="text-gray-400">
-                            @if($remainingOvers !== null)
-                            {{ $totalOvers - $remainingOvers }}
-                            @else
-                            In Progress
-                            @endif
-                        </div>
-                    </div>
-                    @elseif($target || (!$isHundredBall && !$isOversBased))
-                    <div class="text-center">
-                        <div class="font-semibold text-gray-500">Detail</div>
-                        <div class="text-gray-400">{{ $match['event_status_info'] ?? '-' }}</div>
-                    </div>
-                    @endif
-
-                    <!-- Runs Needed / Balls/Overs Remaining / Second Team Progress -->
-                    @if($awayScore && $homeScore && $target)
-                    <div class="text-center">
-                        <div class="font-semibold text-gray-500">Req RR</div>
-                        <div class="text-orange-400 font-bold">
-                            @php
-                            $runsNeeded = max(0, $target - $awayRuns);
-                            $oversLeft = $isHundredBall ? ($remainingBalls / 6) : ($remainingOvers ?? 0);
-                            $requiredRR = $oversLeft > 0 ? round($runsNeeded / $oversLeft, 2) : 0;
-                            @endphp
-                            {{ $requiredRR }}
-                        </div>
-                    </div>
-                    @elseif($isHundredBall && $isSecondInningsStarted && $remainingBalls !== null)
-                    <div class="text-center">
-                        <div class="font-semibold text-gray-500">2nd Team</div>
-                        <div class="text-blue-400 font-bold">{{ 100 - $remainingBalls }}/100</div>
-                    </div>
-                    @elseif($isOversBased && $isSecondInningsStarted && $remainingOvers !== null)
-                    <div class="text-center">
-                        <div class="font-semibold text-gray-500">2nd Team</div>
-                        <div class="text-blue-400 font-bold">{{ $totalOvers - $remainingOvers }}/{{ $totalOvers }}</div>
-                    </div>
-                    @elseif($isHundredBall && $remainingBalls !== null)
-                    <div class="text-center">
-                        <div class="font-semibold text-gray-500">Left</div>
-                        <div class="text-blue-400 font-bold">{{ $remainingBalls }}</div>
-                    </div>
-                    @elseif($isOversBased && $remainingOvers !== null)
-                    <div class="text-center">
-                        <div class="font-semibold text-gray-500">Left</div>
-                        <div class="text-blue-400 font-bold">{{ $remainingOvers }}</div>
-                    </div>
-                    @endif
-
-                    <!-- Toss Info -->
-                    @if(isset($match['event_toss']))
-                    <div class="text-center">
-                        <div class="font-semibold text-gray-500">Toss</div>
-                        <div class="text-gray-400">{{ $match['event_toss'] }}</div>
-                    </div>
+            <!-- Match Result/Date for Finished Matches -->
+            @if($type === 'finished')
+            <div class="bg-white rounded p-2 mb-2 text-center">
+                <div class="text-sm font-semibold text-gray-800">
+                    @if($result)
+                        <!-- Show result for completed matches -->
+                        @if($winner)
+                            <span class="text-green-600">{{ $match[$winner === 'home' ? 'event_home_team' : 'event_away_team'] }}</span>
+                            <span class="text-gray-600">{{ $result }}</span>
+                        @else
+                            <span class="text-blue-600">{{ $result }}</span>
+                        @endif
                     @endif
                 </div>
+                @if($dateTimeDisplay)
+                <div class="text-xs text-gray-500 mt-1">
+                    📅 {{ $dateTimeDisplay }}
+                </div>
+                @else
+                <div class="text-xs text-gray-500 mt-1">
+                    📅 Date Unknown
+                </div>
+                @endif
             </div>
+            @endif
+
+            <!-- Match Info - Different content based on match type -->
+            @if($type === 'live')
+            <!-- Live Match Info - Show only status -->
+            <div class="bg-gray-50 rounded p-2 mb-2 text-center border border-gray-200">
+                <div class="text-sm font-semibold text-gray-700">
+                    🏏 {{ $match['event_status_info'] ?? 'Match in Progress' }}
+                </div>
+            </div>
+
+
+
             @elseif($type === 'today' && $isCompleted)
             <!-- Completed Match Info - Show only date and time -->
-                   <div class="text-xs text-gray-500 mt-1">⏰ <span class="local-time" data-utc="{{ $utcTime ?? '' }}">{{ $match['event_time'] ?? 'No time' }}</span></div>
+            <div class="text-xs text-gray-500 mt-1">⏰ <span class="local-time" data-utc="{{ $utcTime ?? '' }}">{{ $match['event_time'] ?? 'No time' }}</span></div>
 
             @elseif($type === 'upcoming')
             <!-- Upcoming Match Info - Show date and time -->
             <div class="bg-white rounded p-2 mb-2 text-center">
                 <div class="text-sm font-semibold text-gray-800">
-                    @if($matchDateTime)
-                        <span class="text-blue-600">📅 {{ $matchDate }}</span>
-                        <div class="text-xs text-gray-600 mt-1">⏰ {{ $matchTime }}</div>
+                    @if($dateTimeDisplay)
+                        <span class="text-blue-600">📅 {{ $dateTimeDisplay }}</span>
                     @else
                         <span class="text-blue-600">⏰ <span class="local-time" data-utc="{{ $utcTime ?? '' }}">{{ $match['event_time'] ?? 'Time TBD' }}</span></span>
                     @endif
@@ -449,3 +457,20 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
+
+<style>
+.blink-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #ef4444;
+    border-radius: 50%;
+    margin-right: 4px;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0.3; }
+}
+</style>

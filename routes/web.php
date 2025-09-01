@@ -30,16 +30,10 @@ Route::prefix('cricket')->name('cricket.')->group(function () {
     Route::get('/team/{teamKey}', [CricketController::class, 'teamDetail'])->name('team-detail');
     Route::post('/sync-teams', [CricketController::class, 'syncTeams'])->name('sync-teams');
     Route::get('/teams/league/{leagueKey}', [CricketController::class, 'getTeamsByLeague'])->name('teams-by-league');
-    Route::get('/leagues', [CricketController::class, 'leagues'])->name('leagues');
-    Route::get('/league/{leagueKey}', [CricketController::class, 'leagueDetail'])->name('league-detail');
-    Route::get('/series', [CricketController::class, 'series'])->name('series');
-    Route::get('/series/{seriesKey}', [CricketController::class, 'seriesDetail'])->name('series-detail');
     Route::get('/search', [CricketController::class, 'search'])->name('search');
     Route::post('/refresh', [CricketController::class, 'refreshData'])->name('refresh');
-    Route::get('/debug', [CricketController::class, 'debug'])->name('debug');
-    Route::get('/test-api', [CricketController::class, 'testApi'])->name('test-api');
-    Route::get('/debug-api-calls', [CricketController::class, 'debugApiCalls'])->name('debug-api-calls');
-    Route::get('/test-domain-connectivity', [CricketController::class, 'testDomainConnectivity'])->name('test-domain-connectivity');
+    Route::get('/mock/enable', [CricketController::class, 'enableMock'])->name('mock-enable');
+    Route::get('/mock/disable', [CricketController::class, 'disableMock'])->name('mock-disable');
 });
 
 // Redirect root to cricket index

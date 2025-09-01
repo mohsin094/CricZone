@@ -153,7 +153,6 @@
                         <h4 class="text-md font-semibold mb-4">More</h4>
                         <ul class="space-y-2 text-sm text-gray-300">
                             <li><a href="{{ route('cricket.teams') }}" class="hover:text-white">Teams</a></li>
-                            <li><a href="{{ route('cricket.leagues') }}" class="hover:text-white">Leagues</a></li>
                             <li><a href="{{ route('cricket.search') }}" class="hover:text-white">Search</a></li>
                         </ul>
                     </div>

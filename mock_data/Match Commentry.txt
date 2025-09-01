@@ -1,0 +1,1141 @@
+{
+  "inningsid": 0,
+  "comwrapper": [
+    {
+      "commentary": {
+        "commtxt": "Williams to Nissanka, no run, length ball around off, bowled from wide of the crease. Chopped to cover",
+        "timestamp": 1756647623018,
+        "overnum": 25.5,
+        "inningsid": 2,
+        "eventtype": "NONE",
+        "commentaryformats": [
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          }
+        ],
+        "videotype": "",
+        "videourl": "",
+        "videoid": 0,
+        "ballnbr": 155,
+        "planid": 0,
+        "imageid": 0,
+        "premiumvideourl": "",
+        "ispremiumfree": false,
+        "batteamscore": 0,
+        "boundarytracker": false
+      }
+    },
+    {
+      "commentary": {
+        "commtxt": "Williams to Samarawickrama, 1 run, skips down, almost yorks himself and jams it to long-on",
+        "timestamp": 1756647600243,
+        "overnum": 25.4,
+        "inningsid": 2,
+        "eventtype": "NONE",
+        "commentaryformats": [
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          }
+        ],
+        "videotype": "",
+        "videourl": "",
+        "videoid": 0,
+        "ballnbr": 154,
+        "planid": 0,
+        "imageid": 0,
+        "premiumvideourl": "",
+        "ispremiumfree": false,
+        "batteamscore": 0,
+        "boundarytracker": false
+      }
+    },
+    {
+      "commentary": {
+        "commtxt": "Williams to Nissanka, 1 run, flat ball on a length, middle-stump line, Nissanka dinks it to long-on",
+        "timestamp": 1756647573290,
+        "overnum": 25.3,
+        "inningsid": 2,
+        "eventtype": "NONE",
+        "commentaryformats": [
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          }
+        ],
+        "videotype": "",
+        "videourl": "",
+        "videoid": 0,
+        "ballnbr": 153,
+        "planid": 0,
+        "imageid": 0,
+        "premiumvideourl": "",
+        "ispremiumfree": false,
+        "batteamscore": 0,
+        "boundarytracker": false
+      }
+    },
+    {
+      "commentary": {
+        "commtxt": "Williams to Nissanka, no run, defended off the front foot",
+        "timestamp": 1756647556219,
+        "overnum": 25.2,
+        "inningsid": 2,
+        "eventtype": "NONE",
+        "commentaryformats": [
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          }
+        ],
+        "videotype": "",
+        "videourl": "",
+        "videoid": 0,
+        "ballnbr": 152,
+        "planid": 0,
+        "imageid": 0,
+        "premiumvideourl": "",
+        "ispremiumfree": false,
+        "batteamscore": 0,
+        "boundarytracker": false
+      }
+    },
+    {
+      "commentary": {
+        "commtxt": "Williams to Samarawickrama, 1 run, Samarawickrama shimmies down and moves leg-side to try and go inside-out over extra cover. He isn't close to the pitch of the ball and ends up chipping it over the umpire's head",
+        "timestamp": 1756647537458,
+        "overnum": 25.1,
+        "inningsid": 2,
+        "eventtype": "NONE",
+        "commentaryformats": [
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          }
+        ],
+        "videotype": "",
+        "videourl": "",
+        "videoid": 0,
+        "ballnbr": 151,
+        "planid": 0,
+        "imageid": 0,
+        "premiumvideourl": "",
+        "ispremiumfree": false,
+        "batteamscore": 0,
+        "boundarytracker": false
+      }
+    },
+    {
+      "commentary": {
+        "commtxt": "Muzarabani to Nissanka, no run, short of length, Nissanka defends it into the off-side",
+        "timestamp": 1756647446304,
+        "overnum": 24.6,
+        "inningsid": 2,
+        "eventtype": "over-break",
+        "oversep": {
+          "score": 122,
+          "wickets": 2,
+          "inningsid": 2,
+          "oversummary": "0 4 2 1 1 0 ",
+          "runs": 8,
+          "batstrikerdetails": "23(35)",
+          "batnonstrikerdetails": "75(78)",
+          "bowldetails": "6-0-26-0",
+          "timestamp": 1756647446304,
+          "overnum": 24.6,
+          "ovrbatnames": [],
+          "ovrbowlnames": [],
+          "batstrikername": "Sadeera Samarawickrama",
+          "batnonstrikername": "Pathum Nissanka",
+          "bowlname": "Blessing Muzarabani",
+          "battingteamname": "SL"
+        },
+        "commentaryformats": [
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          }
+        ],
+        "videotype": "",
+        "videourl": "",
+        "videoid": 0,
+        "ballnbr": 150,
+        "planid": 0,
+        "imageid": 0,
+        "premiumvideourl": "",
+        "ispremiumfree": false,
+        "batteamscore": 0,
+        "boundarytracker": false
+      }
+    },
+    {
+      "commentary": {
+        "commtxt": "Muzarabani to Samarawickrama, 1 run, length ball just outside off, knocked towards mid-on for a single. The short midwicket fielder ran quickly but couldn't get to the ball",
+        "timestamp": 1756647411007,
+        "overnum": 24.5,
+        "inningsid": 2,
+        "eventtype": "NONE",
+        "commentaryformats": [
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          }
+        ],
+        "videotype": "",
+        "videourl": "",
+        "videoid": 0,
+        "ballnbr": 149,
+        "planid": 0,
+        "imageid": 0,
+        "premiumvideourl": "",
+        "ispremiumfree": false,
+        "batteamscore": 0,
+        "boundarytracker": false
+      }
+    },
+    {
+      "commentary": {
+        "commtxt": "Muzarabani to Nissanka, 1 run, short of length, a hopping Nissanka drops it in front of point off the inner edge for a quick single",
+        "timestamp": 1756647369662,
+        "overnum": 24.4,
+        "inningsid": 2,
+        "eventtype": "NONE",
+        "commentaryformats": [
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          }
+        ],
+        "videotype": "",
+        "videourl": "",
+        "videoid": 0,
+        "ballnbr": 148,
+        "planid": 0,
+        "imageid": 0,
+        "premiumvideourl": "",
+        "ispremiumfree": false,
+        "batteamscore": 0,
+        "boundarytracker": false
+      }
+    },
+    {
+      "commentary": {
+        "commtxt": "Muzarabani to Nissanka, 2 runs, full outside off, Nissanka leans across to ease it to deep point",
+        "timestamp": 1756647326236,
+        "overnum": 24.3,
+        "inningsid": 2,
+        "eventtype": "NONE",
+        "commentaryformats": [
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          }
+        ],
+        "videotype": "",
+        "videourl": "",
+        "videoid": 0,
+        "ballnbr": 147,
+        "planid": 0,
+        "imageid": 0,
+        "premiumvideourl": "",
+        "ispremiumfree": false,
+        "batteamscore": 0,
+        "boundarytracker": false
+      }
+    },
+    {
+      "commentary": {
+        "commtxt": "Muzarabani to Nissanka, B0$, Muzarabani pulls his length back, Nissanka rises on his toes, gets on top of the bounce and scythes it to the left of the diving backward point fielder. Third man runs across to his right and dives but to no avail. The boundary brings up the B1$",
+        "timestamp": 1756647283322,
+        "overnum": 24.2,
+        "inningsid": 2,
+        "eventtype": "FOUR",
+        "commentaryformats": [
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "bold",
+            "value": [
+              {
+                "id": "B0$",
+                "value": "FOUR"
+              },
+              {
+                "id": "B1$",
+                "value": "fifty partnership"
+              }
+            ]
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          }
+        ],
+        "videotype": "",
+        "videourl": "",
+        "videoid": 0,
+        "ballnbr": 146,
+        "planid": 0,
+        "imageid": 0,
+        "premiumvideourl": "",
+        "ispremiumfree": false,
+        "batteamscore": 0,
+        "boundarytracker": false
+      }
+    },
+    {
+      "commentary": {
+        "commtxt": "Muzarabani to Nissanka, no run, beaten! Hard length around the fifth-sixth stump zone, Nissanka wants to have a feel for it and is lucky not to nick off",
+        "timestamp": 1756647245303,
+        "overnum": 24.1,
+        "inningsid": 2,
+        "eventtype": "NONE",
+        "commentaryformats": [
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          }
+        ],
+        "videotype": "",
+        "videourl": "",
+        "videoid": 0,
+        "ballnbr": 145,
+        "planid": 0,
+        "imageid": 0,
+        "premiumvideourl": "",
+        "ispremiumfree": false,
+        "batteamscore": 0,
+        "boundarytracker": false
+      }
+    },
+    {
+      "commentary": {
+        "commtxt": "Williams to Samarawickrama, no run, gets forward to turn this full delivery to midwicket",
+        "timestamp": 1756647191727,
+        "overnum": 23.6,
+        "inningsid": 2,
+        "eventtype": "over-break",
+        "oversep": {
+          "score": 114,
+          "wickets": 2,
+          "inningsid": 2,
+          "oversummary": "0 0 1 2 0 0 ",
+          "runs": 3,
+          "batstrikerdetails": "68(73)",
+          "batnonstrikerdetails": "22(34)",
+          "bowldetails": "3-0-8-0",
+          "timestamp": 1756647191727,
+          "overnum": 23.6,
+          "ovrbatnames": [],
+          "ovrbowlnames": [],
+          "batstrikername": "Pathum Nissanka",
+          "batnonstrikername": "Sadeera Samarawickrama",
+          "bowlname": "Sean Williams",
+          "battingteamname": "SL"
+        },
+        "commentaryformats": [
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          }
+        ],
+        "videotype": "",
+        "videourl": "",
+        "videoid": 0,
+        "ballnbr": 144,
+        "planid": 0,
+        "imageid": 0,
+        "premiumvideourl": "",
+        "ispremiumfree": false,
+        "batteamscore": 0,
+        "boundarytracker": false
+      }
+    },
+    {
+      "commentary": {
+        "commtxt": "Williams to Samarawickrama, no run, driven to the left of cover where Evans makes a diving stop",
+        "timestamp": 1756647178373,
+        "overnum": 23.5,
+        "inningsid": 2,
+        "eventtype": "NONE",
+        "commentaryformats": [
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          }
+        ],
+        "videotype": "",
+        "videourl": "",
+        "videoid": 0,
+        "ballnbr": 143,
+        "planid": 0,
+        "imageid": 0,
+        "premiumvideourl": "",
+        "ispremiumfree": false,
+        "batteamscore": 0,
+        "boundarytracker": false
+      }
+    },
+    {
+      "commentary": {
+        "commtxt": "Williams to Samarawickrama, 2 runs, in-drifter, Samarawickrama shimmies down and knocks it towards long-on. Good running",
+        "timestamp": 1756647150162,
+        "overnum": 23.4,
+        "inningsid": 2,
+        "eventtype": "NONE",
+        "commentaryformats": [
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          }
+        ],
+        "videotype": "",
+        "videourl": "",
+        "videoid": 0,
+        "ballnbr": 142,
+        "planid": 0,
+        "imageid": 0,
+        "premiumvideourl": "",
+        "ispremiumfree": false,
+        "batteamscore": 0,
+        "boundarytracker": false
+      }
+    },
+    {
+      "commentary": {
+        "commtxt": "Williams to Nissanka, 1 run, very full and Nissanka comes on the front foot to ease it to long-off",
+        "timestamp": 1756647122905,
+        "overnum": 23.3,
+        "inningsid": 2,
+        "eventtype": "NONE",
+        "commentaryformats": [
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          }
+        ],
+        "videotype": "",
+        "videourl": "",
+        "videoid": 0,
+        "ballnbr": 141,
+        "planid": 0,
+        "imageid": 0,
+        "premiumvideourl": "",
+        "ispremiumfree": false,
+        "batteamscore": 0,
+        "boundarytracker": false
+      }
+    },
+    {
+      "commentary": {
+        "commtxt": "Williams to Nissanka, no run, turn and bounce, Nissanka goes back to cut and misses",
+        "timestamp": 1756647106031,
+        "overnum": 23.2,
+        "inningsid": 2,
+        "eventtype": "NONE",
+        "commentaryformats": [
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          }
+        ],
+        "videotype": "",
+        "videourl": "",
+        "videoid": 0,
+        "ballnbr": 140,
+        "planid": 0,
+        "imageid": 0,
+        "premiumvideourl": "",
+        "ispremiumfree": false,
+        "batteamscore": 0,
+        "boundarytracker": false
+      }
+    },
+    {
+      "commentary": {
+        "commtxt": "Williams to Nissanka, no run, full on off-middle, push-driven to cover",
+        "timestamp": 1756647097146,
+        "overnum": 23.1,
+        "inningsid": 2,
+        "eventtype": "NONE",
+        "commentaryformats": [
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          }
+        ],
+        "videotype": "",
+        "videourl": "",
+        "videoid": 0,
+        "ballnbr": 139,
+        "planid": 0,
+        "imageid": 0,
+        "premiumvideourl": "",
+        "ispremiumfree": false,
+        "batteamscore": 0,
+        "boundarytracker": false
+      }
+    },
+    {
+      "commentary": {
+        "commtxt": "B0$",
+        "timestamp": 1756647096475,
+        "overnum": 0,
+        "inningsid": 2,
+        "eventtype": "NONE",
+        "commentaryformats": [
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "bold",
+            "value": [
+              {
+                "id": "B0$",
+                "value": "Sean Williams [2.0-0-5-0] is back into the attack"
+              }
+            ]
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          }
+        ],
+        "videotype": "",
+        "videourl": "",
+        "videoid": 0,
+        "ballnbr": 0,
+        "planid": 0,
+        "imageid": 0,
+        "premiumvideourl": "",
+        "ispremiumfree": false,
+        "batteamscore": 0,
+        "boundarytracker": false
+      }
+    },
+    {
+      "commentary": {
+        "commtxt": "Muzarabani to Samarawickrama, 2 runs, tucks this short of length ball to backward square leg for a couple more",
+        "timestamp": 1756647034029,
+        "overnum": 22.6,
+        "inningsid": 2,
+        "eventtype": "over-break",
+        "oversep": {
+          "score": 111,
+          "wickets": 2,
+          "inningsid": 2,
+          "oversummary": "1 1 1 4 L1 2 ",
+          "runs": 10,
+          "batstrikerdetails": "67(70)",
+          "batnonstrikerdetails": "20(31)",
+          "bowldetails": "5-0-18-0",
+          "timestamp": 1756647034029,
+          "overnum": 22.6,
+          "ovrbatnames": [],
+          "ovrbowlnames": [],
+          "batstrikername": "Pathum Nissanka",
+          "batnonstrikername": "Sadeera Samarawickrama",
+          "bowlname": "Blessing Muzarabani",
+          "battingteamname": "SL"
+        },
+        "commentaryformats": [
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          }
+        ],
+        "videotype": "",
+        "videourl": "",
+        "videoid": 0,
+        "ballnbr": 138,
+        "planid": 0,
+        "imageid": 0,
+        "premiumvideourl": "",
+        "ispremiumfree": false,
+        "batteamscore": 0,
+        "boundarytracker": false
+      }
+    },
+    {
+      "commentary": {
+        "commtxt": "Muzarabani to Nissanka, leg byes, 1 run, good comeback from Muzarabani. Gets this to nip back in from a length, Nissanka is half-forward to defend and gets hit on the back thigh. There's an appeal for lbw but struck down by the umpire. There may have been an inside edge and even height was a factor",
+        "timestamp": 1756646998000,
+        "overnum": 22.5,
+        "inningsid": 2,
+        "eventtype": "NONE",
+        "commentaryformats": [
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          },
+          {
+            "type": "",
+            "value": []
+          }
+        ],
+        "videotype": "",
+        "videourl": "",
+        "videoid": 0,
+        "ballnbr": 137,
+        "planid": 0,
+        "imageid": 0,
+        "premiumvideourl": "",
+        "ispremiumfree": false,
+        "batteamscore": 0,
+        "boundarytracker": false
+      }
+    }
+  ],
+  "miniscore": {
+    "batsmanstriker": {
+      "id": 13682,
+      "balls": 81,
+      "runs": 76,
+      "fours": 12,
+      "sixes": 0,
+      "strkrate": "93.83",
+      "name": "Pathum Nissanka",
+      "nickname": "Pathum Nissanka",
+      "iscaptain": false,
+      "iskeeper": false,
+      "outdec": "",
+      "videotype": "",
+      "videourl": "",
+      "videoid": 0,
+      "planid": 0,
+      "imageid": 0,
+      "premiumvideourl": "",
+      "iscbplusfree": false,
+      "ispremiumfree": false,
+      "inmatchchange": "",
+      "isoverseas": false,
+      "playingxichange": ""
+    },
+    "batsmannonstriker": {
+      "id": 9495,
+      "balls": 37,
+      "runs": 25,
+      "fours": 1,
+      "sixes": 0,
+      "strkrate": "67.57",
+      "name": "Sadeera Samarawickrama",
+      "nickname": "Sadeera Samarawickrama",
+      "iscaptain": false,
+      "iskeeper": false,
+      "outdec": "",
+      "videotype": "",
+      "videourl": "",
+      "videoid": 0,
+      "planid": 0,
+      "imageid": 0,
+      "premiumvideourl": "",
+      "iscbplusfree": false,
+      "ispremiumfree": false,
+      "inmatchchange": "",
+      "isoverseas": false,
+      "playingxichange": ""
+    },
+    "bowlerstriker": {
+      "id": 441,
+      "overs": "3.5",
+      "maidens": 0,
+      "wickets": 0,
+      "runs": 11,
+      "economy": "2.9",
+      "name": "Sean Williams",
+      "nickname": "",
+      "iscaptain": false,
+      "iskeeper": false,
+      "videotype": "",
+      "videourl": "",
+      "videoid": 0,
+      "dots": 0,
+      "balls": 0,
+      "rpb": 0,
+      "planid": 0,
+      "imageid": 0,
+      "premiumvideourl": "",
+      "ispremiumfree": false,
+      "inmatchchange": "",
+      "isoverseas": false,
+      "playingxichange": ""
+    },
+    "bowlernonstriker": {
+      "id": 13316,
+      "overs": "6",
+      "maidens": 0,
+      "wickets": 0,
+      "runs": 26,
+      "economy": "4.3",
+      "name": "Blessing Muzarabani",
+      "nickname": "",
+      "iscaptain": false,
+      "iskeeper": false,
+      "videotype": "",
+      "videourl": "",
+      "videoid": 0,
+      "dots": 0,
+      "balls": 0,
+      "rpb": 0,
+      "planid": 0,
+      "imageid": 0,
+      "premiumvideourl": "",
+      "ispremiumfree": false,
+      "inmatchchange": "",
+      "isoverseas": false,
+      "playingxichange": ""
+    },
+    "crr": 4.84,
+    "rrr": 6.33,
+    "inningsnbr": "1st inn",
+    "lastwkt": "Kusal Mendis  c Ben Curran b Brad Evans 5(10)  - 68/2 in 14.2 ov.",
+    "curovsstats": "1 0 1 1 0",
+    "inningsscores": {
+      "inningsscore": [
+        {
+          "inningsid": 2,
+          "batteamid": 5,
+          "batteamshortname": "SL",
+          "runs": 125,
+          "wickets": 2,
+          "overs": 25.5,
+          "isdeclared": false,
+          "isfollowon": false,
+          "target": 278,
+          "balls": 155
+        },
+        {
+          "inningsid": 1,
+          "batteamid": 12,
+          "batteamshortname": "ZIM",
+          "runs": 277,
+          "wickets": 7,
+          "overs": 49.6,
+          "isdeclared": false,
+          "isfollowon": false,
+          "target": 278,
+          "balls": 300
+        }
+      ]
+    },
+    "inningsid": 2,
+    "performance": [
+      {
+        "runs": 53,
+        "wickets": 0,
+        "label": "Last 10 overs"
+      },
+      {
+        "runs": 34,
+        "wickets": 0,
+        "label": "Last 5 overs"
+      }
+    ],
+    "partnership": "57(69)",
+    "oversrem": "",
+    "pp": {
+      "powerplay": [
+        {
+          "id": 8,
+          "ovrfrom": 0.1,
+          "ovrto": 10,
+          "pptype": "Mandatory",
+          "run": 45,
+          "wickets": 0
+        }
+      ]
+    },
+    "target": 0,
+    "custstatus": "",
+    "ballsrem": 0,
+    "rpb": 0,
+    "rrpb": 0,
+    "responselastupdated": 0,
+    "event": ""
+  },
+  "matchheaders": {
+    "state": "In Progress",
+    "status": "Sri Lanka need 153 runs",
+    "matchformat": "ODI",
+    "matchstarttimestamp": 1756625400000,
+    "teamdetails": {
+      "batteamid": 5,
+      "batteamname": "SL",
+      "bowlteamid": 12,
+      "bowlteamname": "ZIM"
+    },
+    "momplayers": {
+      "player": [],
+      "category": ""
+    },
+    "mosplayers": {
+      "player": [],
+      "category": ""
+    },
+    "winningteamid": 0,
+    "revisedtarget": 0,
+    "matchendtimestamp": 1756650600000,
+    "seriesid": 10267,
+    "matchdesc": "2nd ODI",
+    "seriesname": "Sri Lanka tour of Zimbabwe, 2025",
+    "alerttype": "auto",
+    "tossresults": {
+      "tosswinnerid": 5,
+      "tosswinnername": "Sri Lanka",
+      "decision": "Bowling"
+    },
+    "livestreamenabled": false,
+    "team1": {
+      "teamid": 12,
+      "teamname": "Zimbabwe",
+      "teamsname": "ZIM",
+      "isfullmember": false,
+      "isassociated": false,
+      "isleagueteam": false,
+      "iswomenteam": false,
+      "isheader": false,
+      "isactive": false,
+      "teampriority": "",
+      "isvideopresent": false,
+      "imageid": 0,
+      "countryname": "",
+      "belongsto": ""
+    },
+    "team2": {
+      "teamid": 5,
+      "teamname": "Sri Lanka",
+      "teamsname": "SL",
+      "isfullmember": false,
+      "isassociated": false,
+      "isleagueteam": false,
+      "iswomenteam": false,
+      "isheader": false,
+      "isactive": false,
+      "teampriority": "",
+      "isvideopresent": false,
+      "imageid": 0,
+      "countryname": "",
+      "belongsto": ""
+    }
+  },
+  "appindex": {
+    "seotitle": "ZIM vs SL 2nd ODI,Sri Lanka tour of Zimbabwe, 2025 | Cricbuzz.com",
+    "weburl": "http://www.cricbuzz.com/live-cricket-scores/122951/zim-vs-sl-2nd-odi-sri-lanka-tour-of-zimbabwe-2025"
+  },
+  "matchvideos": [],
+  "responselastupdated": 1756647636,
+  "buzz": {
+    "imageids": [
+      743296,
+      743266,
+      742970
+    ],
+    "position": 2,
+    "applink": "cricbuzz://buzz",
+    "isbuzzenabled": true
+  }
+}

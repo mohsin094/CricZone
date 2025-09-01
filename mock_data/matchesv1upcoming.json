@@ -1,0 +1,2891 @@
+{
+  "typeMatches": [
+    {
+      "matchType": "International",
+      "seriesMatches": [
+        {
+          "seriesAdWrapper": {
+            "seriesId": 8788,
+            "seriesName": "South Africa tour of England, 2025",
+            "matches": [
+              {
+                "matchInfo": {
+                  "matchId": 105786,
+                  "seriesId": 8788,
+                  "seriesName": "South Africa tour of England, 2025",
+                  "matchDesc": "1st ODI",
+                  "matchFormat": "ODI",
+                  "startDate": "1756814400000",
+                  "endDate": "1756843200000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 02, 12:00 GMT",
+                  "team1": {
+                    "teamId": 9,
+                    "teamName": "England",
+                    "teamSName": "ENG",
+                    "imageId": 172123
+                  },
+                  "team2": {
+                    "teamId": 11,
+                    "teamName": "South Africa",
+                    "teamSName": "RSA",
+                    "imageId": 172126
+                  },
+                  "venueInfo": {
+                    "id": 66,
+                    "ground": "Headingley",
+                    "city": "Leeds",
+                    "timezone": "+01:00",
+                    "latitude": "53.817622",
+                    "longitude": "-1.58211"
+                  },
+                  "seriesStartDt": "1756684800000",
+                  "seriesEndDt": "1757894400000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 105788,
+                  "seriesId": 8788,
+                  "seriesName": "South Africa tour of England, 2025",
+                  "matchDesc": "2nd ODI",
+                  "matchFormat": "ODI",
+                  "startDate": "1756987200000",
+                  "endDate": "1757016000000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 04, 12:00 GMT",
+                  "team1": {
+                    "teamId": 9,
+                    "teamName": "England",
+                    "teamSName": "ENG",
+                    "imageId": 172123
+                  },
+                  "team2": {
+                    "teamId": 11,
+                    "teamName": "South Africa",
+                    "teamSName": "RSA",
+                    "imageId": 172126
+                  },
+                  "venueInfo": {
+                    "id": 19,
+                    "ground": "Lord's",
+                    "city": "London",
+                    "timezone": "+01:00",
+                    "latitude": "51.529488",
+                    "longitude": "-0.172926"
+                  },
+                  "seriesStartDt": "1756684800000",
+                  "seriesEndDt": "1757894400000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 105794,
+                  "seriesId": 8788,
+                  "seriesName": "South Africa tour of England, 2025",
+                  "matchDesc": "3rd ODI",
+                  "matchFormat": "ODI",
+                  "startDate": "1757239200000",
+                  "endDate": "1757268000000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 07, 10:00 GMT",
+                  "team1": {
+                    "teamId": 9,
+                    "teamName": "England",
+                    "teamSName": "ENG",
+                    "imageId": 172123
+                  },
+                  "team2": {
+                    "teamId": 11,
+                    "teamName": "South Africa",
+                    "teamSName": "RSA",
+                    "imageId": 172126
+                  },
+                  "venueInfo": {
+                    "id": 21,
+                    "ground": "The Rose Bowl",
+                    "city": "Southampton",
+                    "timezone": "+01:00",
+                    "latitude": "50.924131",
+                    "longitude": "-1.322163"
+                  },
+                  "seriesStartDt": "1756684800000",
+                  "seriesEndDt": "1757894400000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "seriesAdWrapper": {
+            "seriesId": 10642,
+            "seriesName": "United Arab Emirates T20I Tri-Series 2025",
+            "matches": [
+              {
+                "matchInfo": {
+                  "matchId": 131064,
+                  "seriesId": 10642,
+                  "seriesName": "United Arab Emirates T20I Tri-Series 2025",
+                  "matchDesc": "3rd Match",
+                  "matchFormat": "T20",
+                  "startDate": "1756738800000",
+                  "endDate": "1756751400000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 01, 15:00 GMT",
+                  "team1": {
+                    "teamId": 7,
+                    "teamName": "United Arab Emirates",
+                    "teamSName": "UAE",
+                    "imageId": 172121
+                  },
+                  "team2": {
+                    "teamId": 96,
+                    "teamName": "Afghanistan",
+                    "teamSName": "AFG",
+                    "imageId": 172188
+                  },
+                  "venueInfo": {
+                    "id": 140,
+                    "ground": "Sharjah Cricket Stadium",
+                    "city": "Sharjah",
+                    "timezone": "+04:00",
+                    "latitude": "25.33095",
+                    "longitude": "55.420902"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1756339200000",
+                  "seriesEndDt": "1757289600000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 131070,
+                  "seriesId": 10642,
+                  "seriesName": "United Arab Emirates T20I Tri-Series 2025",
+                  "matchDesc": "4th Match",
+                  "matchFormat": "T20",
+                  "startDate": "1756825200000",
+                  "endDate": "1756837800000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 02, 15:00 GMT",
+                  "team1": {
+                    "teamId": 3,
+                    "teamName": "Pakistan",
+                    "teamSName": "PAK",
+                    "imageId": 591986
+                  },
+                  "team2": {
+                    "teamId": 96,
+                    "teamName": "Afghanistan",
+                    "teamSName": "AFG",
+                    "imageId": 172188
+                  },
+                  "venueInfo": {
+                    "id": 140,
+                    "ground": "Sharjah Cricket Stadium",
+                    "city": "Sharjah",
+                    "timezone": "+04:00",
+                    "latitude": "25.33095",
+                    "longitude": "55.420902"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1756339200000",
+                  "seriesEndDt": "1757289600000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 131075,
+                  "seriesId": 10642,
+                  "seriesName": "United Arab Emirates T20I Tri-Series 2025",
+                  "matchDesc": "5th Match",
+                  "matchFormat": "T20",
+                  "startDate": "1756998000000",
+                  "endDate": "1757010600000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 04, 15:00 GMT",
+                  "team1": {
+                    "teamId": 3,
+                    "teamName": "Pakistan",
+                    "teamSName": "PAK",
+                    "imageId": 591986
+                  },
+                  "team2": {
+                    "teamId": 7,
+                    "teamName": "United Arab Emirates",
+                    "teamSName": "UAE",
+                    "imageId": 172121
+                  },
+                  "venueInfo": {
+                    "id": 140,
+                    "ground": "Sharjah Cricket Stadium",
+                    "city": "Sharjah",
+                    "timezone": "+04:00",
+                    "latitude": "25.33095",
+                    "longitude": "55.420902"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1756339200000",
+                  "seriesEndDt": "1757289600000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 131086,
+                  "seriesId": 10642,
+                  "seriesName": "United Arab Emirates T20I Tri-Series 2025",
+                  "matchDesc": "6th Match",
+                  "matchFormat": "T20",
+                  "startDate": "1757084400000",
+                  "endDate": "1757097000000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 05, 15:00 GMT",
+                  "team1": {
+                    "teamId": 96,
+                    "teamName": "Afghanistan",
+                    "teamSName": "AFG",
+                    "imageId": 172188
+                  },
+                  "team2": {
+                    "teamId": 7,
+                    "teamName": "United Arab Emirates",
+                    "teamSName": "UAE",
+                    "imageId": 172121
+                  },
+                  "venueInfo": {
+                    "id": 140,
+                    "ground": "Sharjah Cricket Stadium",
+                    "city": "Sharjah",
+                    "timezone": "+04:00",
+                    "latitude": "25.33095",
+                    "longitude": "55.420902"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1756339200000",
+                  "seriesEndDt": "1757289600000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "seriesAdWrapper": {
+            "seriesId": 7572,
+            "seriesName": "ICC Cricket World Cup League Two 2023-27",
+            "matches": [
+              {
+                "matchInfo": {
+                  "matchId": 128897,
+                  "seriesId": 7572,
+                  "seriesName": "ICC Cricket World Cup League Two 2023-27",
+                  "matchDesc": "82nd Match",
+                  "matchFormat": "ODI",
+                  "startDate": "1756652400000",
+                  "endDate": "1756681200000",
+                  "state": "Preview",
+                  "status": "Match starts at Aug 31, 15:00 GMT",
+                  "team1": {
+                    "teamId": 26,
+                    "teamName": "Canada",
+                    "teamSName": "CAN",
+                    "imageId": 172140
+                  },
+                  "team2": {
+                    "teamId": 23,
+                    "teamName": "Scotland",
+                    "teamSName": "SCO",
+                    "imageId": 172137
+                  },
+                  "venueInfo": {
+                    "id": 139,
+                    "ground": "Maple Leaf North-West Ground",
+                    "city": "King City",
+                    "timezone": "-04:00",
+                    "latitude": "36.210861",
+                    "longitude": "-121.126602"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1707868800000",
+                  "seriesEndDt": "1806451200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Preview"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 128902,
+                  "seriesId": 7572,
+                  "seriesName": "ICC Cricket World Cup League Two 2023-27",
+                  "matchDesc": "83rd Match",
+                  "matchFormat": "ODI",
+                  "startDate": "1756825200000",
+                  "endDate": "1756854000000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 02, 15:00 GMT",
+                  "team1": {
+                    "teamId": 26,
+                    "teamName": "Canada",
+                    "teamSName": "CAN",
+                    "imageId": 172140
+                  },
+                  "team2": {
+                    "teamId": 161,
+                    "teamName": "Namibia",
+                    "teamSName": "NAM",
+                    "imageId": 172229
+                  },
+                  "venueInfo": {
+                    "id": 139,
+                    "ground": "Maple Leaf North-West Ground",
+                    "city": "King City",
+                    "timezone": "-04:00",
+                    "latitude": "36.210861",
+                    "longitude": "-121.126602"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1707868800000",
+                  "seriesEndDt": "1806451200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 128908,
+                  "seriesId": 7572,
+                  "seriesName": "ICC Cricket World Cup League Two 2023-27",
+                  "matchDesc": "84th Match",
+                  "matchFormat": "ODI",
+                  "startDate": "1756998000000",
+                  "endDate": "1757026800000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 04, 15:00 GMT",
+                  "team1": {
+                    "teamId": 161,
+                    "teamName": "Namibia",
+                    "teamSName": "NAM",
+                    "imageId": 172229
+                  },
+                  "team2": {
+                    "teamId": 23,
+                    "teamName": "Scotland",
+                    "teamSName": "SCO",
+                    "imageId": 172137
+                  },
+                  "venueInfo": {
+                    "id": 139,
+                    "ground": "Maple Leaf North-West Ground",
+                    "city": "King City",
+                    "timezone": "-04:00",
+                    "latitude": "36.210861",
+                    "longitude": "-121.126602"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1707868800000",
+                  "seriesEndDt": "1806451200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 128919,
+                  "seriesId": 7572,
+                  "seriesName": "ICC Cricket World Cup League Two 2023-27",
+                  "matchDesc": "85th Match",
+                  "matchFormat": "ODI",
+                  "startDate": "1757170800000",
+                  "endDate": "1757199600000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 06, 15:00 GMT",
+                  "team1": {
+                    "teamId": 26,
+                    "teamName": "Canada",
+                    "teamSName": "CAN",
+                    "imageId": 172140
+                  },
+                  "team2": {
+                    "teamId": 23,
+                    "teamName": "Scotland",
+                    "teamSName": "SCO",
+                    "imageId": 172137
+                  },
+                  "venueInfo": {
+                    "id": 139,
+                    "ground": "Maple Leaf North-West Ground",
+                    "city": "King City",
+                    "timezone": "-04:00",
+                    "latitude": "36.210861",
+                    "longitude": "-121.126602"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1707868800000",
+                  "seriesEndDt": "1806451200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "seriesAdWrapper": {
+            "seriesId": 10647,
+            "seriesName": "Netherlands tour of Bangladesh 2025",
+            "matches": [
+              {
+                "matchInfo": {
+                  "matchId": 131114,
+                  "seriesId": 10647,
+                  "seriesName": "Netherlands tour of Bangladesh 2025",
+                  "matchDesc": "2nd T20I",
+                  "matchFormat": "T20",
+                  "startDate": "1756728000000",
+                  "endDate": "1756740600000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 01, 12:00 GMT",
+                  "team1": {
+                    "teamId": 6,
+                    "teamName": "Bangladesh",
+                    "teamSName": "BAN",
+                    "imageId": 172120
+                  },
+                  "team2": {
+                    "teamId": 24,
+                    "teamName": "Netherlands",
+                    "teamSName": "NED",
+                    "imageId": 172138
+                  },
+                  "venueInfo": {
+                    "id": 379,
+                    "ground": "Sylhet International Cricket Stadium",
+                    "city": "Sylhet",
+                    "timezone": "+06:00",
+                    "latitude": "24.898183",
+                    "longitude": "91.863608"
+                  },
+                  "seriesStartDt": "1756425600000",
+                  "seriesEndDt": "1756944000000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 131119,
+                  "seriesId": 10647,
+                  "seriesName": "Netherlands tour of Bangladesh 2025",
+                  "matchDesc": "3rd T20I",
+                  "matchFormat": "T20",
+                  "startDate": "1756900800000",
+                  "endDate": "1756913400000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 03, 12:00 GMT",
+                  "team1": {
+                    "teamId": 6,
+                    "teamName": "Bangladesh",
+                    "teamSName": "BAN",
+                    "imageId": 172120
+                  },
+                  "team2": {
+                    "teamId": 24,
+                    "teamName": "Netherlands",
+                    "teamSName": "NED",
+                    "imageId": 172138
+                  },
+                  "venueInfo": {
+                    "id": 379,
+                    "ground": "Sylhet International Cricket Stadium",
+                    "city": "Sylhet",
+                    "timezone": "+06:00",
+                    "latitude": "24.898183",
+                    "longitude": "91.863608"
+                  },
+                  "seriesStartDt": "1756425600000",
+                  "seriesEndDt": "1756944000000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "ad": {
+            "name": "native_matches",
+            "layout": "native_large",
+            "position": 4
+          }
+        },
+        {
+          "seriesAdWrapper": {
+            "seriesId": 10267,
+            "seriesName": "Sri Lanka tour of Zimbabwe, 2025",
+            "matches": [
+              {
+                "matchInfo": {
+                  "matchId": 122962,
+                  "seriesId": 10267,
+                  "seriesName": "Sri Lanka tour of Zimbabwe, 2025",
+                  "matchDesc": "1st T20I",
+                  "matchFormat": "T20",
+                  "startDate": "1756899000000",
+                  "endDate": "1756911600000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 03, 11:30 GMT",
+                  "team1": {
+                    "teamId": 12,
+                    "teamName": "Zimbabwe",
+                    "teamSName": "ZIM",
+                    "imageId": 172127
+                  },
+                  "team2": {
+                    "teamId": 5,
+                    "teamName": "Sri Lanka",
+                    "teamSName": "SL",
+                    "imageId": 172119
+                  },
+                  "venueInfo": {
+                    "id": 69,
+                    "ground": "Harare Sports Club",
+                    "city": "Harare",
+                    "timezone": "+02:00",
+                    "latitude": "-17.814114",
+                    "longitude": "31.050962"
+                  },
+                  "seriesStartDt": "1756339200000",
+                  "seriesEndDt": "1757289600000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 122968,
+                  "seriesId": 10267,
+                  "seriesName": "Sri Lanka tour of Zimbabwe, 2025",
+                  "matchDesc": "2nd T20I",
+                  "matchFormat": "T20",
+                  "startDate": "1757158200000",
+                  "endDate": "1757170800000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 06, 11:30 GMT",
+                  "team1": {
+                    "teamId": 12,
+                    "teamName": "Zimbabwe",
+                    "teamSName": "ZIM",
+                    "imageId": 172127
+                  },
+                  "team2": {
+                    "teamId": 5,
+                    "teamName": "Sri Lanka",
+                    "teamSName": "SL",
+                    "imageId": 172119
+                  },
+                  "venueInfo": {
+                    "id": 69,
+                    "ground": "Harare Sports Club",
+                    "city": "Harare",
+                    "timezone": "+02:00",
+                    "latitude": "-17.814114",
+                    "longitude": "31.050962"
+                  },
+                  "seriesStartDt": "1756339200000",
+                  "seriesEndDt": "1757289600000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 122973,
+                  "seriesId": 10267,
+                  "seriesName": "Sri Lanka tour of Zimbabwe, 2025",
+                  "matchDesc": "3rd T20I",
+                  "matchFormat": "T20",
+                  "startDate": "1757244600000",
+                  "endDate": "1757257200000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 07, 11:30 GMT",
+                  "team1": {
+                    "teamId": 12,
+                    "teamName": "Zimbabwe",
+                    "teamSName": "ZIM",
+                    "imageId": 172127
+                  },
+                  "team2": {
+                    "teamId": 5,
+                    "teamName": "Sri Lanka",
+                    "teamSName": "SL",
+                    "imageId": 172119
+                  },
+                  "venueInfo": {
+                    "id": 69,
+                    "ground": "Harare Sports Club",
+                    "city": "Harare",
+                    "timezone": "+02:00",
+                    "latitude": "-17.814114",
+                    "longitude": "31.050962"
+                  },
+                  "seriesStartDt": "1756339200000",
+                  "seriesEndDt": "1757289600000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "seriesAdWrapper": {
+            "seriesId": 10812,
+            "seriesName": "Sweden tour of Isle Of Man 2025",
+            "matches": [
+              {
+                "matchInfo": {
+                  "matchId": 133160,
+                  "seriesId": 10812,
+                  "seriesName": "Sweden tour of Isle Of Man 2025",
+                  "matchDesc": "1st T20I",
+                  "matchFormat": "T20",
+                  "startDate": "1757152800000",
+                  "endDate": "1757165400000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 06, 10:00 GMT",
+                  "team1": {
+                    "teamId": 557,
+                    "teamName": "Isle of Man",
+                    "teamSName": "IOM",
+                    "imageId": 172609
+                  },
+                  "team2": {
+                    "teamId": 534,
+                    "teamName": "Sweden",
+                    "teamSName": "SWE",
+                    "imageId": 248454
+                  },
+                  "venueInfo": {
+                    "id": 1438142,
+                    "ground": "Cronkbourne Sports and Social Club Ground",
+                    "city": "Tromode",
+                    "timezone": "+01:00",
+                    "latitude": "54.1692678",
+                    "longitude": "-4.4754267"
+                  },
+                  "seriesStartDt": "1757030400000",
+                  "seriesEndDt": "1757289600000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 133171,
+                  "seriesId": 10812,
+                  "seriesName": "Sweden tour of Isle Of Man 2025",
+                  "matchDesc": "2nd T20I",
+                  "matchFormat": "T20",
+                  "startDate": "1757169000000",
+                  "endDate": "1757181600000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 06, 14:30 GMT",
+                  "team1": {
+                    "teamId": 557,
+                    "teamName": "Isle of Man",
+                    "teamSName": "IOM",
+                    "imageId": 172609
+                  },
+                  "team2": {
+                    "teamId": 534,
+                    "teamName": "Sweden",
+                    "teamSName": "SWE",
+                    "imageId": 248454
+                  },
+                  "venueInfo": {
+                    "id": 1438142,
+                    "ground": "Cronkbourne Sports and Social Club Ground",
+                    "city": "Tromode",
+                    "timezone": "+01:00",
+                    "latitude": "54.1692678",
+                    "longitude": "-4.4754267"
+                  },
+                  "seriesStartDt": "1757030400000",
+                  "seriesEndDt": "1757289600000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 133176,
+                  "seriesId": 10812,
+                  "seriesName": "Sweden tour of Isle Of Man 2025",
+                  "matchDesc": "3rd T20I",
+                  "matchFormat": "T20",
+                  "startDate": "1757239200000",
+                  "endDate": "1757251800000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 07, 10:00 GMT",
+                  "team1": {
+                    "teamId": 557,
+                    "teamName": "Isle of Man",
+                    "teamSName": "IOM",
+                    "imageId": 172609
+                  },
+                  "team2": {
+                    "teamId": 534,
+                    "teamName": "Sweden",
+                    "teamSName": "SWE",
+                    "imageId": 248454
+                  },
+                  "venueInfo": {
+                    "id": 1438142,
+                    "ground": "Cronkbourne Sports and Social Club Ground",
+                    "city": "Tromode",
+                    "timezone": "+01:00",
+                    "latitude": "54.1692678",
+                    "longitude": "-4.4754267"
+                  },
+                  "seriesStartDt": "1757030400000",
+                  "seriesEndDt": "1757289600000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "matchType": "League",
+      "seriesMatches": [
+        {
+          "seriesAdWrapper": {
+            "seriesId": 9575,
+            "seriesName": "Caribbean Premier League 2025",
+            "matches": [
+              {
+                "matchInfo": {
+                  "matchId": 116720,
+                  "seriesId": 9575,
+                  "seriesName": "Caribbean Premier League 2025",
+                  "matchDesc": "18th Match",
+                  "matchFormat": "T20",
+                  "startDate": "1756652400000",
+                  "endDate": "1756665000000",
+                  "state": "Preview",
+                  "status": "Match starts at Aug 31, 15:00 GMT",
+                  "team1": {
+                    "teamId": 263,
+                    "teamName": "Saint Lucia Kings",
+                    "teamSName": "SLK",
+                    "imageId": 172316
+                  },
+                  "team2": {
+                    "teamId": 1978,
+                    "teamName": "Antigua and Barbuda Falcons",
+                    "teamSName": "ABF",
+                    "imageId": 507236
+                  },
+                  "venueInfo": {
+                    "id": 59,
+                    "ground": "Daren Sammy National Cricket Stadium",
+                    "city": "Gros Islet, St Lucia",
+                    "timezone": "-04:00",
+                    "latitude": "14.070532",
+                    "longitude": "-60.931743"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1755043200000",
+                  "seriesEndDt": "1758499200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Preview"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 116729,
+                  "seriesId": 9575,
+                  "seriesName": "Caribbean Premier League 2025",
+                  "matchDesc": "19th Match",
+                  "matchFormat": "T20",
+                  "startDate": "1756738800000",
+                  "endDate": "1756751400000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 01, 15:00 GMT",
+                  "team1": {
+                    "teamId": 271,
+                    "teamName": "Trinbago Knight Riders",
+                    "teamSName": "TKR",
+                    "imageId": 172325
+                  },
+                  "team2": {
+                    "teamId": 302,
+                    "teamName": "St Kitts and Nevis Patriots",
+                    "teamSName": "SNP",
+                    "imageId": 172351
+                  },
+                  "venueInfo": {
+                    "id": 500,
+                    "ground": "Brian Lara Stadium",
+                    "city": "Tarouba, Trinidad",
+                    "timezone": "-04:00",
+                    "latitude": "10.295034",
+                    "longitude": "-61.445609"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1755043200000",
+                  "seriesEndDt": "1758499200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 116738,
+                  "seriesId": 9575,
+                  "seriesName": "Caribbean Premier League 2025",
+                  "matchDesc": "20th Match",
+                  "matchFormat": "T20",
+                  "startDate": "1756940400000",
+                  "endDate": "1756953000000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 04, 23:00 GMT",
+                  "team1": {
+                    "teamId": 271,
+                    "teamName": "Trinbago Knight Riders",
+                    "teamSName": "TKR",
+                    "imageId": 172325
+                  },
+                  "team2": {
+                    "teamId": 263,
+                    "teamName": "Saint Lucia Kings",
+                    "teamSName": "SLK",
+                    "imageId": 172316
+                  },
+                  "venueInfo": {
+                    "id": 500,
+                    "ground": "Brian Lara Stadium",
+                    "city": "Tarouba, Trinidad",
+                    "timezone": "-04:00",
+                    "latitude": "10.295034",
+                    "longitude": "-61.445609"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1755043200000",
+                  "seriesEndDt": "1758499200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 116741,
+                  "seriesId": 9575,
+                  "seriesName": "Caribbean Premier League 2025",
+                  "matchDesc": "21st Match",
+                  "matchFormat": "T20",
+                  "startDate": "1757026800000",
+                  "endDate": "1757039400000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 05, 23:00 GMT",
+                  "team1": {
+                    "teamId": 262,
+                    "teamName": "Barbados Royals",
+                    "teamSName": "BR",
+                    "imageId": 210485
+                  },
+                  "team2": {
+                    "teamId": 159,
+                    "teamName": "Guyana Amazon Warriors",
+                    "teamSName": "GAW",
+                    "imageId": 172227
+                  },
+                  "venueInfo": {
+                    "id": 55,
+                    "ground": "Kensington Oval",
+                    "city": "Bridgetown, Barbados",
+                    "timezone": "-04:00",
+                    "latitude": "13.105021",
+                    "longitude": "-59.62257"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1755043200000",
+                  "seriesEndDt": "1758499200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 116750,
+                  "seriesId": 9575,
+                  "seriesName": "Caribbean Premier League 2025",
+                  "matchDesc": "22nd Match",
+                  "matchFormat": "T20",
+                  "startDate": "1757113200000",
+                  "endDate": "1757125800000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 06, 23:00 GMT",
+                  "team1": {
+                    "teamId": 262,
+                    "teamName": "Barbados Royals",
+                    "teamSName": "BR",
+                    "imageId": 210485
+                  },
+                  "team2": {
+                    "teamId": 1978,
+                    "teamName": "Antigua and Barbuda Falcons",
+                    "teamSName": "ABF",
+                    "imageId": 507236
+                  },
+                  "venueInfo": {
+                    "id": 55,
+                    "ground": "Kensington Oval",
+                    "city": "Bridgetown, Barbados",
+                    "timezone": "-04:00",
+                    "latitude": "13.105021",
+                    "longitude": "-59.62257"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1755043200000",
+                  "seriesEndDt": "1758499200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 116759,
+                  "seriesId": 9575,
+                  "seriesName": "Caribbean Premier League 2025",
+                  "matchDesc": "23rd Match",
+                  "matchFormat": "T20",
+                  "startDate": "1757199600000",
+                  "endDate": "1757212200000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 07, 23:00 GMT",
+                  "team1": {
+                    "teamId": 159,
+                    "teamName": "Guyana Amazon Warriors",
+                    "teamSName": "GAW",
+                    "imageId": 172227
+                  },
+                  "team2": {
+                    "teamId": 271,
+                    "teamName": "Trinbago Knight Riders",
+                    "teamSName": "TKR",
+                    "imageId": 172325
+                  },
+                  "venueInfo": {
+                    "id": 110,
+                    "ground": "Providence Stadium",
+                    "city": "Guyana",
+                    "timezone": "-04:00",
+                    "latitude": "41.823872",
+                    "longitude": "-71.411987"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1755043200000",
+                  "seriesEndDt": "1758499200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "seriesAdWrapper": {
+            "seriesId": 9384,
+            "seriesName": "The Hundred Mens Competition 2025",
+            "matches": [
+              {
+                "matchInfo": {
+                  "matchId": 114297,
+                  "seriesId": 9384,
+                  "seriesName": "The Hundred Mens Competition 2025",
+                  "matchDesc": "Final",
+                  "matchFormat": "HUN",
+                  "startDate": "1756659600000",
+                  "endDate": "1756659600000",
+                  "state": "Preview",
+                  "status": "Match starts at Aug 31, 17:00 GMT",
+                  "team1": {
+                    "teamId": 605,
+                    "teamName": "Oval Invincibles",
+                    "teamSName": "OVL",
+                    "imageId": 202707
+                  },
+                  "team2": {
+                    "teamId": 612,
+                    "teamName": "Trent Rockets",
+                    "teamSName": "TRE",
+                    "imageId": 202713
+                  },
+                  "venueInfo": {
+                    "id": 19,
+                    "ground": "Lord's",
+                    "city": "London",
+                    "timezone": "+01:00",
+                    "latitude": "51.529488",
+                    "longitude": "-0.172926"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1754265600000",
+                  "seriesEndDt": "1756684800000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Preview"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "seriesAdWrapper": {
+            "seriesId": 9257,
+            "seriesName": "T20 Blast 2025",
+            "matches": [
+              {
+                "matchInfo": {
+                  "matchId": 111061,
+                  "seriesId": 9257,
+                  "seriesName": "T20 Blast 2025",
+                  "matchDesc": "Quarter Final 1",
+                  "matchFormat": "T20",
+                  "startDate": "1756920600000",
+                  "endDate": "1756933200000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 03, 17:30 GMT",
+                  "team1": {
+                    "teamId": 148,
+                    "teamName": "Surrey",
+                    "teamSName": "SUR",
+                    "imageId": 172215
+                  },
+                  "team2": {
+                    "teamId": 142,
+                    "teamName": "Northamptonshire",
+                    "teamSName": "NHNTS",
+                    "imageId": 172209
+                  },
+                  "venueInfo": {
+                    "id": 12,
+                    "ground": "Kennington Oval",
+                    "city": "London",
+                    "timezone": "+01:00",
+                    "latitude": "51.48368",
+                    "longitude": "-0.114885"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1748390400000",
+                  "seriesEndDt": "1757808000000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 111069,
+                  "seriesId": 9257,
+                  "seriesName": "T20 Blast 2025",
+                  "matchDesc": "Quarter Final 2",
+                  "matchFormat": "T20",
+                  "startDate": "1757093400000",
+                  "endDate": "1757106000000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 05, 17:30 GMT",
+                  "team1": {
+                    "teamId": 141,
+                    "teamName": "Durham",
+                    "teamSName": "DUR",
+                    "imageId": 172208
+                  },
+                  "team2": {
+                    "teamId": 153,
+                    "teamName": "Hampshire",
+                    "teamSName": "HAM",
+                    "imageId": 172220
+                  },
+                  "venueInfo": {
+                    "id": 60,
+                    "ground": "Riverside Ground",
+                    "city": "Chester-le-Street",
+                    "timezone": "+01:00",
+                    "latitude": "54.849531",
+                    "longitude": "-1.56103"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1748390400000",
+                  "seriesEndDt": "1757808000000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 111073,
+                  "seriesId": 9257,
+                  "seriesName": "T20 Blast 2025",
+                  "matchDesc": "Quarter Final 3",
+                  "matchFormat": "T20",
+                  "startDate": "1757165400000",
+                  "endDate": "1757178000000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 06, 13:30 GMT",
+                  "team1": {
+                    "teamId": 143,
+                    "teamName": "Lancashire",
+                    "teamSName": "LANCS",
+                    "imageId": 172210
+                  },
+                  "team2": {
+                    "teamId": 150,
+                    "teamName": "Kent",
+                    "teamSName": "KENT",
+                    "imageId": 172217
+                  },
+                  "venueInfo": {
+                    "id": 65,
+                    "ground": "Emirates Old Trafford",
+                    "city": "Manchester",
+                    "timezone": "+01:00",
+                    "latitude": "53.463066",
+                    "longitude": "-2.291301"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1748390400000",
+                  "seriesEndDt": "1757808000000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 111081,
+                  "seriesId": 9257,
+                  "seriesName": "T20 Blast 2025",
+                  "matchDesc": "Quarter Final 4",
+                  "matchFormat": "T20",
+                  "startDate": "1757179800000",
+                  "endDate": "1757192400000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 06, 17:30 GMT",
+                  "team1": {
+                    "teamId": 119,
+                    "teamName": "Somerset",
+                    "teamSName": "SOM",
+                    "imageId": 172199
+                  },
+                  "team2": {
+                    "teamId": 140,
+                    "teamName": "Warwickshire",
+                    "teamSName": "WARKS",
+                    "imageId": 172207
+                  },
+                  "venueInfo": {
+                    "id": 223,
+                    "ground": "The Cooper Associates County Ground",
+                    "city": "Taunton",
+                    "timezone": "+01:00",
+                    "latitude": "51.018913",
+                    "longitude": "3.100894"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1748390400000",
+                  "seriesEndDt": "1757808000000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "seriesAdWrapper": {
+            "seriesId": 10735,
+            "seriesName": "Uttar Pradesh Premier League 2025",
+            "matches": [
+              {
+                "matchInfo": {
+                  "matchId": 132604,
+                  "seriesId": 10735,
+                  "seriesName": "Uttar Pradesh Premier League 2025",
+                  "matchDesc": "29th Match",
+                  "matchFormat": "T20",
+                  "startDate": "1756648800000",
+                  "endDate": "1756661400000",
+                  "state": "Preview",
+                  "status": "Match starts at Aug 31, 14:00 GMT",
+                  "team1": {
+                    "teamId": 2833,
+                    "teamName": "Meerut Mavericks",
+                    "teamSName": "MRM",
+                    "imageId": 738654
+                  },
+                  "team2": {
+                    "teamId": 2822,
+                    "teamName": "Noida Kings",
+                    "teamSName": "NDK",
+                    "imageId": 738652
+                  },
+                  "venueInfo": {
+                    "id": 485,
+                    "ground": "Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium",
+                    "city": "Lucknow",
+                    "timezone": "+05:30",
+                    "latitude": "26.846694",
+                    "longitude": "80.946166"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1755302400000",
+                  "seriesEndDt": "1757203200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Preview"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 132610,
+                  "seriesId": 10735,
+                  "seriesName": "Uttar Pradesh Premier League 2025",
+                  "matchDesc": "30th Match",
+                  "matchFormat": "T20",
+                  "startDate": "1756735200000",
+                  "endDate": "1756747800000",
+                  "state": "Preview",
+                  "status": "Match starts at Sep 01, 14:00 GMT",
+                  "team1": {
+                    "teamId": 2844,
+                    "teamName": "Lucknow Falcons",
+                    "teamSName": "LFC",
+                    "imageId": 738651
+                  },
+                  "team2": {
+                    "teamId": 2800,
+                    "teamName": "Kashi Rudras",
+                    "teamSName": "KRD",
+                    "imageId": 738657
+                  },
+                  "venueInfo": {
+                    "id": 485,
+                    "ground": "Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium",
+                    "city": "Lucknow",
+                    "timezone": "+05:30",
+                    "latitude": "26.846694",
+                    "longitude": "80.946166"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1755302400000",
+                  "seriesEndDt": "1757203200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Preview"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 132621,
+                  "seriesId": 10735,
+                  "seriesName": "Uttar Pradesh Premier League 2025",
+                  "matchDesc": "Qualifier 1",
+                  "matchFormat": "T20",
+                  "startDate": "1756891800000",
+                  "endDate": "1756904400000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 03, 09:30 GMT",
+                  "team1": {
+                    "teamId": 106,
+                    "teamName": "TBC",
+                    "teamSName": "TBC",
+                    "imageId": 172198
+                  },
+                  "team2": {
+                    "teamId": 106,
+                    "teamName": "TBC",
+                    "teamSName": "TBC",
+                    "imageId": 172198
+                  },
+                  "venueInfo": {
+                    "id": 485,
+                    "ground": "Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium",
+                    "city": "Lucknow",
+                    "timezone": "+05:30",
+                    "latitude": "26.846694",
+                    "longitude": "80.946166"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1755302400000",
+                  "seriesEndDt": "1757203200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 132632,
+                  "seriesId": 10735,
+                  "seriesName": "Uttar Pradesh Premier League 2025",
+                  "matchDesc": "Eliminator",
+                  "matchFormat": "T20",
+                  "startDate": "1756908000000",
+                  "endDate": "1756920600000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 03, 14:00 GMT",
+                  "team1": {
+                    "teamId": 106,
+                    "teamName": "TBC",
+                    "teamSName": "TBC",
+                    "imageId": 172198
+                  },
+                  "team2": {
+                    "teamId": 106,
+                    "teamName": "TBC",
+                    "teamSName": "TBC",
+                    "imageId": 172198
+                  },
+                  "venueInfo": {
+                    "id": 485,
+                    "ground": "Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium",
+                    "city": "Lucknow",
+                    "timezone": "+05:30",
+                    "latitude": "26.846694",
+                    "longitude": "80.946166"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1755302400000",
+                  "seriesEndDt": "1757203200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 132637,
+                  "seriesId": 10735,
+                  "seriesName": "Uttar Pradesh Premier League 2025",
+                  "matchDesc": "Qualifier 2",
+                  "matchFormat": "T20",
+                  "startDate": "1756994400000",
+                  "endDate": "1757007000000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 04, 14:00 GMT",
+                  "team1": {
+                    "teamId": 106,
+                    "teamName": "TBC",
+                    "teamSName": "TBC",
+                    "imageId": 172198
+                  },
+                  "team2": {
+                    "teamId": 106,
+                    "teamName": "TBC",
+                    "teamSName": "TBC",
+                    "imageId": 172198
+                  },
+                  "venueInfo": {
+                    "id": 485,
+                    "ground": "Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium",
+                    "city": "Lucknow",
+                    "timezone": "+05:30",
+                    "latitude": "26.846694",
+                    "longitude": "80.946166"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1755302400000",
+                  "seriesEndDt": "1757203200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 132648,
+                  "seriesId": 10735,
+                  "seriesName": "Uttar Pradesh Premier League 2025",
+                  "matchDesc": "Final",
+                  "matchFormat": "T20",
+                  "startDate": "1757167200000",
+                  "endDate": "1757179800000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 06, 14:00 GMT",
+                  "team1": {
+                    "teamId": 106,
+                    "teamName": "TBC",
+                    "teamSName": "TBC",
+                    "imageId": 172198
+                  },
+                  "team2": {
+                    "teamId": 106,
+                    "teamName": "TBC",
+                    "teamSName": "TBC",
+                    "imageId": 172198
+                  },
+                  "venueInfo": {
+                    "id": 485,
+                    "ground": "Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium",
+                    "city": "Lucknow",
+                    "timezone": "+05:30",
+                    "latitude": "26.846694",
+                    "longitude": "80.946166"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1755302400000",
+                  "seriesEndDt": "1757203200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "seriesAdWrapper": {
+            "seriesId": 10620,
+            "seriesName": "Kerala Cricket League 2025",
+            "matches": [
+              {
+                "matchInfo": {
+                  "matchId": 130729,
+                  "seriesId": 10620,
+                  "seriesName": "Kerala Cricket League 2025",
+                  "matchDesc": "23rd Match",
+                  "matchFormat": "T20",
+                  "startDate": "1756717200000",
+                  "endDate": "1756729800000",
+                  "state": "Preview",
+                  "status": "Match starts at Sep 01, 09:00 GMT",
+                  "team1": {
+                    "teamId": 2752,
+                    "teamName": "Thrissur Titans",
+                    "teamSName": "TST",
+                    "imageId": 731736
+                  },
+                  "team2": {
+                    "teamId": 2774,
+                    "teamName": "Alleppey Ripples",
+                    "teamSName": "ALPR",
+                    "imageId": 731735
+                  },
+                  "venueInfo": {
+                    "id": 506,
+                    "ground": "Greenfield International Stadium",
+                    "city": "Thiruvananthapuram",
+                    "timezone": "+05:30",
+                    "latitude": "8.570806",
+                    "longitude": "76.884328"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1755648000000",
+                  "seriesEndDt": "1757203200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Preview"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 130734,
+                  "seriesId": 10620,
+                  "seriesName": "Kerala Cricket League 2025",
+                  "matchDesc": "24th Match",
+                  "matchFormat": "T20",
+                  "startDate": "1756732500000",
+                  "endDate": "1756745100000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 01, 13:15 GMT",
+                  "team1": {
+                    "teamId": 2741,
+                    "teamName": "Calicut Globstars",
+                    "teamSName": "CGS",
+                    "imageId": 731732
+                  },
+                  "team2": {
+                    "teamId": 2778,
+                    "teamName": "Aries Kollam Sailors",
+                    "teamSName": "AKS",
+                    "imageId": 731731
+                  },
+                  "venueInfo": {
+                    "id": 506,
+                    "ground": "Greenfield International Stadium",
+                    "city": "Thiruvananthapuram",
+                    "timezone": "+05:30",
+                    "latitude": "8.570806",
+                    "longitude": "76.884328"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1755648000000",
+                  "seriesEndDt": "1757203200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 130740,
+                  "seriesId": 10620,
+                  "seriesName": "Kerala Cricket League 2025",
+                  "matchDesc": "25th Match",
+                  "matchFormat": "T20",
+                  "startDate": "1756803600000",
+                  "endDate": "1756816200000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 02, 09:00 GMT",
+                  "team1": {
+                    "teamId": 2733,
+                    "teamName": "Kochi Blue Tigers",
+                    "teamSName": "KBT",
+                    "imageId": 731734
+                  },
+                  "team2": {
+                    "teamId": 2741,
+                    "teamName": "Calicut Globstars",
+                    "teamSName": "CGS",
+                    "imageId": 731732
+                  },
+                  "venueInfo": {
+                    "id": 506,
+                    "ground": "Greenfield International Stadium",
+                    "city": "Thiruvananthapuram",
+                    "timezone": "+05:30",
+                    "latitude": "8.570806",
+                    "longitude": "76.884328"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1755648000000",
+                  "seriesEndDt": "1757203200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 130751,
+                  "seriesId": 10620,
+                  "seriesName": "Kerala Cricket League 2025",
+                  "matchDesc": "26th Match",
+                  "matchFormat": "T20",
+                  "startDate": "1756818900000",
+                  "endDate": "1756831500000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 02, 13:15 GMT",
+                  "team1": {
+                    "teamId": 2752,
+                    "teamName": "Thrissur Titans",
+                    "teamSName": "TST",
+                    "imageId": 731736
+                  },
+                  "team2": {
+                    "teamId": 2763,
+                    "teamName": "Adani Trivandrum Royals",
+                    "teamSName": "ATR",
+                    "imageId": 731733
+                  },
+                  "venueInfo": {
+                    "id": 506,
+                    "ground": "Greenfield International Stadium",
+                    "city": "Thiruvananthapuram",
+                    "timezone": "+05:30",
+                    "latitude": "8.570806",
+                    "longitude": "76.884328"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1755648000000",
+                  "seriesEndDt": "1757203200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 130756,
+                  "seriesId": 10620,
+                  "seriesName": "Kerala Cricket League 2025",
+                  "matchDesc": "27th Match",
+                  "matchFormat": "T20",
+                  "startDate": "1756890000000",
+                  "endDate": "1756902600000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 03, 09:00 GMT",
+                  "team1": {
+                    "teamId": 2763,
+                    "teamName": "Adani Trivandrum Royals",
+                    "teamSName": "ATR",
+                    "imageId": 731733
+                  },
+                  "team2": {
+                    "teamId": 2774,
+                    "teamName": "Alleppey Ripples",
+                    "teamSName": "ALPR",
+                    "imageId": 731735
+                  },
+                  "venueInfo": {
+                    "id": 506,
+                    "ground": "Greenfield International Stadium",
+                    "city": "Thiruvananthapuram",
+                    "timezone": "+05:30",
+                    "latitude": "8.570806",
+                    "longitude": "76.884328"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1755648000000",
+                  "seriesEndDt": "1757203200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 130762,
+                  "seriesId": 10620,
+                  "seriesName": "Kerala Cricket League 2025",
+                  "matchDesc": "28th Match",
+                  "matchFormat": "T20",
+                  "startDate": "1756905300000",
+                  "endDate": "1756917900000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 03, 13:15 GMT",
+                  "team1": {
+                    "teamId": 2778,
+                    "teamName": "Aries Kollam Sailors",
+                    "teamSName": "AKS",
+                    "imageId": 731731
+                  },
+                  "team2": {
+                    "teamId": 2733,
+                    "teamName": "Kochi Blue Tigers",
+                    "teamSName": "KBT",
+                    "imageId": 731734
+                  },
+                  "venueInfo": {
+                    "id": 506,
+                    "ground": "Greenfield International Stadium",
+                    "city": "Thiruvananthapuram",
+                    "timezone": "+05:30",
+                    "latitude": "8.570806",
+                    "longitude": "76.884328"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1755648000000",
+                  "seriesEndDt": "1757203200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 130773,
+                  "seriesId": 10620,
+                  "seriesName": "Kerala Cricket League 2025",
+                  "matchDesc": "29th Match",
+                  "matchFormat": "T20",
+                  "startDate": "1756976400000",
+                  "endDate": "1756989000000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 04, 09:00 GMT",
+                  "team1": {
+                    "teamId": 2774,
+                    "teamName": "Alleppey Ripples",
+                    "teamSName": "ALPR",
+                    "imageId": 731735
+                  },
+                  "team2": {
+                    "teamId": 2778,
+                    "teamName": "Aries Kollam Sailors",
+                    "teamSName": "AKS",
+                    "imageId": 731731
+                  },
+                  "venueInfo": {
+                    "id": 506,
+                    "ground": "Greenfield International Stadium",
+                    "city": "Thiruvananthapuram",
+                    "timezone": "+05:30",
+                    "latitude": "8.570806",
+                    "longitude": "76.884328"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1755648000000",
+                  "seriesEndDt": "1757203200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 130778,
+                  "seriesId": 10620,
+                  "seriesName": "Kerala Cricket League 2025",
+                  "matchDesc": "30th Match",
+                  "matchFormat": "T20",
+                  "startDate": "1756991700000",
+                  "endDate": "1757004300000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 04, 13:15 GMT",
+                  "team1": {
+                    "teamId": 2741,
+                    "teamName": "Calicut Globstars",
+                    "teamSName": "CGS",
+                    "imageId": 731732
+                  },
+                  "team2": {
+                    "teamId": 2752,
+                    "teamName": "Thrissur Titans",
+                    "teamSName": "TST",
+                    "imageId": 731736
+                  },
+                  "venueInfo": {
+                    "id": 506,
+                    "ground": "Greenfield International Stadium",
+                    "city": "Thiruvananthapuram",
+                    "timezone": "+05:30",
+                    "latitude": "8.570806",
+                    "longitude": "76.884328"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1755648000000",
+                  "seriesEndDt": "1757203200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 130784,
+                  "seriesId": 10620,
+                  "seriesName": "Kerala Cricket League 2025",
+                  "matchDesc": "Semi Final 1 (2nd v 3rd)",
+                  "matchFormat": "T20",
+                  "startDate": "1757062800000",
+                  "endDate": "1757075400000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 05, 09:00 GMT",
+                  "team1": {
+                    "teamId": 106,
+                    "teamName": "TBC",
+                    "teamSName": "TBC",
+                    "imageId": 172198
+                  },
+                  "team2": {
+                    "teamId": 106,
+                    "teamName": "TBC",
+                    "teamSName": "TBC",
+                    "imageId": 172198
+                  },
+                  "venueInfo": {
+                    "id": 506,
+                    "ground": "Greenfield International Stadium",
+                    "city": "Thiruvananthapuram",
+                    "timezone": "+05:30",
+                    "latitude": "8.570806",
+                    "longitude": "76.884328"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1755648000000",
+                  "seriesEndDt": "1757203200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 130795,
+                  "seriesId": 10620,
+                  "seriesName": "Kerala Cricket League 2025",
+                  "matchDesc": "Semi Final 2 (1st v 4th)",
+                  "matchFormat": "T20",
+                  "startDate": "1757078100000",
+                  "endDate": "1757090700000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 05, 13:15 GMT",
+                  "team1": {
+                    "teamId": 106,
+                    "teamName": "TBC",
+                    "teamSName": "TBC",
+                    "imageId": 172198
+                  },
+                  "team2": {
+                    "teamId": 106,
+                    "teamName": "TBC",
+                    "teamSName": "TBC",
+                    "imageId": 172198
+                  },
+                  "venueInfo": {
+                    "id": 506,
+                    "ground": "Greenfield International Stadium",
+                    "city": "Thiruvananthapuram",
+                    "timezone": "+05:30",
+                    "latitude": "8.570806",
+                    "longitude": "76.884328"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1755648000000",
+                  "seriesEndDt": "1757203200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 130806,
+                  "seriesId": 10620,
+                  "seriesName": "Kerala Cricket League 2025",
+                  "matchDesc": "Final",
+                  "matchFormat": "T20",
+                  "startDate": "1757250900000",
+                  "endDate": "1757263500000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 06, 13:15 GMT",
+                  "team1": {
+                    "teamId": 106,
+                    "teamName": "TBC",
+                    "teamSName": "TBC",
+                    "imageId": 172198
+                  },
+                  "team2": {
+                    "teamId": 106,
+                    "teamName": "TBC",
+                    "teamSName": "TBC",
+                    "imageId": 172198
+                  },
+                  "venueInfo": {
+                    "id": 506,
+                    "ground": "Greenfield International Stadium",
+                    "city": "Thiruvananthapuram",
+                    "timezone": "+05:30",
+                    "latitude": "8.570806",
+                    "longitude": "76.884328"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1755648000000",
+                  "seriesEndDt": "1757203200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "matchType": "Domestic",
+      "seriesMatches": [
+        {
+          "seriesAdWrapper": {
+            "seriesId": 10311,
+            "seriesName": "Duleep Trophy 2025",
+            "matches": [
+              {
+                "matchInfo": {
+                  "matchId": 123672,
+                  "seriesId": 10311,
+                  "seriesName": "Duleep Trophy 2025",
+                  "matchDesc": "1st Semi-Final",
+                  "matchFormat": "TEST",
+                  "startDate": "1756958400000",
+                  "endDate": "1757242800000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 04, 04:00 GMT",
+                  "team1": {
+                    "teamId": 236,
+                    "teamName": "South Zone",
+                    "teamSName": "SZONE",
+                    "imageId": 172289
+                  },
+                  "team2": {
+                    "teamId": 233,
+                    "teamName": "North Zone",
+                    "teamSName": "NZONE",
+                    "imageId": 172286
+                  },
+                  "venueInfo": {
+                    "id": 1438087,
+                    "ground": "BCCI Centre of Excellence Ground",
+                    "city": "Bengaluru",
+                    "timezone": "+05:30",
+                    "latitude": "12.978853",
+                    "longitude": "77.599533"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1756252800000",
+                  "seriesEndDt": "1757980800000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 123677,
+                  "seriesId": 10311,
+                  "seriesName": "Duleep Trophy 2025",
+                  "matchDesc": "2nd Semi-Final",
+                  "matchFormat": "TEST",
+                  "startDate": "1756958400000",
+                  "endDate": "1757242800000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 04, 04:00 GMT",
+                  "team1": {
+                    "teamId": 234,
+                    "teamName": "West Zone",
+                    "teamSName": "WZONE",
+                    "imageId": 172287
+                  },
+                  "team2": {
+                    "teamId": 237,
+                    "teamName": "Central Zone",
+                    "teamSName": "CZONE",
+                    "imageId": 172290
+                  },
+                  "venueInfo": {
+                    "id": 1438102,
+                    "ground": "BCCI Centre of Excellence Ground B",
+                    "city": "Bengaluru",
+                    "timezone": "+05:30",
+                    "latitude": "13.174092",
+                    "longitude": "77.706999"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1756252800000",
+                  "seriesEndDt": "1757980800000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "seriesAdWrapper": {
+            "seriesId": 9557,
+            "seriesName": "New Zealand A tour of South Africa, 2025",
+            "matches": [
+              {
+                "matchInfo": {
+                  "matchId": 116480,
+                  "seriesId": 9557,
+                  "seriesName": "New Zealand A tour of South Africa, 2025",
+                  "matchDesc": "2nd Unofficial ODI",
+                  "matchFormat": "ODI",
+                  "startDate": "1756713600000",
+                  "endDate": "1756742400000",
+                  "state": "Preview",
+                  "status": "Match starts at Sep 01, 08:00 GMT",
+                  "team1": {
+                    "teamId": 268,
+                    "teamName": "South Africa A",
+                    "teamSName": "RSAA",
+                    "imageId": 172321
+                  },
+                  "team2": {
+                    "teamId": 80,
+                    "teamName": "New Zealand A",
+                    "teamSName": "NZA",
+                    "imageId": 172174
+                  },
+                  "venueInfo": {
+                    "id": 367,
+                    "ground": "LC de Villiers Oval",
+                    "city": "Pretoria",
+                    "timezone": "+02:00",
+                    "latitude": "-25.771079",
+                    "longitude": "28.221849"
+                  },
+                  "seriesStartDt": "1756425600000",
+                  "seriesEndDt": "1758153600000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Preview"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 116489,
+                  "seriesId": 9557,
+                  "seriesName": "New Zealand A tour of South Africa, 2025",
+                  "matchDesc": "3rd Unofficial ODI",
+                  "matchFormat": "ODI",
+                  "startDate": "1756886400000",
+                  "endDate": "1756915200000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 03, 08:00 GMT",
+                  "team1": {
+                    "teamId": 268,
+                    "teamName": "South Africa A",
+                    "teamSName": "RSAA",
+                    "imageId": 172321
+                  },
+                  "team2": {
+                    "teamId": 80,
+                    "teamName": "New Zealand A",
+                    "teamSName": "NZA",
+                    "imageId": 172174
+                  },
+                  "venueInfo": {
+                    "id": 367,
+                    "ground": "LC de Villiers Oval",
+                    "city": "Pretoria",
+                    "timezone": "+02:00",
+                    "latitude": "-25.771079",
+                    "longitude": "28.221849"
+                  },
+                  "seriesStartDt": "1756425600000",
+                  "seriesEndDt": "1758153600000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 116495,
+                  "seriesId": 9557,
+                  "seriesName": "New Zealand A tour of South Africa, 2025",
+                  "matchDesc": "1st Unofficial Test",
+                  "matchFormat": "TEST",
+                  "startDate": "1757232000000",
+                  "endDate": "1757516400000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 07, 08:00 GMT",
+                  "team1": {
+                    "teamId": 268,
+                    "teamName": "South Africa A",
+                    "teamSName": "RSAA",
+                    "imageId": 172321
+                  },
+                  "team2": {
+                    "teamId": 80,
+                    "teamName": "New Zealand A",
+                    "teamSName": "NZA",
+                    "imageId": 172174
+                  },
+                  "venueInfo": {
+                    "id": 102,
+                    "ground": "Senwes Park",
+                    "city": "Potchefstroom",
+                    "timezone": "+02:00",
+                    "latitude": "-26.695565",
+                    "longitude": "27.100691"
+                  },
+                  "seriesStartDt": "1756425600000",
+                  "seriesEndDt": "1758153600000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "matchType": "Women",
+      "seriesMatches": [
+        {
+          "seriesAdWrapper": {
+            "seriesId": 10785,
+            "seriesName": "Czech Republic Women tour Estonia 2025",
+            "matches": [
+              {
+                "matchInfo": {
+                  "matchId": 133055,
+                  "seriesId": 10785,
+                  "seriesName": "Czech Republic Women tour Estonia 2025",
+                  "matchDesc": "1st T20I",
+                  "matchFormat": "T20",
+                  "startDate": "1757145600000",
+                  "endDate": "1757158200000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 06, 08:00 GMT",
+                  "team1": {
+                    "teamId": 1521,
+                    "teamName": "Estonia Women",
+                    "teamSName": "ESTW",
+                    "imageId": 315349
+                  },
+                  "team2": {
+                    "teamId": 1987,
+                    "teamName": "Czech Republic Women",
+                    "teamSName": "CZEW",
+                    "imageId": 501075
+                  },
+                  "venueInfo": {
+                    "id": 1552,
+                    "ground": "Estonian National Cricket and Rugby Field",
+                    "city": "Tallinn",
+                    "timezone": "+03:00",
+                    "latitude": "59.43696",
+                    "longitude": "24.75353"
+                  },
+                  "seriesStartDt": "1757030400000",
+                  "seriesEndDt": "1757289600000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 133061,
+                  "seriesId": 10785,
+                  "seriesName": "Czech Republic Women tour Estonia 2025",
+                  "matchDesc": "2nd T20I",
+                  "matchFormat": "T20",
+                  "startDate": "1757161800000",
+                  "endDate": "1757174400000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 06, 12:30 GMT",
+                  "team1": {
+                    "teamId": 1521,
+                    "teamName": "Estonia Women",
+                    "teamSName": "ESTW",
+                    "imageId": 315349
+                  },
+                  "team2": {
+                    "teamId": 1987,
+                    "teamName": "Czech Republic Women",
+                    "teamSName": "CZEW",
+                    "imageId": 501075
+                  },
+                  "venueInfo": {
+                    "id": 1552,
+                    "ground": "Estonian National Cricket and Rugby Field",
+                    "city": "Tallinn",
+                    "timezone": "+03:00",
+                    "latitude": "59.43696",
+                    "longitude": "24.75353"
+                  },
+                  "seriesStartDt": "1757030400000",
+                  "seriesEndDt": "1757289600000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 133066,
+                  "seriesId": 10785,
+                  "seriesName": "Czech Republic Women tour Estonia 2025",
+                  "matchDesc": "3rd T20I",
+                  "matchFormat": "T20",
+                  "startDate": "1757228400000",
+                  "endDate": "1757241000000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 07, 07:00 GMT",
+                  "team1": {
+                    "teamId": 1521,
+                    "teamName": "Estonia Women",
+                    "teamSName": "ESTW",
+                    "imageId": 315349
+                  },
+                  "team2": {
+                    "teamId": 1987,
+                    "teamName": "Czech Republic Women",
+                    "teamSName": "CZEW",
+                    "imageId": 501075
+                  },
+                  "venueInfo": {
+                    "id": 1552,
+                    "ground": "Estonian National Cricket and Rugby Field",
+                    "city": "Tallinn",
+                    "timezone": "+03:00",
+                    "latitude": "59.43696",
+                    "longitude": "24.75353"
+                  },
+                  "seriesStartDt": "1757030400000",
+                  "seriesEndDt": "1757289600000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "seriesAdWrapper": {
+            "seriesId": 10697,
+            "seriesName": "ICC Womens T20 World Cup Africa Region Division One Qualifier 2025",
+            "matches": [
+              {
+                "matchInfo": {
+                  "matchId": 131554,
+                  "seriesId": 10697,
+                  "seriesName": "ICC Womens T20 World Cup Africa Region Division One Qualifier 2025",
+                  "matchDesc": "5th Match, Group A",
+                  "matchFormat": "T20",
+                  "startDate": "1756711800000",
+                  "endDate": "1756724400000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 01, 07:30 GMT",
+                  "team1": {
+                    "teamId": 490,
+                    "teamName": "Sierra Leone Women",
+                    "teamSName": "SLEW",
+                    "imageId": 172538
+                  },
+                  "team2": {
+                    "teamId": 388,
+                    "teamName": "Zimbabwe Women",
+                    "teamSName": "ZIMW",
+                    "imageId": 172441
+                  },
+                  "venueInfo": {
+                    "id": 1438021,
+                    "ground": "Namibia Cricket Ground",
+                    "city": " Windhoek",
+                    "timezone": "+02:00",
+                    "latitude": "-22.5872377",
+                    "longitude": "17.0677249"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1756512000000",
+                  "seriesEndDt": "1757203200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 131565,
+                  "seriesId": 10697,
+                  "seriesName": "ICC Womens T20 World Cup Africa Region Division One Qualifier 2025",
+                  "matchDesc": "6th Match, Group B",
+                  "matchFormat": "T20",
+                  "startDate": "1756711800000",
+                  "endDate": "1756724400000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 01, 07:30 GMT",
+                  "team1": {
+                    "teamId": 501,
+                    "teamName": "Kenya Women",
+                    "teamSName": "KENW",
+                    "imageId": 172550
+                  },
+                  "team2": {
+                    "teamId": 483,
+                    "teamName": "Tanzania Women",
+                    "teamSName": "TANW",
+                    "imageId": 172531
+                  },
+                  "venueInfo": {
+                    "id": 1438052,
+                    "ground": "High Performance Oval",
+                    "city": "Windhoek",
+                    "timezone": "+02:00",
+                    "latitude": "-22.5859618",
+                    "longitude": "17.0436255"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1756512000000",
+                  "seriesEndDt": "1757203200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 131576,
+                  "seriesId": 10697,
+                  "seriesName": "ICC Womens T20 World Cup Africa Region Division One Qualifier 2025",
+                  "matchDesc": "7th Match, Group A",
+                  "matchFormat": "T20",
+                  "startDate": "1756727400000",
+                  "endDate": "1756740000000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 01, 11:50 GMT",
+                  "team1": {
+                    "teamId": 503,
+                    "teamName": "Namibia Women",
+                    "teamSName": "NAMW",
+                    "imageId": 172552
+                  },
+                  "team2": {
+                    "teamId": 1482,
+                    "teamName": "Nigeria Women",
+                    "teamSName": "NGAW",
+                    "imageId": 273957
+                  },
+                  "venueInfo": {
+                    "id": 1438021,
+                    "ground": "Namibia Cricket Ground",
+                    "city": " Windhoek",
+                    "timezone": "+02:00",
+                    "latitude": "-22.5872377",
+                    "longitude": "17.0677249"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1756512000000",
+                  "seriesEndDt": "1757203200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 131587,
+                  "seriesId": 10697,
+                  "seriesName": "ICC Womens T20 World Cup Africa Region Division One Qualifier 2025",
+                  "matchDesc": "8th Match, Group B",
+                  "matchFormat": "T20",
+                  "startDate": "1756727400000",
+                  "endDate": "1756740000000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 01, 11:50 GMT",
+                  "team1": {
+                    "teamId": 720,
+                    "teamName": "Rwanda Women",
+                    "teamSName": "RWAW",
+                    "imageId": 248448
+                  },
+                  "team2": {
+                    "teamId": 448,
+                    "teamName": "Uganda Women",
+                    "teamSName": "UGAW",
+                    "imageId": 172496
+                  },
+                  "venueInfo": {
+                    "id": 1438052,
+                    "ground": "High Performance Oval",
+                    "city": "Windhoek",
+                    "timezone": "+02:00",
+                    "latitude": "-22.5859618",
+                    "longitude": "17.0436255"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1756512000000",
+                  "seriesEndDt": "1757203200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 131598,
+                  "seriesId": 10697,
+                  "seriesName": "ICC Womens T20 World Cup Africa Region Division One Qualifier 2025",
+                  "matchDesc": "9th Match, Group B",
+                  "matchFormat": "T20",
+                  "startDate": "1756884600000",
+                  "endDate": "1756897200000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 03, 07:30 GMT",
+                  "team1": {
+                    "teamId": 720,
+                    "teamName": "Rwanda Women",
+                    "teamSName": "RWAW",
+                    "imageId": 248448
+                  },
+                  "team2": {
+                    "teamId": 483,
+                    "teamName": "Tanzania Women",
+                    "teamSName": "TANW",
+                    "imageId": 172531
+                  },
+                  "venueInfo": {
+                    "id": 1438021,
+                    "ground": "Namibia Cricket Ground",
+                    "city": " Windhoek",
+                    "timezone": "+02:00",
+                    "latitude": "-22.5872377",
+                    "longitude": "17.0677249"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1756512000000",
+                  "seriesEndDt": "1757203200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 131609,
+                  "seriesId": 10697,
+                  "seriesName": "ICC Womens T20 World Cup Africa Region Division One Qualifier 2025",
+                  "matchDesc": "10th Match, Group A",
+                  "matchFormat": "T20",
+                  "startDate": "1756884600000",
+                  "endDate": "1756897200000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 03, 07:30 GMT",
+                  "team1": {
+                    "teamId": 503,
+                    "teamName": "Namibia Women",
+                    "teamSName": "NAMW",
+                    "imageId": 172552
+                  },
+                  "team2": {
+                    "teamId": 490,
+                    "teamName": "Sierra Leone Women",
+                    "teamSName": "SLEW",
+                    "imageId": 172538
+                  },
+                  "venueInfo": {
+                    "id": 1438052,
+                    "ground": "High Performance Oval",
+                    "city": "Windhoek",
+                    "timezone": "+02:00",
+                    "latitude": "-22.5859618",
+                    "longitude": "17.0436255"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1756512000000",
+                  "seriesEndDt": "1757203200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 131614,
+                  "seriesId": 10697,
+                  "seriesName": "ICC Womens T20 World Cup Africa Region Division One Qualifier 2025",
+                  "matchDesc": "11th Match, Group B",
+                  "matchFormat": "T20",
+                  "startDate": "1756900200000",
+                  "endDate": "1756912800000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 03, 11:50 GMT",
+                  "team1": {
+                    "teamId": 501,
+                    "teamName": "Kenya Women",
+                    "teamSName": "KENW",
+                    "imageId": 172550
+                  },
+                  "team2": {
+                    "teamId": 448,
+                    "teamName": "Uganda Women",
+                    "teamSName": "UGAW",
+                    "imageId": 172496
+                  },
+                  "venueInfo": {
+                    "id": 1438021,
+                    "ground": "Namibia Cricket Ground",
+                    "city": " Windhoek",
+                    "timezone": "+02:00",
+                    "latitude": "-22.5872377",
+                    "longitude": "17.0677249"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1756512000000",
+                  "seriesEndDt": "1757203200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 131625,
+                  "seriesId": 10697,
+                  "seriesName": "ICC Womens T20 World Cup Africa Region Division One Qualifier 2025",
+                  "matchDesc": "12th Match, Group A",
+                  "matchFormat": "T20",
+                  "startDate": "1756900200000",
+                  "endDate": "1756912800000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 03, 11:50 GMT",
+                  "team1": {
+                    "teamId": 1482,
+                    "teamName": "Nigeria Women",
+                    "teamSName": "NGAW",
+                    "imageId": 273957
+                  },
+                  "team2": {
+                    "teamId": 388,
+                    "teamName": "Zimbabwe Women",
+                    "teamSName": "ZIMW",
+                    "imageId": 172441
+                  },
+                  "venueInfo": {
+                    "id": 1438052,
+                    "ground": "High Performance Oval",
+                    "city": "Windhoek",
+                    "timezone": "+02:00",
+                    "latitude": "-22.5859618",
+                    "longitude": "17.0436255"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1756512000000",
+                  "seriesEndDt": "1757203200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 131631,
+                  "seriesId": 10697,
+                  "seriesName": "ICC Womens T20 World Cup Africa Region Division One Qualifier 2025",
+                  "matchDesc": "1st semi-final",
+                  "matchFormat": "T20",
+                  "startDate": "1756971000000",
+                  "endDate": "1756983600000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 04, 07:30 GMT",
+                  "team1": {
+                    "teamId": 106,
+                    "teamName": "TBC",
+                    "teamSName": "TBC",
+                    "imageId": 172198
+                  },
+                  "team2": {
+                    "teamId": 106,
+                    "teamName": "TBC",
+                    "teamSName": "TBC",
+                    "imageId": 172198
+                  },
+                  "venueInfo": {
+                    "id": 1438021,
+                    "ground": "Namibia Cricket Ground",
+                    "city": " Windhoek",
+                    "timezone": "+02:00",
+                    "latitude": "-22.5872377",
+                    "longitude": "17.0677249"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1756512000000",
+                  "seriesEndDt": "1757203200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 131642,
+                  "seriesId": 10697,
+                  "seriesName": "ICC Womens T20 World Cup Africa Region Division One Qualifier 2025",
+                  "matchDesc": "5th Place Play-off 1st Semi-Final",
+                  "matchFormat": "T20",
+                  "startDate": "1756971000000",
+                  "endDate": "1756983600000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 04, 07:30 GMT",
+                  "team1": {
+                    "teamId": 106,
+                    "teamName": "TBC",
+                    "teamSName": "TBC",
+                    "imageId": 172198
+                  },
+                  "team2": {
+                    "teamId": 106,
+                    "teamName": "TBC",
+                    "teamSName": "TBC",
+                    "imageId": 172198
+                  },
+                  "venueInfo": {
+                    "id": 1438052,
+                    "ground": "High Performance Oval",
+                    "city": "Windhoek",
+                    "timezone": "+02:00",
+                    "latitude": "-22.5859618",
+                    "longitude": "17.0436255"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1756512000000",
+                  "seriesEndDt": "1757203200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 131647,
+                  "seriesId": 10697,
+                  "seriesName": "ICC Womens T20 World Cup Africa Region Division One Qualifier 2025",
+                  "matchDesc": "2nd semi-final",
+                  "matchFormat": "T20",
+                  "startDate": "1756986600000",
+                  "endDate": "1756999200000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 04, 11:50 GMT",
+                  "team1": {
+                    "teamId": 106,
+                    "teamName": "TBC",
+                    "teamSName": "TBC",
+                    "imageId": 172198
+                  },
+                  "team2": {
+                    "teamId": 106,
+                    "teamName": "TBC",
+                    "teamSName": "TBC",
+                    "imageId": 172198
+                  },
+                  "venueInfo": {
+                    "id": 1438021,
+                    "ground": "Namibia Cricket Ground",
+                    "city": " Windhoek",
+                    "timezone": "+02:00",
+                    "latitude": "-22.5872377",
+                    "longitude": "17.0677249"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1756512000000",
+                  "seriesEndDt": "1757203200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 131653,
+                  "seriesId": 10697,
+                  "seriesName": "ICC Womens T20 World Cup Africa Region Division One Qualifier 2025",
+                  "matchDesc": "5th Place Play-off 2nd Semi-Final",
+                  "matchFormat": "T20",
+                  "startDate": "1756986600000",
+                  "endDate": "1756999200000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 04, 11:50 GMT",
+                  "team1": {
+                    "teamId": 106,
+                    "teamName": "TBC",
+                    "teamSName": "TBC",
+                    "imageId": 172198
+                  },
+                  "team2": {
+                    "teamId": 106,
+                    "teamName": "TBC",
+                    "teamSName": "TBC",
+                    "imageId": 172198
+                  },
+                  "venueInfo": {
+                    "id": 1438052,
+                    "ground": "High Performance Oval",
+                    "city": "Windhoek",
+                    "timezone": "+02:00",
+                    "latitude": "-22.5859618",
+                    "longitude": "17.0436255"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1756512000000",
+                  "seriesEndDt": "1757203200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 131664,
+                  "seriesId": 10697,
+                  "seriesName": "ICC Womens T20 World Cup Africa Region Division One Qualifier 2025",
+                  "matchDesc": "3rd place play-off",
+                  "matchFormat": "T20",
+                  "startDate": "1757143800000",
+                  "endDate": "1757156400000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 06, 07:30 GMT",
+                  "team1": {
+                    "teamId": 106,
+                    "teamName": "TBC",
+                    "teamSName": "TBC",
+                    "imageId": 172198
+                  },
+                  "team2": {
+                    "teamId": 106,
+                    "teamName": "TBC",
+                    "teamSName": "TBC",
+                    "imageId": 172198
+                  },
+                  "venueInfo": {
+                    "id": 1438021,
+                    "ground": "Namibia Cricket Ground",
+                    "city": " Windhoek",
+                    "timezone": "+02:00",
+                    "latitude": "-22.5872377",
+                    "longitude": "17.0677249"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1756512000000",
+                  "seriesEndDt": "1757203200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 131669,
+                  "seriesId": 10697,
+                  "seriesName": "ICC Womens T20 World Cup Africa Region Division One Qualifier 2025",
+                  "matchDesc": "7th Place Play-off",
+                  "matchFormat": "T20",
+                  "startDate": "1757143800000",
+                  "endDate": "1757156400000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 06, 07:30 GMT",
+                  "team1": {
+                    "teamId": 106,
+                    "teamName": "TBC",
+                    "teamSName": "TBC",
+                    "imageId": 172198
+                  },
+                  "team2": {
+                    "teamId": 106,
+                    "teamName": "TBC",
+                    "teamSName": "TBC",
+                    "imageId": 172198
+                  },
+                  "venueInfo": {
+                    "id": 1438052,
+                    "ground": "High Performance Oval",
+                    "city": "Windhoek",
+                    "timezone": "+02:00",
+                    "latitude": "-22.5859618",
+                    "longitude": "17.0436255"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1756512000000",
+                  "seriesEndDt": "1757203200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 131675,
+                  "seriesId": 10697,
+                  "seriesName": "ICC Womens T20 World Cup Africa Region Division One Qualifier 2025",
+                  "matchDesc": "5th Place Play-off",
+                  "matchFormat": "T20",
+                  "startDate": "1757159400000",
+                  "endDate": "1757172000000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 06, 11:50 GMT",
+                  "team1": {
+                    "teamId": 106,
+                    "teamName": "TBC",
+                    "teamSName": "TBC",
+                    "imageId": 172198
+                  },
+                  "team2": {
+                    "teamId": 106,
+                    "teamName": "TBC",
+                    "teamSName": "TBC",
+                    "imageId": 172198
+                  },
+                  "venueInfo": {
+                    "id": 1438052,
+                    "ground": "High Performance Oval",
+                    "city": "Windhoek",
+                    "timezone": "+02:00",
+                    "latitude": "-22.5859618",
+                    "longitude": "17.0436255"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1756512000000",
+                  "seriesEndDt": "1757203200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 131686,
+                  "seriesId": 10697,
+                  "seriesName": "ICC Womens T20 World Cup Africa Region Division One Qualifier 2025",
+                  "matchDesc": "Final",
+                  "matchFormat": "T20",
+                  "startDate": "1757159400000",
+                  "endDate": "1757172000000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 06, 11:50 GMT",
+                  "team1": {
+                    "teamId": 106,
+                    "teamName": "TBC",
+                    "teamSName": "TBC",
+                    "imageId": 172198
+                  },
+                  "team2": {
+                    "teamId": 106,
+                    "teamName": "TBC",
+                    "teamSName": "TBC",
+                    "imageId": 172198
+                  },
+                  "venueInfo": {
+                    "id": 1438021,
+                    "ground": "Namibia Cricket Ground",
+                    "city": " Windhoek",
+                    "timezone": "+02:00",
+                    "latitude": "-22.5872377",
+                    "longitude": "17.0677249"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1756512000000",
+                  "seriesEndDt": "1757203200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "seriesAdWrapper": {
+            "seriesId": 10141,
+            "seriesName": "Womens Caribbean Premier League 2025",
+            "matches": [
+              {
+                "matchInfo": {
+                  "matchId": 122082,
+                  "seriesId": 10141,
+                  "seriesName": "Womens Caribbean Premier League 2025",
+                  "matchDesc": "1st Match",
+                  "matchFormat": "T20",
+                  "startDate": "1757181600000",
+                  "endDate": "1757194200000",
+                  "state": "Upcoming",
+                  "status": "Match starts at Sep 06, 18:00 GMT",
+                  "team1": {
+                    "teamId": 1144,
+                    "teamName": "Guyana Amazon Warriors Women",
+                    "teamSName": "GAWW",
+                    "imageId": 241607
+                  },
+                  "team2": {
+                    "teamId": 1139,
+                    "teamName": "Trinbago Knight Riders Women",
+                    "teamSName": "TKRW",
+                    "imageId": 241610
+                  },
+                  "venueInfo": {
+                    "id": 110,
+                    "ground": "Providence Stadium",
+                    "city": "Guyana",
+                    "timezone": "-04:00",
+                    "latitude": "41.823872",
+                    "longitude": "-71.411987"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1757030400000",
+                  "seriesEndDt": "1758153600000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "filters": {
+    "matchType": [
+      "International",
+      "League",
+      "Domestic",
+      "Women"
+    ]
+  },
+  "appIndex": {
+    "seoTitle": "Live Cricket Score - Scorecard and Match Results",
+    "webURL": "www.cricbuzz.com/live-cricket-scores/"
+  },
+  "responseLastUpdated": "1756647381"
+}

@@ -78,6 +78,28 @@
             <!-- Search Status -->
             <div id="searchStatus" class="text-sm text-gray-600 mt-2" style="display: none;"></div>
         </div>
+        
+        <!-- Mock Data Controls -->
+        <div class="mb-4 sm:mb-6">
+            <div class="bg-yellow-50 rounded-lg border border-yellow-200 p-3 sm:p-4">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h3 class="text-sm font-medium text-yellow-800">🔄 Mock Data Controls</h3>
+                        <p class="text-xs text-yellow-700 mt-1">Enable/disable mock data for testing</p>
+                    </div>
+                    <div class="flex space-x-2">
+                        <a href="{{ route('cricket.mock-enable') }}" 
+                           class="inline-flex items-center px-3 py-2 border border-transparent text-xs font-medium rounded-md text-yellow-800 bg-yellow-100 hover:bg-yellow-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500">
+                            ✅ Enable Mock
+                        </a>
+                        <a href="{{ route('cricket.mock-disable') }}" 
+                           class="inline-flex items-center px-3 py-2 border border-transparent text-xs font-medium rounded-md text-gray-800 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+                            ❌ Disable Mock
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
         
         <!-- Tabs -->
@@ -95,6 +117,9 @@
                 </button>
                 <button id="tab-upcoming" class="tab-button border-b-2 border-transparent py-2 px-3 text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300">
                     ⏰ Upcoming
+                </button>
+                <button id="tab-recent" class="tab-button border-b-2 border-transparent py-2 px-3 text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300">
+                    🏆 Recent Completed
                 </button>
             </nav>
         </div>
@@ -587,6 +612,72 @@
                 </a>
             </div>
         </div>
+        @endif
+    </div>
+
+    <!-- Recent Completed Matches Tab Content -->
+    <div id="tab-content-recent" class="tab-content hidden">
+        <!-- Recent Completed Matches Section -->
+        @if(!empty($recentCompletedMatches))
+            @php
+                // Sort recent completed matches by date (most recent first)
+                $sortedRecentMatches = collect($recentCompletedMatches)->sortByDesc(function($match) {
+                    // Handle different date formats and ensure proper sorting
+                    $date = $match['event_date'] ?? $match['event_date_start'] ?? '';
+                    if ($date) {
+                        // Convert to Carbon instance for proper date comparison
+                        try {
+                            return \Carbon\Carbon::parse($date)->timestamp;
+                        } catch (\Exception $e) {
+                            return 0; // Fallback for invalid dates
+                        }
+                    }
+                    return 0;
+                });
+                
+                // Show only first 12 recent completed matches for home page
+                $currentPageRecentMatches = $sortedRecentMatches->take(12);
+            @endphp
+            
+            <div class="mb-4 sm:mb-8">
+                <div class="flex items-center justify-between mb-3 sm:mb-6">
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-900">🏆 Recent Completed Matches</h2>
+                    <div class="flex items-center space-x-2">
+                        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                        <span class="text-sm text-gray-600">Past 7 days</span>
+                        <span class="text-sm text-gray-500">(Showing 12 of {{ $sortedRecentMatches->count() }} matches)</span>
+                    </div>
+                </div>
+                            <div class="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
+                @foreach($currentPageRecentMatches as $match)
+                    @include('cricket.partials.match-card', ['match' => $match, 'type' => 'finished'])
+                @endforeach
+            </div>
+                
+                <!-- View More Button -->
+                <div class="mt-6 text-center">
+                    <a href="{{ route('cricket.results') }}" 
+                       class="inline-flex items-center px-6 py-3 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 transition-colors duration-200">
+                        <span>🏆 View All Results</span>
+                        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                    <p class="mt-2 text-sm text-gray-600">See all {{ $sortedRecentMatches->count() }} completed matches from the past 7 days</p>
+                </div>
+            </div>
+        @else
+            <div class="mb-8 text-center py-12">
+                <div class="text-6xl mb-4">🏆</div>
+                <h3 class="text-xl font-semibold text-gray-600 mb-2">No Recent Completed Matches</h3>
+                <p class="text-gray-500">There are no completed matches in the past 7 days.</p>
+                <div class="mt-4">
+                    <a href="{{ route('cricket.results') }}" 
+                       class="inline-flex items-center px-4 py-2 bg-green-600 text-white font-medium rounded-md hover:bg-green-700 transition-colors duration-200">
+                        🏆 Check Results for More Matches
+                    </a>
+                </div>
+            </div>
         @endif
     </div>
 

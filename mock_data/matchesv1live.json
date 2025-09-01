@@ -1,0 +1,849 @@
+{
+  "typeMatches": [
+    {
+      "matchType": "International",
+      "seriesMatches": [
+        {
+          "seriesAdWrapper": {
+            "seriesId": 10267,
+            "seriesName": "Sri Lanka tour of Zimbabwe, 2025",
+            "matches": [
+              {
+                "matchInfo": {
+                  "matchId": 122951,
+                  "seriesId": 10267,
+                  "seriesName": "Sri Lanka tour of Zimbabwe, 2025",
+                  "matchDesc": "2nd ODI",
+                  "matchFormat": "ODI",
+                  "startDate": "1756625400000",
+                  "endDate": "1756654200000",
+                  "state": "In Progress",
+                  "status": "Sri Lanka need 155 runs",
+                  "team1": {
+                    "teamId": 12,
+                    "teamName": "Zimbabwe",
+                    "teamSName": "ZIM",
+                    "imageId": 172127
+                  },
+                  "team2": {
+                    "teamId": 5,
+                    "teamName": "Sri Lanka",
+                    "teamSName": "SL",
+                    "imageId": 172119
+                  },
+                  "venueInfo": {
+                    "id": 69,
+                    "ground": "Harare Sports Club",
+                    "city": "Harare",
+                    "timezone": "+02:00",
+                    "latitude": "-17.814114",
+                    "longitude": "31.050962"
+                  },
+                  "currBatTeamId": 5,
+                  "seriesStartDt": "1756339200000",
+                  "seriesEndDt": "1757289600000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "In Progress"
+                },
+                "matchScore": {
+                  "team1Score": {
+                    "inngs1": {
+                      "inningsId": 1,
+                      "runs": 277,
+                      "wickets": 7,
+                      "overs": 49.6
+                    }
+                  },
+                  "team2Score": {
+                    "inngs1": {
+                      "inningsId": 2,
+                      "runs": 123,
+                      "wickets": 2,
+                      "overs": 25.1
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "matchType": "League",
+      "seriesMatches": [
+        {
+          "seriesAdWrapper": {
+            "seriesId": 10581,
+            "seriesName": "Delhi Premier League 2025",
+            "matches": [
+              {
+                "matchInfo": {
+                  "matchId": 129997,
+                  "seriesId": 10581,
+                  "seriesName": "Delhi Premier League 2025",
+                  "matchDesc": "Final",
+                  "matchFormat": "T20",
+                  "startDate": "1756647000000",
+                  "endDate": "1756659600000",
+                  "state": "In Progress",
+                  "status": "West Delhi Lions opt to bowl",
+                  "team1": {
+                    "teamId": 2620,
+                    "teamName": "Central Delhi Kings",
+                    "teamSName": "CDK",
+                    "imageId": 731747
+                  },
+                  "team2": {
+                    "teamId": 2656,
+                    "teamName": "West Delhi Lions",
+                    "teamSName": "WDL",
+                    "imageId": 731750
+                  },
+                  "venueInfo": {
+                    "id": 51,
+                    "ground": "Arun Jaitley Stadium",
+                    "city": "Delhi",
+                    "timezone": "+05:30",
+                    "latitude": "28.637891",
+                    "longitude": "77.243073"
+                  },
+                  "currBatTeamId": 2620,
+                  "seriesStartDt": "1754006400000",
+                  "seriesEndDt": "1756684800000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "In Progress"
+                },
+                "matchScore": {
+                  "team1Score": {
+                    "inngs1": {
+                      "inningsId": 1,
+                      "runs": 11,
+                      "wickets": 1,
+                      "overs": 1.3
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "seriesAdWrapper": {
+            "seriesId": 10620,
+            "seriesName": "Kerala Cricket League 2025",
+            "matches": [
+              {
+                "matchInfo": {
+                  "matchId": 130718,
+                  "seriesId": 10620,
+                  "seriesName": "Kerala Cricket League 2025",
+                  "matchDesc": "22nd Match",
+                  "matchFormat": "T20",
+                  "startDate": "1756646100000",
+                  "endDate": "1756658700000",
+                  "state": "In Progress",
+                  "status": "Kochi Blue Tigers opt to bowl",
+                  "team1": {
+                    "teamId": 2774,
+                    "teamName": "Alleppey Ripples",
+                    "teamSName": "ALPR",
+                    "imageId": 731735
+                  },
+                  "team2": {
+                    "teamId": 2733,
+                    "teamName": "Kochi Blue Tigers",
+                    "teamSName": "KBT",
+                    "imageId": 731734
+                  },
+                  "venueInfo": {
+                    "id": 506,
+                    "ground": "Greenfield International Stadium",
+                    "city": "Thiruvananthapuram",
+                    "timezone": "+05:30",
+                    "latitude": "8.570806",
+                    "longitude": "76.884328"
+                  },
+                  "currBatTeamId": 2774,
+                  "seriesStartDt": "1755648000000",
+                  "seriesEndDt": "1757203200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "In Progress"
+                },
+                "matchScore": {
+                  "team1Score": {
+                    "inngs1": {
+                      "inningsId": 1,
+                      "runs": 49,
+                      "overs": 4.3
+                    }
+                  }
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 130707,
+                  "seriesId": 10620,
+                  "seriesName": "Kerala Cricket League 2025",
+                  "matchDesc": "21st Match",
+                  "matchFormat": "T20",
+                  "startDate": "1756630800000",
+                  "endDate": "1756643400000",
+                  "state": "Complete",
+                  "status": "Aries Kollam Sailors won by 7 wkts",
+                  "team1": {
+                    "teamId": 2763,
+                    "teamName": "Adani Trivandrum Royals",
+                    "teamSName": "ATR",
+                    "imageId": 731733
+                  },
+                  "team2": {
+                    "teamId": 2778,
+                    "teamName": "Aries Kollam Sailors",
+                    "teamSName": "AKS",
+                    "imageId": 731731
+                  },
+                  "venueInfo": {
+                    "id": 506,
+                    "ground": "Greenfield International Stadium",
+                    "city": "Thiruvananthapuram",
+                    "timezone": "+05:30",
+                    "latitude": "8.570806",
+                    "longitude": "76.884328"
+                  },
+                  "currBatTeamId": 2778,
+                  "seriesStartDt": "1755648000000",
+                  "seriesEndDt": "1757203200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "AKS Won"
+                },
+                "matchScore": {
+                  "team1Score": {
+                    "inngs1": {
+                      "inningsId": 1,
+                      "runs": 178,
+                      "wickets": 6,
+                      "overs": 19.6
+                    }
+                  },
+                  "team2Score": {
+                    "inngs1": {
+                      "inningsId": 2,
+                      "runs": 181,
+                      "wickets": 3,
+                      "overs": 17.2
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "seriesAdWrapper": {
+            "seriesId": 10735,
+            "seriesName": "Uttar Pradesh Premier League 2025",
+            "matches": [
+              {
+                "matchInfo": {
+                  "matchId": 132593,
+                  "seriesId": 10735,
+                  "seriesName": "Uttar Pradesh Premier League 2025",
+                  "matchDesc": "28th Match",
+                  "matchFormat": "T20",
+                  "startDate": "1756632600000",
+                  "endDate": "1756645200000",
+                  "state": "In Progress",
+                  "status": "Kanpur Superstars need 37 runs in 25 balls - Match reduced to 15 overs per side due to rain",
+                  "team1": {
+                    "teamId": 2811,
+                    "teamName": "Gaur Gorakhapur Lions",
+                    "teamSName": "GGL",
+                    "imageId": 738656
+                  },
+                  "team2": {
+                    "teamId": 2818,
+                    "teamName": "Kanpur Superstars",
+                    "teamSName": "KSS",
+                    "imageId": 738655
+                  },
+                  "venueInfo": {
+                    "id": 485,
+                    "ground": "Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium",
+                    "city": "Lucknow",
+                    "timezone": "+05:30",
+                    "latitude": "26.846694",
+                    "longitude": "80.946166"
+                  },
+                  "currBatTeamId": 2818,
+                  "seriesStartDt": "1755302400000",
+                  "seriesEndDt": "1757203200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "In Progress"
+                },
+                "matchScore": {
+                  "team1Score": {
+                    "inngs1": {
+                      "inningsId": 1,
+                      "runs": 141,
+                      "wickets": 7,
+                      "overs": 14.6
+                    }
+                  },
+                  "team2Score": {
+                    "inngs1": {
+                      "inningsId": 2,
+                      "runs": 105,
+                      "wickets": 3,
+                      "overs": 10.5
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "matchType": "Domestic",
+      "seriesMatches": [
+        {
+          "seriesAdWrapper": {
+            "seriesId": 10311,
+            "seriesName": "Duleep Trophy 2025",
+            "matches": [
+              {
+                "matchInfo": {
+                  "matchId": 123661,
+                  "seriesId": 10311,
+                  "seriesName": "Duleep Trophy 2025",
+                  "matchDesc": "2nd Quarter-Final",
+                  "matchFormat": "TEST",
+                  "startDate": "1756353600000",
+                  "endDate": "1756638000000",
+                  "state": "Complete",
+                  "status": "Match drawn",
+                  "team1": {
+                    "teamId": 237,
+                    "teamName": "Central Zone",
+                    "teamSName": "CZONE",
+                    "imageId": 172290
+                  },
+                  "team2": {
+                    "teamId": 1146,
+                    "teamName": "North East Zone",
+                    "teamSName": "NEZONE",
+                    "imageId": 242496
+                  },
+                  "venueInfo": {
+                    "id": 1438102,
+                    "ground": "BCCI Centre of Excellence Ground B",
+                    "city": "Bengaluru",
+                    "timezone": "+05:30",
+                    "latitude": "13.174092",
+                    "longitude": "77.706999"
+                  },
+                  "seriesStartDt": "1756252800000",
+                  "seriesEndDt": "1757980800000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Complete"
+                },
+                "matchScore": {
+                  "team1Score": {
+                    "inngs1": {
+                      "inningsId": 1,
+                      "runs": 532,
+                      "wickets": 4,
+                      "overs": 101.6
+                    },
+                    "inngs2": {
+                      "inningsId": 3,
+                      "runs": 331,
+                      "wickets": 7,
+                      "overs": 80.3
+                    }
+                  },
+                  "team2Score": {
+                    "inngs1": {
+                      "inningsId": 2,
+                      "runs": 185,
+                      "wickets": 10,
+                      "overs": 69.3
+                    },
+                    "inngs2": {
+                      "inningsId": 4,
+                      "runs": 200,
+                      "wickets": 6,
+                      "overs": 57.6
+                    }
+                  }
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 123655,
+                  "seriesId": 10311,
+                  "seriesName": "Duleep Trophy 2025",
+                  "matchDesc": "1st Quarter-Final",
+                  "matchFormat": "TEST",
+                  "startDate": "1756353600000",
+                  "endDate": "1756638000000",
+                  "state": "Complete",
+                  "status": "Match drawn",
+                  "team1": {
+                    "teamId": 233,
+                    "teamName": "North Zone",
+                    "teamSName": "NZONE",
+                    "imageId": 172286
+                  },
+                  "team2": {
+                    "teamId": 235,
+                    "teamName": "East Zone",
+                    "teamSName": "EZONE",
+                    "imageId": 172288
+                  },
+                  "venueInfo": {
+                    "id": 1438087,
+                    "ground": "BCCI Centre of Excellence Ground",
+                    "city": "Bengaluru",
+                    "timezone": "+05:30",
+                    "latitude": "12.978853",
+                    "longitude": "77.599533"
+                  },
+                  "seriesStartDt": "1756252800000",
+                  "seriesEndDt": "1757980800000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Complete"
+                },
+                "matchScore": {
+                  "team1Score": {
+                    "inngs1": {
+                      "inningsId": 1,
+                      "runs": 405,
+                      "wickets": 10,
+                      "overs": 93.2
+                    },
+                    "inngs2": {
+                      "inningsId": 3,
+                      "runs": 658,
+                      "wickets": 4,
+                      "overs": 146.2
+                    }
+                  },
+                  "team2Score": {
+                    "inngs1": {
+                      "inningsId": 2,
+                      "runs": 230,
+                      "wickets": 10,
+                      "overs": 56.1
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "ad": {
+            "name": "native_matches",
+            "layout": "native_large",
+            "position": 5
+          }
+        },
+        {
+          "seriesAdWrapper": {
+            "seriesId": 8993,
+            "seriesName": "ICC CWC Challenge League A, 2024-26",
+            "matches": [
+              {
+                "matchInfo": {
+                  "matchId": 129062,
+                  "seriesId": 8993,
+                  "seriesName": "ICC CWC Challenge League A, 2024-26",
+                  "matchDesc": "29th Match",
+                  "matchFormat": "ODI",
+                  "startDate": "1756634400000",
+                  "endDate": "1756663200000",
+                  "state": "Innings Break",
+                  "status": "Innings Break",
+                  "team1": {
+                    "teamId": 525,
+                    "teamName": "Qatar",
+                    "teamSName": "QAT",
+                    "imageId": 172575
+                  },
+                  "team2": {
+                    "teamId": 303,
+                    "teamName": "Jersey",
+                    "teamSName": "JER",
+                    "imageId": 172352
+                  },
+                  "venueInfo": {
+                    "id": 1563,
+                    "ground": "Grainville",
+                    "city": "St Saviour",
+                    "timezone": "+01:00",
+                    "latitude": "49.1995792",
+                    "longitude": "-2.087867"
+                  },
+                  "currBatTeamId": 525,
+                  "seriesStartDt": "1727136000000",
+                  "seriesEndDt": "1769731200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Ings Break"
+                },
+                "matchScore": {
+                  "team1Score": {
+                    "inngs1": {
+                      "inningsId": 1,
+                      "runs": 132,
+                      "wickets": 10,
+                      "overs": 47.2
+                    }
+                  }
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 129067,
+                  "seriesId": 8993,
+                  "seriesName": "ICC CWC Challenge League A, 2024-26",
+                  "matchDesc": "30th Match",
+                  "matchFormat": "ODI",
+                  "startDate": "1756634400000",
+                  "endDate": "1756663200000",
+                  "state": "Toss",
+                  "status": "Kenya opt to bowl",
+                  "team1": {
+                    "teamId": 185,
+                    "teamName": "Denmark",
+                    "teamSName": "DEN",
+                    "imageId": 172245
+                  },
+                  "team2": {
+                    "teamId": 14,
+                    "teamName": "Kenya",
+                    "teamSName": "KEN",
+                    "imageId": 172129
+                  },
+                  "venueInfo": {
+                    "id": 1566,
+                    "ground": "Farmers Cricket Club Ground",
+                    "city": "St Martin",
+                    "timezone": "+01:00",
+                    "latitude": "49.2184521",
+                    "longitude": "-2.0601565"
+                  },
+                  "isTournament": true,
+                  "seriesStartDt": "1727136000000",
+                  "seriesEndDt": "1769731200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Toss"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "seriesAdWrapper": {
+            "seriesId": 9273,
+            "seriesName": "England Domestic One-Day Cup 2025",
+            "matches": [
+              {
+                "matchInfo": {
+                  "matchId": 111973,
+                  "seriesId": 9273,
+                  "seriesName": "England Domestic One-Day Cup 2025",
+                  "matchDesc": "Semi Final 1",
+                  "matchFormat": "ODI",
+                  "startDate": "1756634400000",
+                  "endDate": "1756663200000",
+                  "state": "Innings Break",
+                  "status": "Innings Break",
+                  "team1": {
+                    "teamId": 147,
+                    "teamName": "Worcestershire",
+                    "teamSName": "WORCS",
+                    "imageId": 172214
+                  },
+                  "team2": {
+                    "teamId": 119,
+                    "teamName": "Somerset",
+                    "teamSName": "SOM",
+                    "imageId": 172199
+                  },
+                  "venueInfo": {
+                    "id": 225,
+                    "ground": "New Road",
+                    "city": "Worcester",
+                    "timezone": "+01:00",
+                    "latitude": "52.189294",
+                    "longitude": "-2.2268"
+                  },
+                  "currBatTeamId": 147,
+                  "seriesStartDt": "1754265600000",
+                  "seriesEndDt": "1758412800000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Ings Break"
+                },
+                "matchScore": {
+                  "team1Score": {
+                    "inngs1": {
+                      "inningsId": 1,
+                      "runs": 275,
+                      "wickets": 9,
+                      "overs": 49.6
+                    }
+                  }
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 111981,
+                  "seriesId": 9273,
+                  "seriesName": "England Domestic One-Day Cup 2025",
+                  "matchDesc": "Semi Final 2",
+                  "matchFormat": "ODI",
+                  "startDate": "1756634400000",
+                  "endDate": "1756663200000",
+                  "state": "Innings Break",
+                  "status": "Innings Break",
+                  "team1": {
+                    "teamId": 153,
+                    "teamName": "Hampshire",
+                    "teamSName": "HAM",
+                    "imageId": 172220
+                  },
+                  "team2": {
+                    "teamId": 146,
+                    "teamName": "Yorkshire",
+                    "teamSName": "YORKS",
+                    "imageId": 172213
+                  },
+                  "venueInfo": {
+                    "id": 220,
+                    "ground": "North Marine Road Ground",
+                    "city": "Scarborough",
+                    "timezone": "+01:00",
+                    "latitude": "54.288277",
+                    "longitude": "-0.40539"
+                  },
+                  "currBatTeamId": 153,
+                  "seriesStartDt": "1754265600000",
+                  "seriesEndDt": "1758412800000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Ings Break"
+                },
+                "matchScore": {
+                  "team1Score": {
+                    "inngs1": {
+                      "inningsId": 1,
+                      "runs": 304,
+                      "wickets": 6,
+                      "overs": 49.6
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "matchType": "Women",
+      "seriesMatches": [
+        {
+          "seriesAdWrapper": {
+            "seriesId": 9386,
+            "seriesName": "The Hundred Womens Competition 2025",
+            "matches": [
+              {
+                "matchInfo": {
+                  "matchId": 114272,
+                  "seriesId": 9386,
+                  "seriesName": "The Hundred Womens Competition 2025",
+                  "matchDesc": "Final",
+                  "matchFormat": "HUN",
+                  "startDate": "1756646100000",
+                  "endDate": "1756646100000",
+                  "state": "In Progress",
+                  "status": "Northern Superchargers Women opt to bowl",
+                  "team1": {
+                    "teamId": 620,
+                    "teamName": "Southern Brave Women",
+                    "teamSName": "SOUW",
+                    "imageId": 202721
+                  },
+                  "team2": {
+                    "teamId": 619,
+                    "teamName": "Northern Superchargers Women",
+                    "teamSName": "NORW",
+                    "imageId": 202720
+                  },
+                  "venueInfo": {
+                    "id": 19,
+                    "ground": "Lord's",
+                    "city": "London",
+                    "timezone": "+01:00",
+                    "latitude": "51.529488",
+                    "longitude": "-0.172926"
+                  },
+                  "currBatTeamId": 620,
+                  "seriesStartDt": "1754265600000",
+                  "seriesEndDt": "1756684800000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "In Progress"
+                },
+                "matchScore": {
+                  "team1Score": {
+                    "inngs1": {
+                      "inningsId": 1,
+                      "runs": 35,
+                      "wickets": 2,
+                      "overs": 30
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "seriesAdWrapper": {
+            "seriesId": 10697,
+            "seriesName": "ICC Womens T20 World Cup Africa Region Division One Qualifier 2025",
+            "matches": [
+              {
+                "matchInfo": {
+                  "matchId": 131515,
+                  "seriesId": 10697,
+                  "seriesName": "ICC Womens T20 World Cup Africa Region Division One Qualifier 2025",
+                  "matchDesc": "1st Match, Group A",
+                  "matchFormat": "T20",
+                  "startDate": "1756625400000",
+                  "endDate": "1756638000000",
+                  "state": "Complete",
+                  "status": "Nigeria Women won by 96 runs",
+                  "team1": {
+                    "teamId": 1482,
+                    "teamName": "Nigeria Women",
+                    "teamSName": "NGAW",
+                    "imageId": 273957
+                  },
+                  "team2": {
+                    "teamId": 490,
+                    "teamName": "Sierra Leone Women",
+                    "teamSName": "SLEW",
+                    "imageId": 172538
+                  },
+                  "venueInfo": {
+                    "id": 1438021,
+                    "ground": "Namibia Cricket Ground",
+                    "city": " Windhoek",
+                    "timezone": "+02:00",
+                    "latitude": "-22.5872377",
+                    "longitude": "17.0677249"
+                  },
+                  "currBatTeamId": 1482,
+                  "seriesStartDt": "1756512000000",
+                  "seriesEndDt": "1757203200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Complete"
+                },
+                "matchScore": {
+                  "team1Score": {
+                    "inngs1": {
+                      "inningsId": 1,
+                      "runs": 182,
+                      "wickets": 3,
+                      "overs": 19.6
+                    }
+                  },
+                  "team2Score": {
+                    "inngs1": {
+                      "inningsId": 2,
+                      "runs": 86,
+                      "wickets": 8,
+                      "overs": 19.6
+                    }
+                  }
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 131526,
+                  "seriesId": 10697,
+                  "seriesName": "ICC Womens T20 World Cup Africa Region Division One Qualifier 2025",
+                  "matchDesc": "2nd Match, Group B",
+                  "matchFormat": "T20",
+                  "startDate": "1756625400000",
+                  "endDate": "1756638000000",
+                  "state": "Complete",
+                  "status": "Rwanda Women won by 6 wkts",
+                  "team1": {
+                    "teamId": 501,
+                    "teamName": "Kenya Women",
+                    "teamSName": "KENW",
+                    "imageId": 172550
+                  },
+                  "team2": {
+                    "teamId": 720,
+                    "teamName": "Rwanda Women",
+                    "teamSName": "RWAW",
+                    "imageId": 248448
+                  },
+                  "venueInfo": {
+                    "id": 1438052,
+                    "ground": "High Performance Oval",
+                    "city": "Windhoek",
+                    "timezone": "+02:00",
+                    "latitude": "-22.5859618",
+                    "longitude": "17.0436255"
+                  },
+                  "currBatTeamId": 720,
+                  "seriesStartDt": "1756512000000",
+                  "seriesEndDt": "1757203200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Complete"
+                },
+                "matchScore": {
+                  "team1Score": {
+                    "inngs1": {
+                      "inningsId": 1,
+                      "runs": 103,
+                      "wickets": 6,
+                      "overs": 19.6
+                    }
+                  },
+                  "team2Score": {
+                    "inngs1": {
+                      "inningsId": 2,
+                      "runs": 107,
+                      "wickets": 4,
+                      "overs": 18.6
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "filters": {
+    "matchType": [
+      "International",
+      "League",
+      "Domestic",
+      "Women"
+    ]
+  },
+  "appIndex": {
+    "seoTitle": "Live Cricket Score - Scorecard and Match Results",
+    "webURL": "www.cricbuzz.com/live-cricket-scores/"
+  },
+  "responseLastUpdated": "1756647559"
+}

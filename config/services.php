@@ -31,10 +31,10 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
-    'cricket' => [
-        'api_key' => env('CRICKET_API_KEY', '3d561c5a8927413649b8f4edd0cbbb9003e6cd0efce493c98c1211d9660aeaf4'),
-        'base_url' => env('CRICKET_BASE_URL', 'https://apiv2.api-cricket.com/cricket/'),
-        'cache_ttl' => env('CRICKET_CACHE_TTL', 60),
+    'cricbuzz' => [
+        'api_key' => env('CRICBUZZ_API_KEY', '11dae3957amsh2f910588e3c40b4p193e2bjsna2ff9927e257'),
+        'base_url' => env('CRICBUZZ_BASE_URL', 'https://cricbuzz-cricket.p.rapidapi.com'),
+        'cache_ttl' => env('CRICBUZZ_CACHE_TTL', 300),
     ],
 
 ];
