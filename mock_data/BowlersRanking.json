@@ -1,0 +1,189 @@
+{
+  "rank": [
+    {
+      "id": "8554",
+      "rank": "1",
+      "name": "Jacob Duffy",
+      "country": "New Zealand",
+      "rating": "717",
+      "points": "717",
+      "lastUpdatedOn": "2025-09-02",
+      "trend": "Flat",
+      "faceImageId": "616417",
+      "countryId": "13"
+    },
+    {
+      "id": "1742",
+      "rank": "2",
+      "name": "Adil Rashid",
+      "country": "England",
+      "rating": "710",
+      "points": "710",
+      "lastUpdatedOn": "2025-09-02",
+      "trend": "Flat",
+      "faceImageId": "617413",
+      "countryId": "9"
+    },
+    {
+      "id": "8435",
+      "rank": "3",
+      "name": "Akeal Hosein",
+      "country": "West Indies",
+      "rating": "707",
+      "points": "707",
+      "lastUpdatedOn": "2025-09-02",
+      "trend": "Flat",
+      "faceImageId": "244660",
+      "countryId": "10"
+    },
+    {
+      "id": "12926",
+      "rank": "4",
+      "name": "Varun Chakaravarthy",
+      "country": "India",
+      "rating": "706",
+      "points": "706",
+      "lastUpdatedOn": "2025-09-02",
+      "trend": "Flat",
+      "faceImageId": "616528",
+      "countryId": "2"
+    },
+    {
+      "id": "8642",
+      "rank": "5",
+      "name": "Adam Zampa",
+      "country": "Australia",
+      "rating": "700",
+      "points": "700",
+      "lastUpdatedOn": "2025-09-02",
+      "trend": "Flat",
+      "faceImageId": "619887",
+      "countryId": "4"
+    },
+    {
+      "id": "10926",
+      "rank": "6",
+      "name": "Wanindu Hasaranga",
+      "country": "Sri Lanka",
+      "rating": "679",
+      "points": "679",
+      "lastUpdatedOn": "2025-09-02",
+      "trend": "Flat",
+      "faceImageId": "244676",
+      "countryId": "5"
+    },
+    {
+      "id": "14659",
+      "rank": "7",
+      "name": "Ravi Bishnoi",
+      "country": "India",
+      "rating": "674",
+      "points": "674",
+      "lastUpdatedOn": "2025-09-02",
+      "trend": "Flat",
+      "faceImageId": "226280",
+      "countryId": "2"
+    },
+    {
+      "id": "10738",
+      "rank": "8",
+      "name": "Rashid Khan",
+      "country": "Afghanistan",
+      "rating": "664",
+      "points": "664",
+      "lastUpdatedOn": "2025-09-02",
+      "trend": "Flat",
+      "faceImageId": "616553",
+      "countryId": "96"
+    },
+    {
+      "id": "15480",
+      "rank": "9",
+      "name": "Nathan Ellis",
+      "country": "Australia",
+      "rating": "658",
+      "difference": -1,
+      "points": "658",
+      "lastUpdatedOn": "2025-09-02",
+      "trend": "Down",
+      "faceImageId": "619885",
+      "countryId": "4"
+    },
+    {
+      "id": "13217",
+      "rank": "10",
+      "name": "Arshdeep Singh",
+      "country": "India",
+      "rating": "653",
+      "points": "653",
+      "lastUpdatedOn": "2025-09-02",
+      "trend": "Flat",
+      "faceImageId": "616527",
+      "countryId": "2"
+    },
+    {
+      "id": "18504",
+      "rank": "11",
+      "name": "Maheesh Theekshana",
+      "country": "Sri Lanka",
+      "rating": "652",
+      "points": "652",
+      "lastUpdatedOn": "2025-09-02",
+      "trend": "Flat",
+      "faceImageId": "594214",
+      "countryId": "5"
+    },
+    {
+      "id": "9863",
+      "rank": "12",
+      "name": "Mustafizur Rahman",
+      "country": "Bangladesh",
+      "rating": "646",
+      "points": "646",
+      "lastUpdatedOn": "2025-09-02",
+      "trend": "Flat",
+      "faceImageId": "616463",
+      "countryId": "6"
+    },
+    {
+      "id": "18509",
+      "rank": "13",
+      "name": "Nuwan Thushara",
+      "country": "Sri Lanka",
+      "rating": "638",
+      "points": "638",
+      "lastUpdatedOn": "2025-09-02",
+      "trend": "Flat",
+      "faceImageId": "226338",
+      "countryId": "5"
+    },
+    {
+      "id": "8808",
+      "rank": "14",
+      "name": "Axar Patel",
+      "country": "India",
+      "rating": "636",
+      "points": "636",
+      "lastUpdatedOn": "2025-09-02",
+      "trend": "Flat",
+      "faceImageId": "616521",
+      "countryId": "2"
+    },
+    {
+      "id": "11540",
+      "rank": "15",
+      "name": "Jofra Archer",
+      "country": "England",
+      "rating": "630",
+      "points": "630",
+      "lastUpdatedOn": "2025-09-02",
+      "trend": "Flat",
+      "faceImageId": "617429",     
+      "countryId": "9"
+    }
+  ],
+  "appIndex": {
+    "seoTitle": "ICC Cricket Rankings - Top 100 Batter | Cricbuzz.com",
+    "webURL": "www.cricbuzz.com/cricket-stats/icc-rankings"
+  }
+}

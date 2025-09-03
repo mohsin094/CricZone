@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CricketController;
+use App\Http\Controllers\RankingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +35,13 @@ Route::prefix('cricket')->name('cricket.')->group(function () {
     Route::post('/refresh', [CricketController::class, 'refreshData'])->name('refresh');
     Route::get('/mock/enable', [CricketController::class, 'enableMock'])->name('mock-enable');
     Route::get('/mock/disable', [CricketController::class, 'disableMock'])->name('mock-disable');
+});
+
+// Ranking Routes
+Route::prefix('rankings')->name('rankings.')->group(function () {
+    Route::get('/', [RankingController::class, 'index'])->name('index');
+    Route::get('/update', [RankingController::class, 'updateRankings'])->name('update');
+    Route::get('/stats', [RankingController::class, 'getRankingStats'])->name('stats');
 });
 
 // Redirect root to cricket index

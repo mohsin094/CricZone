@@ -65,6 +65,174 @@
         html {
             scroll-behavior: smooth;
         }
+        
+        /* Ranking specific styles */
+        .ranking-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            border: 1px solid #cbd5e1;
+            transition: all 0.3s ease;
+        }
+        
+        .ranking-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .top-ranking-card {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            border: 2px solid #3b82f6;
+        }
+        
+        .ranking-number {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .team-flag {
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .player-avatar {
+            border: 2px solid #e5e7eb;
+            transition: border-color 0.3s ease;
+        }
+        
+        .player-avatar:hover {
+            border-color: #3b82f6;
+        }
+        
+        .trend-up {
+            color: #059669;
+        }
+        
+        .trend-down {
+            color: #dc2626;
+        }
+        
+        .trend-same {
+            color: #6b7280;
+        }
+
+        /* Format Card Styling */
+        .format-card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .format-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Compact table styling */
+        .compact-table th,
+        .compact-table td {
+            padding: 0.5rem 0.75rem;
+        }
+
+        /* Player avatar styling */
+        .player-avatar {
+            border: 2px solid #e5e7eb;
+        }
+
+        /* Team flag styling */
+        .team-flag {
+            border-radius: 2px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Tab styling improvements */
+        .ranking-tab {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .ranking-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+            border-radius: 1px;
+        }
+        
+        /* Responsive improvements */
+        @media (max-width: 768px) {
+            .ranking-table {
+                font-size: 0.875rem;
+            }
+            
+            .top-ranking-card {
+                padding: 1rem;
+            }
+            
+            .ranking-number {
+                font-size: 3rem;
+            }
+        }
+        
+        /* Trend indicator styles */
+        .trend-indicator {
+            font-size: 0.875rem;
+            font-weight: bold;
+            transition: all 0.2s ease;
+            display: inline-block;
+            min-width: 1rem;
+            text-align: center;
+        }
+        
+        .trend-indicator:hover {
+            transform: scale(1.2);
+        }
+        
+        .trend-indicator.text-green-500 {
+            color: #10b981 !important;
+        }
+        
+        .trend-indicator.text-red-500 {
+            color: #ef4444 !important;
+        }
+        
+        .trend-indicator.text-gray-400 {
+            color: #9ca3af !important;
+        }
+        
+        /* Tooltip styles */
+        .trend-indicator[data-tooltip] {
+            position: relative;
+        }
+        
+        .trend-indicator[data-tooltip]:hover::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #1f2937;
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            z-index: 1000;
+            margin-bottom: 0.25rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .trend-indicator[data-tooltip]:hover::before {
+            content: '';
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 4px solid transparent;
+            border-top-color: #1f2937;
+            z-index: 1000;
+        }
     </style>
 </head>
 <body class="font-sans antialiased bg-gray-50">
@@ -94,6 +262,9 @@
                             </a>
                             <a href="{{ route('cricket.teams') }}" class="text-white hover:text-green-200 px-1 sm:px-2 lg:px-3 py-2 rounded-md text-xs sm:text-sm font-medium whitespace-nowrap flex-shrink-0 {{ request()->routeIs('cricket.teams*') ? 'bg-green-700' : '' }}">
                                 Teams
+                            </a>
+                            <a href="{{ route('rankings.index') }}" class="text-white hover:text-green-200 px-1 sm:px-2 lg:px-3 py-2 rounded-md text-xs sm:text-sm font-medium whitespace-nowrap flex-shrink-0 {{ request()->routeIs('rankings*') ? 'bg-green-700' : '' }}">
+                                Rankings
                             </a>
                         </div>
                     </div>
@@ -153,6 +324,7 @@
                         <h4 class="text-md font-semibold mb-4">More</h4>
                         <ul class="space-y-2 text-sm text-gray-300">
                             <li><a href="{{ route('cricket.teams') }}" class="hover:text-white">Teams</a></li>
+                            <li><a href="{{ route('rankings.index') }}" class="hover:text-white">Rankings</a></li>
                             <li><a href="{{ route('cricket.search') }}" class="hover:text-white">Search</a></li>
                         </ul>
                     </div>
