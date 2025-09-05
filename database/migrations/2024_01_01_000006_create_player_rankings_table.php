@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('player_name');
             $table->string('team_name');
             $table->string('team_code', 3); // 3-letter country code
-            $table->string('player_image_url')->nullable();
             $table->integer('rank')->nullable();
             $table->integer('rating')->nullable();
             $table->integer('points')->nullable();

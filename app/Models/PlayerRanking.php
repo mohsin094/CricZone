@@ -16,7 +16,6 @@ class PlayerRanking extends Model
         'player_name',
         'team_name',
         'team_code',
-        'player_image_url',
         'rank',
         'rating',
         'trend',
@@ -65,16 +64,39 @@ class PlayerRanking extends Model
     }
 
     /**
-     * Get player image URL with fallback
+     * Get player image URL from images table
      */
-    public function getPlayerImageUrlAttribute($value)
+    public function getPlayerImageUrlAttribute()
     {
-        if ($value) {
-            return $value;
+        // Try to find player image by name first
+        $image = \App\Models\Image::where('type', 'player')
+                                 ->where('name', $this->player_name)
+                                 ->first();
+        
+        if ($image && $image->image_data) {
+            return 'data:' . $image->mime_type . ';base64,' . $image->image_data;
         }
+        
+        // Return null if no image found
+        return null;
+    }
 
-        // Fallback to a default player image
-        return '/images/default-player.png';
+    /**
+     * Get team flag URL from images table
+     */
+    public function getTeamFlagUrlAttribute()
+    {
+        // Try to find country image by name first
+        $image = \App\Models\Image::where('type', 'country')
+                                 ->where('name', $this->team_name)
+                                 ->first();
+        
+        if ($image && $image->image_data) {
+            return 'data:' . $image->mime_type . ';base64,' . $image->image_data;
+        }
+        
+        // Return null if no image found
+        return null;
     }
 
     /**

@@ -20,7 +20,6 @@ return new class extends Migration
             $table->integer('rating')->nullable();
             $table->integer('matches')->nullable();
             $table->integer('points')->nullable();
-            $table->string('team_flag_url')->nullable();
             $table->string('team_code', 3)->nullable(); // 3-letter country code
             $table->timestamp('last_updated');
             $table->timestamps();

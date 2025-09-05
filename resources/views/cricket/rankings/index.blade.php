@@ -12,16 +12,26 @@
     </div>
 
     <!-- Category Tabs -->
-    <div class="mb-6">
-        <div class="border-b border-gray-200">
-            <nav class="-mb-px flex space-x-8">
+    <div class="mb-8">
+        <div class="tab-container rounded-xl p-1">
+            <nav class="flex space-x-1">
                 <a href="{{ route('rankings.index', ['category' => 'men', 'type' => $type]) }}" 
-                   class="py-2 px-1 border-b-2 font-medium text-sm {{ $category === 'men' ? 'border-blue-500 text-blue-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300' }}">
-                    Men
+                   class="tab-item flex-1 py-3 px-4 text-center font-semibold text-sm rounded-lg transition-all duration-200 {{ $category === 'men' ? 'bg-blue-600 text-white shadow-md transform scale-105 active' : 'text-gray-600 hover:text-blue-600 hover:bg-blue-50' }}">
+                    <div class="flex items-center justify-center space-x-2">
+                        <svg class="tab-icon w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span>Men</span>
+                    </div>
                 </a>
                 <a href="{{ route('rankings.index', ['category' => 'women', 'type' => $type]) }}" 
-                   class="py-2 px-1 border-b-2 font-medium text-sm {{ $category === 'women' ? 'border-blue-500 text-blue-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300' }}">
-                    Women
+                   class="tab-item flex-1 py-3 px-4 text-center font-semibold text-sm rounded-lg transition-all duration-200 {{ $category === 'women' ? 'bg-pink-600 text-white shadow-md transform scale-105 active' : 'text-gray-600 hover:text-pink-600 hover:bg-pink-50' }}">
+                    <div class="flex items-center justify-center space-x-2">
+                        <svg class="tab-icon w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span>Women</span>
+                    </div>
                 </a>
             </nav>
         </div>
@@ -29,23 +39,43 @@
 
     <!-- Type Tabs -->
     <div class="mb-8">
-        <div class="border-b border-gray-200">
-            <nav class="-mb-px flex space-x-8">
+        <div class="tab-container rounded-xl p-1">
+            <nav class="grid grid-cols-2 md:grid-cols-4 gap-1">
                 <a href="{{ route('rankings.index', ['category' => $category, 'type' => 'team']) }}" 
-                   class="py-2 px-1 border-b-2 font-medium text-sm {{ $type === 'team' ? 'border-blue-500 text-blue-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300' }}">
-                    Team
+                   class="tab-item py-3 px-4 text-center font-semibold text-sm rounded-lg transition-all duration-200 {{ $type === 'team' ? 'bg-green-600 text-white shadow-md transform scale-105 active' : 'text-gray-600 hover:text-green-600 hover:bg-green-50' }}">
+                    <div class="flex flex-col items-center space-y-1">
+                        <svg class="tab-icon w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span>Team</span>
+                    </div>
                 </a>
                 <a href="{{ route('rankings.index', ['category' => $category, 'type' => 'batter']) }}" 
-                   class="py-2 px-1 border-b-2 font-medium text-sm {{ $type === 'batter' ? 'border-blue-500 text-blue-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300' }}">
-                    Batter
+                   class="tab-item py-3 px-4 text-center font-semibold text-sm rounded-lg transition-all duration-200 {{ $type === 'batter' ? 'bg-orange-600 text-white shadow-md transform scale-105 active' : 'text-gray-600 hover:text-orange-600 hover:bg-orange-50' }}">
+                    <div class="flex flex-col items-center space-y-1">
+                        <svg class="tab-icon w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span>Batter</span>
+                    </div>
                 </a>
                 <a href="{{ route('rankings.index', ['category' => $category, 'type' => 'bowler']) }}" 
-                   class="py-2 px-1 border-b-2 font-medium text-sm {{ $type === 'bowler' ? 'border-blue-500 text-blue-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300' }}">
-                    Bowler
+                   class="tab-item py-3 px-4 text-center font-semibold text-sm rounded-lg transition-all duration-200 {{ $type === 'bowler' ? 'bg-red-600 text-white shadow-md transform scale-105 active' : 'text-gray-600 hover:text-red-600 hover:bg-red-50' }}">
+                    <div class="flex flex-col items-center space-y-1">
+                        <svg class="tab-icon w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l2-2a1 1 0 00-1.414-1.414L11 7.586V3a1 1 0 10-2 0v4.586l-.293-.293z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span>Bowler</span>
+                    </div>
                 </a>
                 <a href="{{ route('rankings.index', ['category' => $category, 'type' => 'all_rounder']) }}" 
-                   class="py-2 px-1 border-b-2 font-medium text-sm {{ $type === 'all_rounder' ? 'border-blue-500 text-blue-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300' }}">
-                    All Rounder
+                   class="tab-item py-3 px-4 text-center font-semibold text-sm rounded-lg transition-all duration-200 {{ $type === 'all_rounder' ? 'bg-purple-600 text-white shadow-md transform scale-105 active' : 'text-gray-600 hover:text-purple-600 hover:bg-purple-50' }}">
+                    <div class="flex flex-col items-center space-y-1">
+                        <svg class="tab-icon w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span>All Rounder</span>
+                    </div>
                 </a>
             </nav>
         </div>

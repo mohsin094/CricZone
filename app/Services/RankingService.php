@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Models\TeamRanking;
 use App\Models\PlayerRanking;
+use App\Models\Image;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 
@@ -84,17 +85,21 @@ class RankingService
                 ->delete();
 
             foreach ($rankings['rank'] as $ranking) {
+                $teamName = $ranking['name'];
+                
+                // This will save the team image to the images table
+                $this->getTeamFlagUrl($teamName, $ranking['imageId'] ?? null);
+                
                 TeamRanking::create([
                     'category' => $category,
                     'format' => $format,
-                    'team_name' => $ranking['name'],
-                    'team_code' => $this->getTeamCode($ranking['name']),
-                    'team_flag_url' => $this->getTeamFlagUrl($ranking['name']),
+                    'team_name' => $teamName,
+                    'team_code' => $this->getTeamCode($teamName),
                     'rank' => $ranking['rank'],
                     'matches' => $ranking['matches'],
                     'rating' => $ranking['rating'] ?? null,
                     'points' => $ranking['points'] ?? null,
-                    'last_updated' =>  $ranking['lastUpdatedOn'],
+                    'last_updated' => $ranking['lastUpdatedOn'],
                 ]);
             }
 
@@ -161,7 +166,6 @@ class RankingService
                     'player_name' => $ranking['player_name'],
                     'team_name' => $ranking['team_name'],
                     'team_code' => $ranking['team_code'],
-                    'player_image_url' => $ranking['player_image_url'] ?? null,
                     'rank' => $ranking['rank'] ?? null,
                     'rating' => $ranking['rating'] ?? null,
                     'points' => $ranking['points'] ?? null,
@@ -291,11 +295,19 @@ class RankingService
         }
 
         foreach ($data['rank'] as $player) {
+            $playerName = $player['name'] ?? 'Unknown Player';
+            $countryName = $player['country'] ?? 'Unknown Team';
+            
+            // These calls will save images to the images table
+            $playerImageUrl = $this->getPlayerImageUrl($player['faceImageId'] ?? null, $playerName);
+            $teamFlagUrl = $this->getCountryFlagUrl($countryName, $player['countryId'] ?? null);
+            
             $rankings[] = [
-                'player_name' => $player['name'] ?? 'Unknown Player',
-                'team_name' => $player['country'] ?? 'Unknown Team',
-                'team_code' => $this->getTeamCode($player['country'] ?? ''),
-                'player_image_url' => $this->getPlayerImageUrl($player['faceImageId'] ?? null),
+                'player_name' => $playerName,
+                'team_name' => $countryName,
+                'team_code' => $this->getTeamCode($countryName),
+                'player_image_url' => $playerImageUrl,
+                'team_flag_url' => $teamFlagUrl,
                 'rank' => (int)($player['rank'] ?? 0),
                 'trend' => $player['trend'] ?? '',
                 'rating' => (int)($player['rating'] ?? 0),
@@ -399,25 +411,43 @@ class RankingService
     }
 
     /**
-     * Get team flag URL
+     * Get team flag URL using images table
      */
-    private function getTeamFlagUrl($teamName)
+    private function getTeamFlagUrl($teamName, $imageId = null)
     {
-        $teamCode = $this->getTeamCode($teamName);
-        return "https://flagcdn.com/16x12/{$teamCode}.png";
+        if ($imageId) {
+            return Image::getTeamImageUrl($imageId, $teamName);
+        }
+        
+        // Fallback to default flag if no imageId
+        return '/images/default-flag.png';
     }
 
     /**
-     * Get player image URL from faceImageId
+     * Get player image URL using images table
      */
-    private function getPlayerImageUrl($faceImageId)
+    private function getPlayerImageUrl($faceImageId, $playerName = 'Unknown Player')
     {
         if (!$faceImageId) {
             return '/images/default-player.png';
         }
 
-        return "https://cricbuzz-cricket2.p.rapidapi.com/img/v1/i1/c{$faceImageId}/i.jpg";
+        return Image::getPlayerImageUrl($faceImageId, $playerName);
     }
+
+    /**
+     * Get country flag URL using images table
+     */
+    private function getCountryFlagUrl($countryName, $countryId = null)
+    {
+        if ($countryId) {
+            return Image::getCountryImageUrl($countryId, $countryName);
+        }
+        
+        // Fallback to default flag if no countryId
+        return '/images/default-flag.png';
+    }
+
 
     /**
      * Get team rankings from database

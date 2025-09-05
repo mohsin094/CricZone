@@ -17,7 +17,6 @@ class TeamRanking extends Model
         'rating',
         'matches',
         'points',
-        'team_flag_url',
         'team_code',
         'last_updated',
     ];
@@ -52,16 +51,21 @@ class TeamRanking extends Model
     }
 
     /**
-     * Get team flag URL with fallback
+     * Get team flag URL from images table
      */
-    public function getTeamFlagUrlAttribute($value)
+    public function getTeamFlagUrlAttribute()
     {
-        if ($value) {
-            return $value;
+        // Try to find team image by name first
+        $image = \App\Models\Image::where('type', 'team')
+                                 ->where('name', $this->team_name)
+                                 ->first();
+        
+        if ($image && $image->image_data) {
+            return 'data:' . $image->mime_type . ';base64,' . $image->image_data;
         }
-
-        // Fallback to a default flag or generate one based on team code
-        return "https://flagcdn.com/16x12/{$this->team_code}.png";
+        
+        // Return null if no image found
+        return null;
     }
 
     /**
