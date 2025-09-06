@@ -48,11 +48,13 @@ class CricketDataService
             
             return $allMatches;
         }
+
         // Use cache to avoid multiple API calls
         $cacheKey = $this->cacheKey . '_' . ($dateStart ?? 'default') . '_' . ($dateEnd ?? 'default');
         
         return Cache::remember($cacheKey, $this->cacheDuration, function () use ($dateStart, $dateEnd) {
             try {
+
                 // Fetch all matches from API with comprehensive data
                 $matches = $this->cricketApi->getEvents($dateStart, $dateEnd);
                 
