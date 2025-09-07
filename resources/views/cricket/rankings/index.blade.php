@@ -6,10 +6,10 @@
 @section('content')
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Page Header -->
-    <div class="mb-8">
+    <!-- <div class="mb-8">
         <h1 class="text-3xl font-bold text-gray-900 mb-2">ICC Rankings</h1>
         <p class="text-gray-600">Latest cricket rankings for teams and players across all formats</p>
-    </div>
+    </div> -->
 
     <!-- Category Tabs -->
     <div class="mb-8">

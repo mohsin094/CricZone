@@ -303,6 +303,9 @@
                             <a href="{{ route('rankings.index') }}" class="text-white hover:text-green-200 px-1 sm:px-2 lg:px-3 py-2 rounded-md text-xs sm:text-sm font-medium whitespace-nowrap flex-shrink-0 {{ request()->routeIs('rankings*') ? 'bg-green-700' : '' }}">
                                 Rankings
                             </a>
+                            <a href="{{ route('cricket.news') }}" class="text-white hover:text-green-200 px-1 sm:px-2 lg:px-3 py-2 rounded-md text-xs sm:text-sm font-medium whitespace-nowrap flex-shrink-0 {{ request()->routeIs('cricket.news*') ? 'bg-green-700' : '' }}">
+                                News
+                            </a>
                         </div>
                     </div>
                     
@@ -352,6 +355,7 @@
                         <ul class="space-y-2 text-sm text-gray-300">
                             <li><a href="{{ route('cricket.index') }}" class="hover:text-white">Home</a></li>
                             <li><a href="{{ route('cricket.fixtures') }}" class="hover:text-white">Fixtures</a></li>
+                            <li><a href="{{ route('cricket.news') }}" class="hover:text-white">News</a></li>
                         </ul>
                     </div>
                     
