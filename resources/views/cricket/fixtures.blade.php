@@ -121,10 +121,10 @@
 
 
     <!-- Header -->
-    <div class="text-center mb-3 sm:mb-6">
-        <!-- <h1 class="text-xl sm:text-3xl font-bold text-gray-900 mb-1 sm:mb-3">📅 Fixtures</h1> -->
+    <!-- <div class="text-center mb-3 sm:mb-6">
+        <h1 class="text-xl sm:text-3xl font-bold text-gray-900 mb-1 sm:mb-3">📅 Fixtures</h1>
         <p class="text-xs sm:text-lg text-gray-600">Upcoming matches & schedules</p>
-    </div>
+    </div> -->
 
     <!-- Search Filter -->
     <div class="mb-4 sm:mb-6">
@@ -208,12 +208,39 @@
                         <!-- Hidden field to hold actual selected value -->
                         <input type="hidden" name="team" id="teamFilter" value="{{ request('team') }}">
                 </div>
+                
+                <!-- Format Filter -->
+                <div class="relative">
+                    <div class="relative">
+                        <input type="text" id="formatSearch" placeholder="🏏 Search Formats..."
+                            class="w-full px-2 sm:px-3 py-1.5 text-xs sm:text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 pr-8"
+                            autocomplete="off">
+                    </div>
+
+                    <div id="formatDropdown"
+                        class="absolute z-20 mt-1 w-full bg-white border border-gray-200 rounded-md shadow-lg max-h-48 overflow-y-auto custom-scrollbar hidden">
+                        <div class="format-option px-3 py-2 text-sm text-gray-700 cursor-pointer hover:bg-green-100" data-value="">
+                            🏏 All Formats
+                        </div>
+                        @if(isset($formats) && is_array($formats))
+                            @foreach($formats as $format)
+                                <div class="format-option px-3 py-2 text-sm text-gray-700 cursor-pointer hover:bg-green-100"
+                                    data-value="{{ $format }}">
+                                    🏏 {{ $format }}
+                                </div>
+                            @endforeach
+                        @endif
+                    </div>
+
+                    <!-- Hidden field to hold actual selected value -->
+                    <input type="hidden" name="match_type" id="formatFilter" value="{{ request('match_type') }}">
+                </div>
                         
                         </div>
                         
                 <!-- Search Status -->
                 <div id="searchStatus" class="text-xs text-gray-600 mt-2">
-                    @if(request('search') || request('league') || request('team'))
+                    @if(request('search') || request('league') || request('team') || request('match_type'))
                     <div class="bg-blue-50 border border-blue-200 rounded p-2">
                         <p class="text-blue-800">
                             🔍 Search Results: {{ isset($totalMatches) ? $totalMatches : 0 }} matches found
@@ -226,6 +253,9 @@
                             @if(request('team'))
                             featuring {{ request('team') }}
                             @endif
+                            @if(request('match_type'))
+                            in {{ request('match_type') }} format
+                            @endif
                         </p>
                         <a href="{{ route('cricket.fixtures') }}" class="text-blue-600 hover:text-blue-800 text-xs underline">Clear all filters</a>
                         </div>
@@ -234,12 +264,14 @@
                     
                 <!-- Filter Status -->
                 <div class="mt-2 text-center">
-                    @if(request('league') || request('team'))
+                    @if(request('league') || request('team') || request('match_type'))
                     <div class="text-xs text-green-600">
                         🔍 Active Filters:
                         @if(request('league')) League: {{ request('league') }} @endif
-                        @if(request('league') && request('team')) | @endif
+                        @if(request('league') && (request('team') || request('match_type'))) | @endif
                         @if(request('team')) Team: {{ request('team') }} @endif
+                        @if(request('team') && request('match_type')) | @endif
+                        @if(request('match_type')) Format: {{ request('match_type') }} @endif
                     </div>
                     @endif
                 </div>
@@ -329,9 +361,6 @@
             <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                 <a href="{{ route('cricket.index') }}" class="bg-green-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-md hover:bg-green-700 transition-colors text-sm sm:text-base">
                     🏠 Back to Home
-                </a>
-                <a href="{{ route('cricket.live-scores') }}" class="bg-red-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-md hover:bg-red-700 transition-colors text-sm sm:text-base">
-                    <span class="blink-dot"></span> Check Live Scores
                 </a>
             </div>
     </div>
@@ -445,14 +474,18 @@
 
         const leagueSearch = document.getElementById('leagueSearch');
         const teamSearch = document.getElementById('teamSearch');
+        const formatSearch = document.getElementById('formatSearch');
         const leagueDropdown = document.getElementById('leagueDropdown');
         const teamDropdown = document.getElementById('teamDropdown');
+        const formatDropdown = document.getElementById('formatDropdown');
         const leagueFilter = document.getElementById('leagueFilter');
         const teamFilter = document.getElementById('teamFilter');
+        const formatFilter = document.getElementById('formatFilter');
 
         // Toggle dropdowns on focus
         leagueSearch.addEventListener('focus', () => leagueDropdown.classList.remove('hidden'));
         teamSearch.addEventListener('focus', () => teamDropdown.classList.remove('hidden'));
+        formatSearch.addEventListener('focus', () => formatDropdown.classList.remove('hidden'));
 
         // Filter league options
         leagueSearch.addEventListener('input', function() {
@@ -466,6 +499,14 @@
         teamSearch.addEventListener('input', function() {
             const term = this.value.toLowerCase();
             teamDropdown.querySelectorAll('.team-option').forEach(option => {
+                option.style.display = option.textContent.toLowerCase().includes(term) ? 'block' : 'none';
+            });
+        });
+
+        // Filter format options
+        formatSearch.addEventListener('input', function() {
+            const term = this.value.toLowerCase();
+            formatDropdown.querySelectorAll('.format-option').forEach(option => {
                 option.style.display = option.textContent.toLowerCase().includes(term) ? 'block' : 'none';
             });
         });
@@ -490,6 +531,16 @@
             searchForm.submit();
         });
 
+        // Select format
+        formatDropdown.addEventListener('click', function(e) {
+            const option = e.target.closest('.format-option');
+            if (!option) return;
+            formatSearch.value = option.textContent.trim();
+            formatFilter.value = option.dataset.value;
+            formatDropdown.classList.add('hidden');
+            searchForm.submit();
+        });
+
                  // Close dropdowns on outside click
          document.addEventListener('click', function(e) {
              if (!leagueSearch.contains(e.target) && !leagueDropdown.contains(e.target)) {
@@ -497,6 +548,9 @@
              }
              if (!teamSearch.contains(e.target) && !teamDropdown.contains(e.target)) {
                  teamDropdown.classList.add('hidden');
+             }
+             if (!formatSearch.contains(e.target) && !formatDropdown.contains(e.target)) {
+                 formatDropdown.classList.add('hidden');
              }
          });
          

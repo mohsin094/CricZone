@@ -16,7 +16,7 @@ class CricketApiService
     {
         $this->apiKey = config('services.cricbuzz.api_key');
         $this->baseUrl = 'https://cricbuzz-cricket.p.rapidapi.com';
-        $this->cacheTtl = 300; // 5 minutes cache for API data
+        $this->cacheTtl = 3000; // 5 minutes cache for API data
         
         // Log API configuration for debugging
         Log::info('Cricbuzz API Service Initialized', [

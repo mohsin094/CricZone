@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CricketController;
 use App\Http\Controllers\RankingController;
+use App\Http\Controllers\NewsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +36,11 @@ Route::prefix('cricket')->name('cricket.')->group(function () {
     Route::post('/refresh', [CricketController::class, 'refreshData'])->name('refresh');
     Route::get('/mock/enable', [CricketController::class, 'enableMock'])->name('mock-enable');
     Route::get('/mock/disable', [CricketController::class, 'disableMock'])->name('mock-disable');
+    
+    // News Routes
+    Route::get('/news', [NewsController::class, 'index'])->name('news');
+    Route::get('/news/latest', [NewsController::class, 'getLatest'])->name('news.latest');
+    Route::get('/news/search', [NewsController::class, 'search'])->name('news.search');
 });
 
 // Ranking Routes

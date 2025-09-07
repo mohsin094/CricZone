@@ -294,20 +294,17 @@
                             <a href="{{ route('cricket.index') }}" class="text-white hover:text-green-200 px-1 sm:px-2 lg:px-3 py-2 rounded-md text-xs sm:text-sm font-medium whitespace-nowrap flex-shrink-0 {{ request()->routeIs('cricket.index') ? 'bg-green-700' : '' }}">
                                 Home
                             </a>
-                            <a href="{{ route('cricket.live-scores') }}" class="text-white hover:text-green-200 px-1 sm:px-2 lg:px-3 py-2 rounded-md text-xs sm:text-sm font-medium whitespace-nowrap flex-shrink-0 {{ request()->routeIs('cricket.live-scores') ? 'bg-green-700' : '' }}">
-                                Live Scores
-                            </a>
                             <a href="{{ route('cricket.fixtures') }}" class="text-white hover:text-green-200 px-1 sm:px-2 lg:px-3 py-2 rounded-md text-xs sm:text-sm font-medium whitespace-nowrap flex-shrink-0 {{ request()->routeIs('cricket.fixtures') ? 'bg-green-700' : '' }}">
                                 Fixtures
-                            </a>
-                            <a href="{{ route('cricket.results') }}" class="text-white hover:text-green-200 px-1 sm:px-2 lg:px-3 py-2 rounded-md text-xs sm:text-sm font-medium whitespace-nowrap flex-shrink-0 {{ request()->routeIs('cricket.results') ? 'bg-green-700' : '' }}">
-                                Results
                             </a>
                             <a href="{{ route('cricket.teams') }}" class="text-white hover:text-green-200 px-1 sm:px-2 lg:px-3 py-2 rounded-md text-xs sm:text-sm font-medium whitespace-nowrap flex-shrink-0 {{ request()->routeIs('cricket.teams*') ? 'bg-green-700' : '' }}">
                                 Teams
                             </a>
                             <a href="{{ route('rankings.index') }}" class="text-white hover:text-green-200 px-1 sm:px-2 lg:px-3 py-2 rounded-md text-xs sm:text-sm font-medium whitespace-nowrap flex-shrink-0 {{ request()->routeIs('rankings*') ? 'bg-green-700' : '' }}">
                                 Rankings
+                            </a>
+                            <a href="{{ route('cricket.news') }}" class="text-white hover:text-green-200 px-1 sm:px-2 lg:px-3 py-2 rounded-md text-xs sm:text-sm font-medium whitespace-nowrap flex-shrink-0 {{ request()->routeIs('cricket.news*') ? 'bg-green-700' : '' }}">
+                                News
                             </a>
                         </div>
                     </div>
@@ -357,9 +354,8 @@
                         <h4 class="text-md font-semibold mb-4">Quick Links</h4>
                         <ul class="space-y-2 text-sm text-gray-300">
                             <li><a href="{{ route('cricket.index') }}" class="hover:text-white">Home</a></li>
-                            <li><a href="{{ route('cricket.live-scores') }}" class="hover:text-white">Live Scores</a></li>
                             <li><a href="{{ route('cricket.fixtures') }}" class="hover:text-white">Fixtures</a></li>
-                            <li><a href="{{ route('cricket.results') }}" class="hover:text-white">Results</a></li>
+                            <li><a href="{{ route('cricket.news') }}" class="hover:text-white">News</a></li>
                         </ul>
                     </div>
                     
@@ -408,7 +404,7 @@
         });
 
         // Auto-refresh live scores every 30 seconds
-        @if(request()->routeIs('cricket.live-scores') || request()->routeIs('cricket.index'))
+        @if(request()->routeIs('cricket.index') || request()->routeIs('cricket.index'))
         setInterval(function() {
             // You can implement AJAX refresh here
             console.log('Auto-refresh triggered');

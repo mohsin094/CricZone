@@ -59,10 +59,10 @@
 
 
     <!-- Header -->
-    <div class="text-center mb-3 sm:mb-6">
-        <!-- <h1 class="text-xl sm:text-3xl font-bold text-gray-900 mb-1 sm:mb-3">🏏 Welcome to CricZone.pk</h1> -->
+    <!-- <div class="text-center mb-3 sm:mb-6">
+        <h1 class="text-xl sm:text-3xl font-bold text-gray-900 mb-1 sm:mb-3">🏏 Welcome to CricZone.pk</h1>
         <p class="text-xs sm:text-lg text-gray-600">All cricket in one zone - Live scores, updates, and more!</p>
-    </div>
+    </div> -->
 
         <!-- Search Filter -->
     <div class="mb-4 sm:mb-6">
