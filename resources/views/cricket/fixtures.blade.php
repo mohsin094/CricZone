@@ -115,6 +115,64 @@
         from { opacity: 1; }
         to { opacity: 0; }
     }
+    
+    /* Mobile match card styling for fixtures */
+    .mobile-match-card {
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        border: 1px solid #e5e7eb;
+        margin-bottom: 8px;
+        overflow: hidden;
+    }
+    
+    .series-group {
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        border: 1px solid #e5e7eb;
+        margin-bottom: 8px;
+        overflow: hidden;
+    }
+    
+    .series-header {
+        background: #f9fafb;
+        padding: 12px 16px;
+        border-bottom: 1px solid #e5e7eb;
+        cursor: pointer;
+        transition: background-color 0.2s;
+    }
+    
+    .series-header:hover {
+        background: #f3f4f6;
+    }
+    
+    .series-matches {
+        padding: 8px;
+    }
+    
+    .series-arrow {
+        transition: transform 0.2s;
+    }
+    
+    /* Mobile responsive adjustments */
+    @media (max-width: 1024px) {
+        .mobile-match-card {
+            margin-bottom: 4px;
+        }
+        
+        .series-group {
+            margin-bottom: 4px;
+        }
+        
+        .series-header {
+            padding: 8px 12px;
+        }
+        
+        .series-matches {
+            padding: 4px;
+        }
+    }
 </style>
 
 <div class="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 pt-4">
@@ -131,25 +189,6 @@
         <div class="bg-white rounded-lg shadow-md border border-gray-200 p-3 sm:p-4">
             <form method="GET" action="{{ route('cricket.fixtures') }}" id="searchForm">
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-                    <!-- Search Bar -->
-                    <div class="relative">
-                        <div class="relative">
-                            <input type="text" name="search" id="searchInput" placeholder="🔍 Search teams, leagues, venues..."
-                                value="{{ request('search') }}"
-                                class="w-full px-2 sm:px-3 py-1.5 text-xs sm:text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 pr-8">
-                            
-                            <!-- Search Loading Indicator -->
-                            
-                        </div>
-                        
-                        @if(request('search'))
-                        <button type="button" id="clearSearch" class="absolute inset-y-0 right-0 flex items-center pr-2 text-gray-400 hover:text-gray-600" style="right: 2rem;">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                            </svg>
-                        </button>
-                        @endif
-                </div>
                 
                 <!-- League Filter -->
                     <div class="relative">
@@ -295,16 +334,68 @@
         </div>
     </div>
 
-    <div class="grid grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 lg:gap-4">
+    <!-- Mobile Layout -->
+    <div class="lg:hidden">
         @if(isset($paginatedMatches) && is_array($paginatedMatches))
-        @foreach($paginatedMatches as $match)
-        @include('cricket.partials.match-card', ['match' => $match, 'type' => 'upcoming'])
-        @endforeach
+            <div class="space-y-1">
+                @foreach($paginatedMatches as $match)
+                    @php
+                        // Determine match type based on match data
+                        $homeScore = $match['event_home_final_result'] ?? null;
+                        $awayScore = $match['event_away_final_result'] ?? null;
+                        $isLive = !empty($match['event_status']) && strpos(strtolower($match['event_status']), 'live') !== false;
+                        $isFinished = $homeScore && $awayScore && 
+                                    $homeScore !== '0/0' && $awayScore !== '0/0' && 
+                                    !$isLive;
+                        $isUpcoming = !$homeScore && !$awayScore && !$isLive;
+                        
+                        $matchType = 'upcoming';
+                        if ($isLive) {
+                            $matchType = 'live';
+                        } elseif ($isFinished) {
+                            $matchType = 'finished';
+                        }
+                    @endphp
+                    @include('cricket.partials.mobile-match-card', ['match' => $match, 'type' => $matchType])
+                @endforeach
+            </div>
         @else
-        <div class="col-span-2 lg:col-span-3 text-center py-8">
-            <p class="text-gray-500">No matches available for the current page.</p>
+            <div class="text-center py-8">
+                <p class="text-gray-500">No matches available for the current page.</p>
+            </div>
+        @endif
+    </div>
+
+    <!-- Desktop Layout - Original Grid -->
+    <div class="hidden lg:block">
+        <div class="grid grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 lg:gap-4">
+            @if(isset($paginatedMatches) && is_array($paginatedMatches))
+                @foreach($paginatedMatches as $match)
+                    @php
+                        // Determine match type based on match data
+                        $homeScore = $match['event_home_final_result'] ?? null;
+                        $awayScore = $match['event_away_final_result'] ?? null;
+                        $isLive = !empty($match['event_status']) && strpos(strtolower($match['event_status']), 'live') !== false;
+                        $isFinished = $homeScore && $awayScore && 
+                                    $homeScore !== '0/0' && $awayScore !== '0/0' && 
+                                    !$isLive;
+                        $isUpcoming = !$homeScore && !$awayScore && !$isLive;
+                        
+                        $matchType = 'upcoming';
+                        if ($isLive) {
+                            $matchType = 'live';
+                        } elseif ($isFinished) {
+                            $matchType = 'finished';
+                        }
+                    @endphp
+                    @include('cricket.partials.match-card', ['match' => $match, 'type' => $matchType])
+                @endforeach
+            @else
+                <div class="col-span-2 lg:col-span-3 text-center py-8">
+                    <p class="text-gray-500">No matches available for the current page.</p>
+                </div>
+            @endif
         </div>
-                @endif
     </div>
     </div> <!-- End fixturesContent -->
  
@@ -651,6 +742,39 @@
          }
      });
 
+        // Individual series toggle functionality for fixtures
+        window.toggleSeries = function(seriesName) {
+            try {
+                const matchesDiv = document.querySelector('#matches-' + seriesName);
+                const arrow = document.querySelector('#arrow-' + seriesName);
+                
+                if (!matchesDiv) {
+                    console.warn('Matches div not found for series:', seriesName);
+                    return;
+                }
+                
+                if (!arrow) {
+                    console.warn('Arrow element not found for series:', seriesName);
+                    return;
+                }
+                
+                const isHidden = matchesDiv.style.display === 'none' || matchesDiv.style.display === '';
+                
+                if (isHidden) {
+                    matchesDiv.style.display = 'block';
+                    if (arrow.style) {
+                        arrow.style.transform = 'rotate(0deg)';
+                    }
+                } else {
+                    matchesDiv.style.display = 'none';
+                    if (arrow.style) {
+                        arrow.style.transform = 'rotate(-90deg)';
+                    }
+                }
+            } catch (error) {
+                console.error('Error in toggleSeries:', error);
+            }
+        };
 
 </script>
 @endsection

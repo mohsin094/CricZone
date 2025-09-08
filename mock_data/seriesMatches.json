@@ -1,0 +1,338 @@
+{
+  "matchDetails": [
+    {
+      "matchDetailsMap": {
+        "key": "Thu, 19 Sep 2024 - Mon, 23 Sep 2024",
+        "match": [
+          {
+            "matchInfo": {
+              "matchId": 100220,
+              "seriesId": 8393,
+              "seriesName": "Bangladesh tour of India, 2024",
+              "matchDesc": "1st Test",
+              "matchFormat": "TEST",
+              "startDate": "1726718400000",
+              "endDate": "1727064000000",
+              "state": "complete",
+              "status": "India won by 280 runs",
+              "team1": {
+                "teamId": 2,
+                "teamName": "INDIA",
+                "teamSName": "IND",
+                "imageId": 719031
+              },
+              "team2": {
+                "teamId": 6,
+                "teamName": "BANGLADESH",
+                "teamSName": "BAN",
+                "imageId": 172120
+              },
+              "venueInfo": {
+                "ground": "MA Chidambaram Stadium",
+                "city": "Chennai",
+                "timezone": "+05:30"
+              },
+              "currBatTeamId": 2,
+              "isTimeAnnounced": true
+            },
+            "matchScore": {
+              "team1Score": {
+                "inngs1": {
+                  "inningsId": 1,
+                  "runs": 376,
+                  "wickets": 10,
+                  "overs": 91.2
+                },
+                "inngs2": {
+                  "inningsId": 3,
+                  "runs": 287,
+                  "wickets": 4,
+                  "overs": 64,
+                  "isDeclared": true
+                }
+              },
+              "team2Score": {
+                "inngs1": {
+                  "inningsId": 2,
+                  "runs": 149,
+                  "wickets": 10,
+                  "overs": 47.1
+                },
+                "inngs2": {
+                  "inningsId": 4,
+                  "runs": 234,
+                  "wickets": 10,
+                  "overs": 62.1
+                }
+              }
+            }
+          }
+        ],
+        "seriesId": 8393
+      }
+    },
+    {
+      "adDetail": {
+        "name": "native_news_index_random_1",
+        "layout": "native_large",
+        "position": 1
+      }
+    },
+    {
+      "matchDetailsMap": {
+        "key": "Fri, 27 Sep 2024 - Tue, 01 Oct 2024",
+        "match": [
+          {
+            "matchInfo": {
+              "matchId": 100229,
+              "seriesId": 8393,
+              "seriesName": "Bangladesh tour of India, 2024",
+              "matchDesc": "2nd Test",
+              "matchFormat": "TEST",
+              "startDate": "1727409600000",
+              "endDate": "1727755200000",
+              "state": "complete",
+              "status": "India won by 7 wkts",
+              "team1": {
+                "teamId": 2,
+                "teamName": "INDIA",
+                "teamSName": "IND",
+                "imageId": 719031
+              },
+              "team2": {
+                "teamId": 6,
+                "teamName": "BANGLADESH",
+                "teamSName": "BAN",
+                "imageId": 172120
+              },
+              "venueInfo": {
+                "ground": "Green Park",
+                "city": "Kanpur",
+                "timezone": "+05:30"
+              },
+              "currBatTeamId": 2,
+              "isTimeAnnounced": true
+            },
+            "matchScore": {
+              "team1Score": {
+                "inngs1": {
+                  "inningsId": 2,
+                  "runs": 285,
+                  "wickets": 9,
+                  "overs": 34.4,
+                  "isDeclared": true
+                },
+                "inngs2": {
+                  "inningsId": 4,
+                  "runs": 98,
+                  "wickets": 3,
+                  "overs": 17.2
+                }
+              },
+              "team2Score": {
+                "inngs1": {
+                  "inningsId": 1,
+                  "runs": 233,
+                  "wickets": 10,
+                  "overs": 74.2
+                },
+                "inngs2": {
+                  "inningsId": 3,
+                  "runs": 146,
+                  "wickets": 10,
+                  "overs": 47
+                }
+              }
+            }
+          }
+        ],
+        "seriesId": 8393
+      }
+    },
+    {
+      "matchDetailsMap": {
+        "key": "Sun, 06 Oct 2024",
+        "match": [
+          {
+            "matchInfo": {
+              "matchId": 100238,
+              "seriesId": 8393,
+              "seriesName": "Bangladesh tour of India, 2024",
+              "matchDesc": "1st T20I",
+              "matchFormat": "T20",
+              "startDate": "1728221400000",
+              "endDate": "1728221400000",
+              "state": "complete",
+              "status": "India won by 7 wkts",
+              "team1": {
+                "teamId": 2,
+                "teamName": "INDIA",
+                "teamSName": "IND",
+                "imageId": 719031
+              },
+              "team2": {
+                "teamId": 6,
+                "teamName": "BANGLADESH",
+                "teamSName": "BAN",
+                "imageId": 172120
+              },
+              "venueInfo": {
+                "ground": "Shrimant Madhavrao Scindia Cricket Stadium",
+                "city": "Gwalior",
+                "timezone": "+05:30"
+              },
+              "currBatTeamId": 2,
+              "isTimeAnnounced": true
+            },
+            "matchScore": {
+              "team1Score": {
+                "inngs1": {
+                  "inningsId": 2,
+                  "runs": 132,
+                  "wickets": 3,
+                  "overs": 11.5
+                }
+              },
+              "team2Score": {
+                "inngs1": {
+                  "inningsId": 1,
+                  "runs": 127,
+                  "wickets": 10,
+                  "overs": 19.5
+                }
+              }
+            }
+          }
+        ],
+        "seriesId": 8393
+      }
+    },
+    {
+      "matchDetailsMap": {
+        "key": "Wed, 09 Oct 2024",
+        "match": [
+          {
+            "matchInfo": {
+              "matchId": 100247,
+              "seriesId": 8393,
+              "seriesName": "Bangladesh tour of India, 2024",
+              "matchDesc": "2nd T20I",
+              "matchFormat": "T20",
+              "startDate": "1728480600000",
+              "endDate": "1728480600000",
+              "state": "complete",
+              "status": "India won by 86 runs",
+              "team1": {
+                "teamId": 2,
+                "teamName": "INDIA",
+                "teamSName": "IND",
+                "imageId": 719031
+              },
+              "team2": {
+                "teamId": 6,
+                "teamName": "BANGLADESH",
+                "teamSName": "BAN",
+                "imageId": 172120
+              },
+              "venueInfo": {
+                "ground": "Arun Jaitley Stadium",
+                "city": "Delhi",
+                "timezone": "+05:30"
+              },
+              "currBatTeamId": 2,
+              "isTimeAnnounced": true
+            },
+            "matchScore": {
+              "team1Score": {
+                "inngs1": {
+                  "inningsId": 1,
+                  "runs": 221,
+                  "wickets": 9,
+                  "overs": 20
+                }
+              },
+              "team2Score": {
+                "inngs1": {
+                  "inningsId": 2,
+                  "runs": 135,
+                  "wickets": 9,
+                  "overs": 20
+                }
+              }
+            }
+          }
+        ],
+        "seriesId": 8393
+      }
+    },
+    {
+      "adDetail": {
+        "name": "native_news_index_random_2",
+        "layout": "native_large",
+        "position": 4
+      }
+    },
+    {
+      "matchDetailsMap": {
+        "key": "Sat, 12 Oct 2024",
+        "match": [
+          {
+            "matchInfo": {
+              "matchId": 100256,
+              "seriesId": 8393,
+              "seriesName": "Bangladesh tour of India, 2024",
+              "matchDesc": "3rd T20I",
+              "matchFormat": "T20",
+              "startDate": "1728739800000",
+              "endDate": "1728739800000",
+              "state": "complete",
+              "status": "India won by 133 runs",
+              "team1": {
+                "teamId": 2,
+                "teamName": "INDIA",
+                "teamSName": "IND",
+                "imageId": 719031
+              },
+              "team2": {
+                "teamId": 6,
+                "teamName": "BANGLADESH",
+                "teamSName": "BAN",
+                "imageId": 172120
+              },
+              "venueInfo": {
+                "ground": "Rajiv Gandhi International Stadium",
+                "city": "Hyderabad",
+                "timezone": "+05:30"
+              },
+              "currBatTeamId": 2,
+              "isTimeAnnounced": true
+            },
+            "matchScore": {
+              "team1Score": {
+                "inngs1": {
+                  "inningsId": 1,
+                  "runs": 297,
+                  "wickets": 6,
+                  "overs": 20
+                }
+              },
+              "team2Score": {
+                "inngs1": {
+                  "inningsId": 2,
+                  "runs": 164,
+                  "wickets": 7,
+                  "overs": 20
+                }
+              }
+            }
+          }
+        ],
+        "seriesId": 8393
+      }
+    }
+  ],
+  "appIndex": {
+    "seoTitle": "Bangladesh tour of India, 2024 live scores, schedule and results - Cricbuzz | Cricbuzz.com",
+    "webURL": "www.cricbuzz.com/cricket-series/"
+  }
+}

@@ -13,11 +13,13 @@ class RankingService
 {
     protected $apiKey;
     protected $baseUrl;
+    protected $apiHost;
 
     public function __construct()
     {
         $this->apiKey = config('services.cricbuzz.api_key');
-        $this->baseUrl = 'https://cricbuzz-cricket2.p.rapidapi.com';
+        $this->baseUrl = config('services.cricbuzz.base_url');
+        $this->apiHost = config('services.cricbuzz.api_host');
     }
 
     /**
@@ -206,7 +208,7 @@ class RankingService
             $response = Http::timeout(30)
                 ->withHeaders([
                     'x-rapidapi-key' => $this->apiKey,
-                    'x-rapidapi-host' => 'cricbuzz-cricket2.p.rapidapi.com'
+                    'x-rapidapi-host' => $this->apiHost
                 ])
                 ->get($this->baseUrl . $endpoint, $params);
             if ($response->successful()) {
@@ -252,7 +254,7 @@ class RankingService
             $response = Http::timeout(30)
                 ->withHeaders([
                     'x-rapidapi-key' => $this->apiKey,
-                    'x-rapidapi-host' => 'cricbuzz-cricket2.p.rapidapi.com'
+                    'x-rapidapi-host' => $this->apiHost
                 ])
                 ->get($this->baseUrl . $endpoint, $params);
 
