@@ -64,29 +64,6 @@ class CricketController extends Controller
             ]);
         }
     }
-    /**
-     * Get teams by league
-     */
-    public function getTeamsByLeague($leagueKey)
-    {
-        try {
-            $teams = $this->cricketApi->getTeamsByLeague($leagueKey);
-            return response()->json([
-                'success' => true,
-                'teams' => $teams
-            ]);
-        } catch (\Exception $e) {
-            Log::error('Error fetching teams by league', [
-                'league_key' => $leagueKey,
-                'error' => $e->getMessage()
-            ]);
-            
-            return response()->json([
-                'success' => false,
-                'message' => 'Error fetching teams: ' . $e->getMessage()
-            ]);
-        }
-    }
 
     public function liveScores(Request $request)
     {
@@ -447,69 +424,6 @@ class CricketController extends Controller
         return view('cricket.teams', compact('teams'));
     }
 
-    /**
-     * Sync teams from API to database
-     */
-    public function syncTeams()
-    {
-        try {
-            $apiTeams = $this->cricketApi->getTeams();
-            
-            if (empty($apiTeams)) {
-                return response()->json([
-                    'success' => false,
-                    'message' => 'No teams found in API response'
-                ]);
-            }
-            
-            $created = 0;
-            $updated = 0;
-            
-            foreach ($apiTeams as $apiTeam) {
-                $teamKey = $apiTeam['team_key'] ?? null;
-                $teamName = $apiTeam['team_name'] ?? '';
-                $teamLogo = $apiTeam['team_logo'] ?? null;
-                
-                if (!$teamKey || !$teamName) {
-                    continue;
-                }
-                
-                $team = Team::updateOrCreate(
-                    ['team_key' => $teamKey],
-                    [
-                        'team_name' => $teamName,
-                        'team_logo' => $teamLogo,
-                        'cached_at' => now()
-                    ]
-                );
-                
-                if ($team->wasRecentlyCreated) {
-                    $created++;
-                } else {
-                    $updated++;
-                }
-            }
-            
-            $message = "Created: {$created}, Updated: {$updated}";
-            
-            return response()->json([
-                'success' => true,
-                'message' => $message,
-                'created' => $created,
-                'updated' => $updated
-            ]);
-            
-        } catch (\Exception $e) {
-            Log::error('Error syncing teams', [
-                'error' => $e->getMessage()
-            ]);
-            
-            return response()->json([
-                'success' => false,
-                'message' => 'Error syncing teams: ' . $e->getMessage()
-            ]);
-        }
-    }
 
     public function search(Request $request)
     {

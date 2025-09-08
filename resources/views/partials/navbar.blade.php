@@ -20,9 +20,9 @@
                     <a href="{{ route('cricket.results') }}" class="text-white hover:text-green-200 px-1 sm:px-2 lg:px-3 py-2 rounded-md text-xs sm:text-sm font-medium whitespace-nowrap flex-shrink-0 {{ request()->routeIs('cricket.results') ? 'bg-green-700' : '' }}">
                         Results
                     </a>
-                    <a href="{{ route('cricket.teams') }}" class="text-white hover:text-green-200 px-1 sm:px-2 lg:px-3 py-2 rounded-md text-xs sm:text-sm font-medium whitespace-nowrap flex-shrink-0 {{ request()->routeIs('cricket.teams*') ? 'bg-green-700' : '' }}">
+                    <!-- <a href="{{ route('cricket.teams') }}" class="text-white hover:text-green-200 px-1 sm:px-2 lg:px-3 py-2 rounded-md text-xs sm:text-sm font-medium whitespace-nowrap flex-shrink-0 {{ request()->routeIs('cricket.teams*') ? 'bg-green-700' : '' }}">
                         Teams
-                    </a>
+                    </a> -->
                 </div>
             </div>
             
@@ -65,9 +65,9 @@
             <a href="{{ route('cricket.results') }}" class="text-white hover:text-green-200 block px-3 py-2 rounded-md text-base font-medium {{ request()->routeIs('cricket.results') ? 'bg-green-800' : '' }}">
                 Results
             </a>
-            <a href="{{ route('cricket.teams') }}" class="text-white hover:text-green-200 block px-3 py-2 rounded-md text-base font-medium {{ request()->routeIs('cricket.teams*') ? 'bg-green-800' : '' }}">
+            <!-- <a href="{{ route('cricket.teams') }}" class="text-white hover:text-green-200 block px-3 py-2 rounded-md text-base font-medium {{ request()->routeIs('cricket.teams*') ? 'bg-green-800' : '' }}">
                 Teams
-            </a>
+            </a> -->
             
             <!-- Mobile search -->
             <form action="{{ route('cricket.search') }}" method="GET" class="px-3 py-2">

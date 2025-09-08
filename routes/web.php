@@ -30,8 +30,6 @@ Route::prefix('cricket')->name('cricket.')->group(function () {
     Route::get('/results', [CricketController::class, 'results'])->name('results');
     Route::get('/teams', [CricketController::class, 'teams'])->name('teams');
     Route::get('/team/{teamKey}', [CricketController::class, 'teamDetail'])->name('team-detail');
-    Route::post('/sync-teams', [CricketController::class, 'syncTeams'])->name('sync-teams');
-    Route::get('/teams/league/{leagueKey}', [CricketController::class, 'getTeamsByLeague'])->name('teams-by-league');
     Route::get('/search', [CricketController::class, 'search'])->name('search');
     Route::post('/refresh', [CricketController::class, 'refreshData'])->name('refresh');
     Route::get('/mock/enable', [CricketController::class, 'enableMock'])->name('mock-enable');

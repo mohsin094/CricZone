@@ -5,322 +5,157 @@
 
 @section('content')
 
-<style>
-@keyframes blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0.3; }
-}
+    <style>
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0.3; }
+        }
 
-.blink-dot {
-    animation: blink 1.5s infinite;
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    background-color: #ef4444;
-        border-radius: 50%;
-    margin-right: 4px;
-}
+        .blink-dot {
+            animation: blink 1.5s infinite;
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: #ef4444;
+            border-radius: 50%;
+            margin-right: 4px;
+        }
 
-/* Mobile-first responsive design */
-@media (max-width: 1024px) {
-    .mobile-tab-container {
-        position: fixed;
-        top: 64px; /* Below the top navbar */
-        left: 0;
-        right: 0;
-        z-index: 40;
-        background: white;
-        border-bottom: 1px solid #e5e7eb;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        height: 48px; /* Reduced height */
-    }
-    
-    /* Mobile content padding adjustments */
-    @media (max-width: 1023px) {
-        body {
-            padding-top: 0; /* Let main handle padding */
-            padding-bottom: 64px; /* Height of bottom navbar */
+        /* Mobile tab styles */
+        .mobile-tab-container {
+            position: fixed;
+            top: 64px; /* Below the top navbar */
+            left: 0;
+            right: 0;
+            z-index: 40;
+            background: white;
+            border-bottom: 1px solid #e5e7eb;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            height: 48px;
         }
         
-        main {
-            padding-top: 112px; /* 64px for top navbar + 48px for tabs */
-            padding-bottom: 80px; /* Extra space for bottom navbar */
+        .mobile-tab-scroll {
+            height: 100%;
+            overflow-x: auto;
+            display: flex;
+            -webkit-overflow-scrolling: touch;
         }
-    }
-    
-    /* Desktop padding */
-    @media (min-width: 1024px) {
-        body {
+        
+        .mobile-tab-scroll nav {
+            display: flex;
+            width: 100%;
+            min-width: max-content;
+        }
+        
+        .mobile-tab-button {
+            flex: 1;
+            min-width: 90px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 12px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #6b7280;
+            border-bottom: 2px solid transparent;
+            white-space: nowrap;
+        }
+        
+        .mobile-tab-button.active {
+            color: #ef4444;
+            border-bottom-color: #ef4444;
+        }
+        
+        .mobile-content {
+            margin-top: 48px; /* Height of the tab bar */
             padding-top: 0;
-            padding-bottom: 0;
         }
-    }
-    
-    /* Ensure content doesn't go behind fixed tabs */
-    .mobile-content {
-        margin-top: 0;
-        padding-top: 0;
-    }
-    
-    .mobile-tab-scroll {
-        height: 48px; /* Reduced height for tab container */
-    }
-    
-    .mobile-tab-scroll nav {
-        height: 100%;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        width: 100%;
-    }
-    
-    .mobile-match-card {
-        background: white;
-        border-radius: 12px;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-        margin-bottom: 12px;
-        overflow: hidden;
-        transition: all 0.2s ease;
-    }
-    
-    .mobile-match-card:hover {
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        transform: translateY(-1px);
-    }
-    
-    .series-header {
-        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-        padding: 8px 12px;
-        border-bottom: 1px solid #e5e7eb;
-        font-weight: 600;
-        color: #374151;
-        font-size: 12px;
-        position: relative;
-        transition: background-color 0.2s ease;
-    }
-    
-    .series-header:hover {
-        background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
-    }
-    
-    .series-header::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 2px;
-        background: linear-gradient(90deg, #3b82f6, #1d4ed8);
-    }
-    
-    .series-arrow {
-        transition: transform 0.3s ease;
-    }
-    
-    .series-matches {
-        transition: all 0.3s ease;
-    }
-    
-    .match-item {
-        padding: 16px;
-        border-bottom: 1px solid #f3f4f6;
-    }
-    
-    .match-item:last-child {
-        border-bottom: none;
-    }
-    
-    .team-row {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 8px;
-    }
-    
-    .team-row:last-child {
-        margin-bottom: 0;
-    }
-    
-    .team-info {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-    }
-    
-    .team-flag {
-        width: 24px;
-        height: 24px;
-        border-radius: 50%;
-        object-fit: cover;
-    }
-    
-    .team-name {
-        font-weight: 500;
-        color: #111827;
-        font-size: 14px;
-    }
-    
-    .team-score {
-        font-weight: 600;
-        color: #111827;
-        font-size: 14px;
-    }
-    
-    .match-status {
-        text-align: right;
-        font-size: 12px;
-        color: #6b7280;
-    }
-    
-    .live-indicator {
-        color: #ef4444;
-        font-weight: 600;
-    }
-    
-    .venue-info {
-        font-size: 12px;
-        color: #6b7280;
-        margin-top: 4px;
-    }
-    
-    /* Enhanced mobile card styling */
-    .mobile-card-container {
-        padding: 0 12px 16px 12px;
-    }
-    
-    .mobile-card-container .space-y-3 > * + * {
-        margin-top: 8px;
-    }
-    
-    .mobile-card-container .space-y-2 > * + * {
-        margin-top: 6px;
-    }
-    
-    /* Mobile card hover effects */
-    .mobile-match-card:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    }
-    
-    /* Mobile tab improvements */
-    .mobile-tab-container {
-        backdrop-filter: blur(10px);
-        background: rgba(255, 255, 255, 0.95);
-    }
-    
-    /* Mobile content improvements */
-    .mobile-content {
-        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-        min-height: calc(100vh - 112px);
-        padding-top: 0;
-    }
-    
-    /* Reduce space between navbar and first card */
-    .mobile-card-container {
-        padding-top: 0;
-        padding-bottom: 4px;
-    }
-    
-    /* Reduce padding for all mobile tabs */
-    .mobile-content .px-4 {
-        padding-left: 6px;
-        padding-right: 6px;
-    }
-    
-    .mobile-content .py-3 {
-        padding-top: 1px;
-        padding-bottom: 1px;
-    }
-    
-    /* Remove extra spacing from tab headers */
-    .mobile-content .px-4.py-3 {
-        padding-top: 2px;
-        padding-bottom: 2px;
-    }
-    
-    /* Remove margin from first mobile card */
-    .mobile-card-container > *:first-child {
-        margin-top: 0;
-    }
-    
-    /* Reduce spacing in mobile tabs */
-    .mobile-content .space-y-1 > * + * {
-        margin-top: 0.125rem;
-    }
-    
-    /* Reduce padding in mobile match cards */
-    .mobile-match-card {
-        margin-bottom: 0.125rem;
-    }
-    
-    /* Remove extra spacing from mobile content */
-    .mobile-content {
-        padding-top: 0;
-    }
-    
-    /* Minimize spacing in mobile card containers */
-    .mobile-card-container {
-        margin-top: 0;
-        padding-top: 0;
-    }
-    
-    /* Live match special styling */
-    .live-match-card {
-        border-left: 4px solid #ef4444;
-        background: linear-gradient(135deg, #fef2f2 0%, #ffffff 100%);
-    }
-    
-    .live-match-card .series-header {
-        background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
-        color: #dc2626;
-    }
-    
-    /* Finished match special styling */
-    .finished-match-card {
-        border-left: 4px solid #10b981;
-    }
-    
-    /* Upcoming match special styling */
-    .upcoming-match-card {
-        border-left: 4px solid #3b82f6;
-    }
-    
-    .mobile-tab-button {
-        height: 48px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        white-space: nowrap;
-        font-size: 12px;
-        padding: 0 8px;
-    }
-    
-    /* Mobile pagination improvements */
-    .mobile-pagination {
-        background: #f9fafb;
-        border-top: 1px solid #e5e7eb;
-    }
-    
-    .mobile-pagination .pagination-button {
-        min-width: 44px;
-        height: 36px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 12px;
-    }
-    
-    .mobile-pagination .page-numbers {
-        gap: 2px;
-    }
-    
-    .mobile-pagination .page-number {
-        min-width: 32px;
-        height: 32px;
-        font-size: 11px;
-    }
-}
-</style>
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        /* Match card styles */
+        .mobile-match-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            overflow: hidden;
+        }
+        
+        .series-header {
+            background: #f8fafc;
+            padding: 10px 12px;
+            border-bottom: 1px solid #e5e7eb;
+            font-weight: 600;
+            color: #374151;
+            font-size: 12px;
+        }
+        
+        .match-item {
+            padding: 12px;
+            border-bottom: 1px solid #f3f4f6;
+        }
+        
+        .match-item:last-child {
+            border-bottom: none;
+        }
+        
+        .team-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 6px;
+        }
+        
+        .team-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .team-flag {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .team-name {
+            font-weight: 500;
+            color: #111827;
+            font-size: 14px;
+        }
+        
+        .team-score {
+            font-weight: 600;
+            color: #111827;
+            font-size: 14px;
+        }
+        
+        .match-status {
+            text-align: right;
+            font-size: 12px;
+            color: #6b7280;
+        }
+        
+        .live-indicator {
+            color: #ef4444;
+            font-weight: 600;
+        }
+        
+        .venue-info {
+            font-size: 12px;
+            color: #6b7280;
+            margin-top: 4px;
+        }
+    </style>
     <!-- Page Loading Overlay - Shows until content is fully loaded -->
     <div id="pageLoader" class="fixed inset-0 bg-gradient-to-br from-green-50 to-blue-50 z-50 flex items-center justify-center">
     <div class="text-center">
@@ -827,7 +662,7 @@
                             <div class="series-matches" id="matches-{{ $sanitizedDateName }}">
                                 @foreach($matches as $match)
                                     @include('cricket.partials.mobile-match-card', ['match' => $match, 'type' => 'finished'])
-                                @endforeach
+                            @endforeach
                             </div>
                         </div>
                     @endforeach
@@ -881,13 +716,13 @@
                                    class="pagination-button inline-flex items-center px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 hover:text-gray-700 transition-colors duration-200">
                                     Next
                                     <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                    </svg>
-                                </a>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
                             @else
                                 <div></div>
                             @endif
-                        </div>
+                    </div>
                     </div>
                     @endif
                 </div>
@@ -1360,11 +1195,7 @@
         <div class="mb-4 sm:mb-8">
             <div class="flex items-center justify-between mb-3 sm:mb-6">
                 <h2 class="text-xl sm:text-2xl font-bold text-gray-900">⏰ Upcoming Matches</h2>
-                <div class="flex items-center space-x-2">
-                    <div class="w-3 h-3 bg-purple-500 rounded-full"></div>
-                    <span class="text-sm text-gray-600">Next 7 days</span>
-                    <span class="text-sm text-gray-500">(Showing 15 of {{ $sortedUpcomingMatches->count() }} matches)</span>
-                </div>
+           
             </div>
             <div class="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
                 @foreach($currentPageUpcomingMatches as $match)
@@ -1458,18 +1289,13 @@
             <div class="mb-4 sm:mb-8">
                 <div class="flex items-center justify-between mb-3 sm:mb-6">
                     <h2 class="text-xl sm:text-2xl font-bold text-gray-900">🏆 Recent Completed Matches</h2>
-                    <div class="flex items-center space-x-2">
-                        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
-                        <span class="text-sm text-gray-600">Sorted by International teams first</span>
-                        <span class="text-sm text-gray-500">(Page {{ $currentPage }} of {{ $totalPages }} - {{ $currentPageRecentMatches->count() }} matches)</span>
                     </div>
-                </div>
                 
                 <div class="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6" id="recent-matches-container">
-                    @foreach($currentPageRecentMatches as $match)
-                        @include('cricket.partials.match-card', ['match' => $match, 'type' => 'finished'])
-                    @endforeach
-                </div>
+                @foreach($currentPageRecentMatches as $match)
+                    @include('cricket.partials.match-card', ['match' => $match, 'type' => 'finished'])
+                @endforeach
+            </div>
                 
                 <!-- Pagination Controls -->
                 @if($totalPages > 1)
@@ -1494,11 +1320,11 @@
                                class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 hover:text-gray-700 transition-colors duration-200">
                                 Next
                                 <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                </svg>
-                            </a>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
                         @endif
-                    </div>
+                </div>
                     
                     <!-- Page Numbers -->
                     <div class="flex items-center space-x-1">

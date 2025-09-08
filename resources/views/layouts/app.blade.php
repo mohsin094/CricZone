@@ -319,9 +319,9 @@
                         <a href="{{ route('cricket.fixtures') }}" class="text-white hover:text-green-200 px-3 py-2 rounded-md text-sm font-medium {{ request()->routeIs('cricket.fixtures') ? 'bg-green-700' : '' }}">
                             Fixtures
                         </a>
-                        <a href="{{ route('cricket.teams') }}" class="text-white hover:text-green-200 px-3 py-2 rounded-md text-sm font-medium {{ request()->routeIs('cricket.teams*') ? 'bg-green-700' : '' }}">
+                        <!-- <a href="{{ route('cricket.teams') }}" class="text-white hover:text-green-200 px-3 py-2 rounded-md text-sm font-medium {{ request()->routeIs('cricket.teams*') ? 'bg-green-700' : '' }}">
                             Teams
-                        </a>
+                        </a> -->
                         <a href="{{ route('rankings.index') }}" class="text-white hover:text-green-200 px-3 py-2 rounded-md text-sm font-medium {{ request()->routeIs('rankings*') ? 'bg-green-700' : '' }}">
                             Rankings
                         </a>
@@ -344,9 +344,9 @@
                         <a href="{{ route('cricket.fixtures') }}" class="text-white hover:text-blue-200 px-2 sm:px-3 py-2 rounded-md text-xs sm:text-sm font-medium whitespace-nowrap flex-1 text-center {{ request()->routeIs('cricket.fixtures') ? 'bg-blue-700' : '' }}">
                             Fixtures
                         </a>
-                        <a href="{{ route('cricket.teams') }}" class="text-white hover:text-blue-200 px-2 sm:px-3 py-2 rounded-md text-xs sm:text-sm font-medium whitespace-nowrap flex-1 text-center {{ request()->routeIs('cricket.teams*') ? 'bg-blue-700' : '' }}">
+                        <!-- <a href="{{ route('cricket.teams') }}" class="text-white hover:text-blue-200 px-2 sm:px-3 py-2 rounded-md text-xs sm:text-sm font-medium whitespace-nowrap flex-1 text-center {{ request()->routeIs('cricket.teams*') ? 'bg-blue-700' : '' }}">
                             Teams
-                        </a>
+                        </a> -->
                         <a href="{{ route('rankings.index') }}" class="text-white hover:text-blue-200 px-2 sm:px-3 py-2 rounded-md text-xs sm:text-sm font-medium whitespace-nowrap flex-1 text-center {{ request()->routeIs('rankings*') ? 'bg-blue-700' : '' }}">
                             Rankings
                         </a>
@@ -403,7 +403,7 @@
                         <div>
                             <h4 class="text-md font-semibold mb-4">More</h4>
                             <ul class="space-y-2 text-sm text-gray-300">
-                                <li><a href="{{ route('cricket.teams') }}" class="hover:text-white">Teams</a></li>
+                                <!-- <li><a href="{{ route('cricket.teams') }}" class="hover:text-white">Teams</a></li> -->
                                 <li><a href="{{ route('rankings.index') }}" class="hover:text-white">Rankings</a></li>
                                 <li><a href="{{ route('cricket.search') }}" class="hover:text-white">Search</a></li>
                             </ul>
