@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Services\CricketApiService;
+use App\Services\NewsService;
 use App\Models\Team;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
@@ -12,144 +13,15 @@ use Illuminate\Support\Facades\Http; // Added for direct API testing
 class CricketController extends Controller
 {
     protected $cricketApi;
+    protected $newsService;
 
-    public function __construct(CricketApiService $cricketApi)
+    public function __construct(CricketApiService $cricketApi, NewsService $newsService)
     {
         $this->cricketApi = $cricketApi;
+        $this->newsService = $newsService;
     }
     
-    /**
-     * Get teams by league
-     */
-    public function getTeamsByLeague($leagueKey)
-    {
-        try {
-            $teams = $this->cricketApi->getTeamsByLeague($leagueKey);
-            return response()->json([
-                'success' => true,
-                'teams' => $teams
-            ]);
-        } catch (\Exception $e) {
-            Log::error('Error fetching teams by league', [
-                'league_key' => $leagueKey,
-                'error' => $e->getMessage()
-            ]);
-            
-            return response()->json([
-                'success' => false,
-                'message' => 'Error fetching teams: ' . $e->getMessage()
-            ]);
-        }
-    }
-    
-    /**
-     * Get team details with matches
-     */
-    public function teamDetail($teamKey)
-    {
-        try {
-            // Get team info
-            $team = Team::where('team_key', $teamKey)->first();
-            
-            if (!$team) {
-                abort(404, 'Team not found');
-            }
-            
-            // Get team matches using the new CricketDataService
-            $cricketData = app(\App\Services\CricketDataService::class);
-            $allMatches = $cricketData->getAllMatches();
-            
-            // Filter matches for this team using team names (same as fixtures page)
-            $teamMatches = collect($allMatches)->filter(function($match) use ($team) {
-                $homeTeamName = $match['event_home_team'] ?? '';
-                $awayTeamName = $match['event_away_team'] ?? '';
-                $teamName = $team->team_name;
-                
-                // Try exact match first, then partial match
-                $isHomeMatch = ($homeTeamName === $teamName) || (stripos($homeTeamName, $teamName) !== false);
-                $isAwayMatch = ($awayTeamName === $teamName) || (stripos($awayTeamName, $teamName) !== false);
-                
-                return $isHomeMatch || $isAwayMatch;
-            })->values();
-            
-            // Log for debugging
-            Log::info('Team detail matches found', [
-                'team_key' => $teamKey,
-                'team_name' => $team->team_name,
-                'total_matches' => count($allMatches),
-                'team_matches' => count($teamMatches),
-                'sample_match' => $allMatches[0] ?? 'No matches',
-                'sample_team_names' => [
-                    'home' => $allMatches[0]['event_home_team'] ?? 'Not found',
-                    'away' => $allMatches[0]['event_away_team'] ?? 'Not found'
-                ] ?? 'No matches'
-            ]);
-            
-            // Additional debugging: Check first few matches for team names
-            if (count($allMatches) > 0) {
-                $firstFewMatches = array_slice($allMatches, 0, 5);
-                $teamNamesInMatches = [];
-                foreach ($firstFewMatches as $index => $match) {
-                    $teamNamesInMatches[] = [
-                        'match_' . $index => [
-                            'home' => $match['event_home_team'] ?? 'Not found',
-                            'away' => $match['event_away_team'] ?? 'Not found',
-                            'status' => $match['event_status'] ?? 'Not found'
-                        ]
-                    ];
-                }
-                \Log::info('Team detail: First few matches team names', $teamNamesInMatches);
-                
-                // Test team name matching logic
-                \Log::info('Team detail: Team name matching test', [
-                    'database_team_name' => $team->team_name,
-                    'database_team_name_lower' => strtolower($team->team_name),
-                    'sample_home_team' => $allMatches[0]['event_home_team'] ?? 'Not found',
-                    'sample_home_team_lower' => strtolower($allMatches[0]['event_home_team'] ?? ''),
-                    'sample_away_team' => $allMatches[0]['event_away_team'] ?? 'Not found',
-                    'sample_away_team_lower' => strtolower($allMatches[0]['event_away_team'] ?? ''),
-                    'exact_home_match' => ($allMatches[0]['event_home_team'] ?? '') === $team->team_name,
-                    'exact_away_match' => ($allMatches[0]['event_away_team'] ?? '') === $team->team_name,
-                    'partial_home_match' => stripos($allMatches[0]['event_home_team'] ?? '', $team->team_name) !== false,
-                    'partial_away_match' => stripos($allMatches[0]['event_away_team'] ?? '', $team->team_name) !== false
-                ]);
-            }
-            
-            // Separate matches by status
-            $liveMatches = $teamMatches->filter(function($match) {
-                return ($match['event_status'] ?? '') === 'Live';
-            })->values();
-            
-            $completedMatches = $teamMatches->filter(function($match) {
-                return in_array($match['event_status'] ?? '', ['Completed', 'Finished']);
-            })->values();
-            
-            $upcomingMatches = $teamMatches->filter(function($match) {
-                return in_array($match['event_status'] ?? '', ['Scheduled', 'Not Started', '']);
-            })->values();
-            
-            // Sort matches by date
-            $completedMatches = $completedMatches->sortByDesc('event_date_start')->values();
-            $upcomingMatches = $upcomingMatches->sortBy('event_date_start')->values();
-            
-            return view('cricket.team-detail', compact(
-                'team',
-                'liveMatches',
-                'completedMatches',
-                'upcomingMatches'
-            ));
-            
-        } catch (\Exception $e) {
-            Log::error('Error fetching team detail', [
-                'team_key' => $teamKey,
-                'error' => $e->getMessage()
-            ]);
-            
-            abort(500, 'Error loading team details');
-        }
-    }
-
-    public function index(Request $request)
+        public function index(Request $request)
     {
         try {
             // Use the new CricketDataService instead of direct API calls
@@ -160,7 +32,6 @@ class CricketController extends Controller
             $todayMatches = $homePageData['todayMatches'];
             $upcomingMatches = $homePageData['upcomingMatches'];
             $recentCompletedMatches = $homePageData['recentCompletedMatches'];
-            
             // Filter out cancelled matches from live matches
             $liveMatches = $this->filterCancelledMatches($liveMatches);
             $todayMatches = $this->filterCancelledMatches($todayMatches);
@@ -176,11 +47,15 @@ class CricketController extends Controller
             // Process today's matches to fix template placeholders
             $todayMatches = $this->processTodayMatches($todayMatches);
             
+            // Fetch featured news
+            $featuredNews = $this->newsService->getNews(5, 1);
+            
             return view('cricket.index', compact(
                 'liveMatches', 
                 'todayMatches', 
                 'upcomingMatches',
-                'recentCompletedMatches'
+                'recentCompletedMatches',
+                'featuredNews'
             ));
             
         } catch (\Exception $e) {
@@ -205,7 +80,6 @@ class CricketController extends Controller
             // Use the new CricketDataService instead of direct API calls
             $cricketData = app(\App\Services\CricketDataService::class);
             $homePageData = $cricketData->getHomePageData();
-            
             $liveMatches = $homePageData['liveMatches'];
             $todayMatches = $homePageData['todayMatches'];
             $upcomingMatches = $homePageData['upcomingMatches'];
@@ -431,15 +305,9 @@ class CricketController extends Controller
     public function fixtures(Request $request)
     {
         // Debug: Log the date range being used
-        $dateStart = now()->format('Y-m-d');
-        $dateEnd = now()->addDays(30)->format('Y-m-d');
-        
-        \Log::info('Fixtures: Fetching matches', [
-            'date_start' => $dateStart,
-            'date_end' => $dateEnd,
-            'current_time' => now()->format('Y-m-d H:i:s')
-        ]);
-        
+        $dateStart = null;
+        $dateEnd = null;
+ 
         // Use the new CricketDataService instead of direct API calls
         $cricketData = app(\App\Services\CricketDataService::class);
         $upcomingMatches = $cricketData->getFixturesData($dateStart, $dateEnd);
@@ -463,11 +331,6 @@ class CricketController extends Controller
         // Apply filters
         $upcomingMatches = $this->filterMatches($upcomingMatches, $request);
         
-        // Debug: Log after filtering
-        \Log::info('Fixtures: After filtering', [
-            'total_matches_after_filter' => count($upcomingMatches),
-            'sample_match_after_filter' => $upcomingMatches[0] ?? 'No matches after filter'
-        ]);
         
         // Pagination
         $perPage = 24; // Increased to 24 matches per page
@@ -478,22 +341,13 @@ class CricketController extends Controller
         // Get paginated matches
         $paginatedMatches = array_slice($upcomingMatches, ($currentPage - 1) * $perPage, $perPage);
         
-        // Get unique leagues and teams for filters (from all matches, not just current page)
+        // Get unique leagues, teams, and formats for filters (from all matches, not just current page)
         $leagues = array_unique(array_column($upcomingMatches, 'league_name'));
         $teams = array_unique(array_merge(
             array_column($upcomingMatches, 'event_home_team'),
             array_column($upcomingMatches, 'event_away_team')
         ));
-        
-        // Debug: Final data being sent to view
-        \Log::info('Fixtures: Final view data', [
-            'total_matches_final' => count($paginatedMatches),
-            'current_page' => $currentPage,
-            'total_pages' => $totalPages,
-            'total_matches_total' => $totalMatches,
-            'leagues_count' => count($leagues),
-            'teams_count' => count($teams)
-        ]);
+        $formats = array_unique(array_filter(array_column($upcomingMatches, 'matchFormat')));
         
         return view('cricket.fixtures', compact(
             'upcomingMatches', // Send all matches for counting and filtering
@@ -502,7 +356,8 @@ class CricketController extends Controller
             'totalPages', 
             'totalMatches',
             'leagues',
-            'teams'
+            'teams',
+            'formats'
         ));
     }
 
@@ -514,6 +369,7 @@ class CricketController extends Controller
         
         return view('cricket.results', compact('finishedMatches'));
     }
+
 
     public function teams()
     {
@@ -575,69 +431,6 @@ class CricketController extends Controller
         return view('cricket.teams', compact('teams'));
     }
 
-    /**
-     * Sync teams from API to database
-     */
-    public function syncTeams()
-    {
-        try {
-            $apiTeams = $this->cricketApi->getTeams();
-            
-            if (empty($apiTeams)) {
-                return response()->json([
-                    'success' => false,
-                    'message' => 'No teams found in API response'
-                ]);
-            }
-            
-            $created = 0;
-            $updated = 0;
-            
-            foreach ($apiTeams as $apiTeam) {
-                $teamKey = $apiTeam['team_key'] ?? null;
-                $teamName = $apiTeam['team_name'] ?? '';
-                $teamLogo = $apiTeam['team_logo'] ?? null;
-                
-                if (!$teamKey || !$teamName) {
-                    continue;
-                }
-                
-                $team = Team::updateOrCreate(
-                    ['team_key' => $teamKey],
-                    [
-                        'team_name' => $teamName,
-                        'team_logo' => $teamLogo,
-                        'cached_at' => now()
-                    ]
-                );
-                
-                if ($team->wasRecentlyCreated) {
-                    $created++;
-                } else {
-                    $updated++;
-                }
-            }
-            
-            $message = "Created: {$created}, Updated: {$updated}";
-            
-            return response()->json([
-                'success' => true,
-                'message' => $message,
-                'created' => $created,
-                'updated' => $updated
-            ]);
-            
-        } catch (\Exception $e) {
-            Log::error('Error syncing teams', [
-                'error' => $e->getMessage()
-            ]);
-            
-            return response()->json([
-                'success' => false,
-                'message' => 'Error syncing teams: ' . $e->getMessage()
-            ]);
-        }
-    }
 
     public function search(Request $request)
     {

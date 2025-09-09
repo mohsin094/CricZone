@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CricketController;
 use App\Http\Controllers\RankingController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\Api\LiveMatchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,11 +28,10 @@ Route::prefix('cricket')->name('cricket.')->group(function () {
     Route::get('/match/{eventKey}', [CricketController::class, 'matchDetail'])->name('match-detail');
     Route::get('/match/{eventKey}/live-update', [CricketController::class, 'liveUpdate'])->name('match-live-update');
     Route::get('/fixtures', [CricketController::class, 'fixtures'])->name('fixtures');
+    Route::get('/news', [NewsController::class, 'index'])->name('news');
     Route::get('/results', [CricketController::class, 'results'])->name('results');
     Route::get('/teams', [CricketController::class, 'teams'])->name('teams');
     Route::get('/team/{teamKey}', [CricketController::class, 'teamDetail'])->name('team-detail');
-    Route::post('/sync-teams', [CricketController::class, 'syncTeams'])->name('sync-teams');
-    Route::get('/teams/league/{leagueKey}', [CricketController::class, 'getTeamsByLeague'])->name('teams-by-league');
     Route::get('/search', [CricketController::class, 'search'])->name('search');
     Route::post('/refresh', [CricketController::class, 'refreshData'])->name('refresh');
     Route::get('/mock/enable', [CricketController::class, 'enableMock'])->name('mock-enable');
@@ -52,3 +52,11 @@ Route::prefix('rankings')->name('rankings.')->group(function () {
 
 // Redirect root to cricket index
 Route::redirect('/', '/cricket');
+
+// Live Match API Routes
+Route::prefix('api')->group(function () {
+    Route::get('/live-matches', [LiveMatchController::class, 'index']);
+    Route::get('/live-matches/{matchKey}', [LiveMatchController::class, 'show']);
+    Route::get('/live-matches/{matchKey}/is-live', [LiveMatchController::class, 'isLive']);
+    Route::post('/live-matches/update', [LiveMatchController::class, 'update']);
+});

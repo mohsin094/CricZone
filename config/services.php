@@ -33,7 +33,8 @@ return [
 
     'cricbuzz' => [
         'api_key' => env('CRICBUZZ_API_KEY', '515d58bbc8msh2fe478a1ba2e86ap1b85d2jsn7b1fd725f460'),
-        'base_url' => env('CRICBUZZ_BASE_URL', 'https://cricbuzz-cricket.p.rapidapi.com'),
+        'base_url' => env('CRICBUZZ_BASE_URL', 'https://cricbuzz-cricket2.p.rapidapi.com'),
+        'api_host' => env('CRICBUZZ_API_HOST', 'cricbuzz-cricket2.p.rapidapi.com'),
         'cache_ttl' => env('CRICBUZZ_CACHE_TTL', 300),
     ],
 

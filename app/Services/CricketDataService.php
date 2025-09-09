@@ -96,12 +96,6 @@ class CricketDataService
                     }
                 }
 
-                Log::info('CricketDataService: Fetched and transformed matches from API', [
-                    'total_matches' => count($transformedMatches),
-                    'transformation_errors' => $transformationErrors,
-                    'date_range' => [$dateStart, $dateEnd]
-                ]);
-
                 return $transformedMatches;
             } catch (\Exception $e) {
                 Log::error('CricketDataService: Error fetching matches', [
@@ -131,8 +125,8 @@ class CricketDataService
             }
             
             // Second priority: date (earlier dates first)
-            $aDate = $a['event_date_start'] ?? '';
-            $bDate = $b['event_date_start'] ?? '';
+            $aDate = $a['startDate'] ?? '';
+            $bDate = $b['startDate'] ?? '';
             
             if ($aDate && $bDate) {
                 return strtotime($aDate) - strtotime($bDate);
@@ -153,7 +147,7 @@ class CricketDataService
             // Handle both old API format and new Cricbuzz format
             $status = strtolower($match['event_status'] ?? $match['status'] ?? '');
             $state = strtolower($match['state'] ?? '');
-            $eventDate = $match['event_date_start'] ?? $match['startDate'] ?? '';
+            $eventDate = $match['startDate'] ?? $match['startDate'] ?? '';
             $isToday = $eventDate === now()->format('Y-m-d');
             
             // Check if this is a live match
@@ -272,14 +266,38 @@ class CricketDataService
         
         // Filter for upcoming and today's matches
         $fixturesMatches = array_filter($allMatches, function($match) {
-            $status = strtolower($match['event_status'] ?? '');
-            $eventDate = $match['event_date_start'] ?? '';
-            $isToday = $eventDate === now()->format('Y-m-d');
+            // Check multiple possible status fields
+            $status = strtolower($match['event_status'] ?? $match['status'] ?? '');
+            $state = strtolower($match['state'] ?? '');
             
+            // Check multiple possible date fields
+            $eventDate = $match['startDate'] ?? '';
+            $isToday = false;
+            
+            if ($eventDate) {
+                try {
+                    if (is_numeric($eventDate)) {
+                        // This is a timestamp, convert it
+                        $timestamp = intval($eventDate) / 1000;
+                        $eventDate = date('Y-m-d', $timestamp);
+                    }
+                    $isToday = $eventDate === now()->format('Y-m-d');
+                } catch (\Exception $e) {
+                    // If date parsing fails, check if it's today by other means
+                    $isToday = false;
+                }
+            }
+            
+            // Include matches that are:
+            // 1. Upcoming (no status or scheduled/not started)
+            // 2. Today's matches
+            // 3. Live matches (for fixtures page, we might want to show live matches too)
             return $status === '' || 
                    $status === 'scheduled' || 
                    $status === 'not started' || 
-                   $isToday;
+                   $status === 'upcoming' ||
+                   $isToday ||
+                   strpos($status, 'live') !== false;
         });
         
         return array_values($fixturesMatches);
@@ -342,18 +360,19 @@ class CricketDataService
      */
     public function getHomePageData()
     {
-        $dateStart = now()->subDays(7)->format('Y-m-d');
-        $dateEnd = now()->addDays(7)->format('Y-m-d');
+        $dateStart = null;
+        $dateEnd = null;
         
         $categorized = $this->getMatchesByStatus($dateStart, $dateEnd);
         
         return [
             'liveMatches' => $categorized['live'],
             'todayMatches' => $categorized['today'],
-            'upcomingMatches' => array_slice($categorized['upcoming'], 0, 12), // Limit to 12
-            'recentCompletedMatches' => array_slice($categorized['finished'], 0, 12) // Limit to 12
+            'upcomingMatches' => array_slice($categorized['upcoming'], 0, 15), // Limit to 15
+            'recentCompletedMatches' => array_slice($categorized['finished'], 0, 15) // Limit to 15
         ];
     }
+
 
     /**
      * Get mock data for testing and development
@@ -596,6 +615,7 @@ class CricketDataService
         // Determine match status from the real API
         $state = $matchInfo['state'] ?? '';
         $status = $matchInfo['status'] ?? '';
+        $stateTitle = $matchInfo['stateTitle'] ?? '';
         
         // Map Cricbuzz states to our internal status
         $isLive = in_array($state, ['In Progress', 'Live']);
@@ -656,7 +676,8 @@ class CricketDataService
             'event_away_final_result' => $awayScore,
             'event_type' => $matchType,
             'event_status' => $state,
-            'event_status_info' => $status,
+            'event_status_info' => $stateTitle ?: $status,
+            'event_state_title' => $stateTitle,
             'event_date_start' => $startDate,
             'event_date_end' => $endDate,
             'event_time' => $startTime,
@@ -665,6 +686,12 @@ class CricketDataService
             'event_live_status' => $isLive ? '1' : '0',
             'league_name' => $matchInfo['seriesName'] ?? '',
             'venue' => $venue,
+            'event_stadium' => $venueInfo['ground'] ?? '',
+            'event_venue' => $venue,
+            'event_city' => $venueInfo['city'] ?? '',
+            'event_country' => $venueInfo['country'] ?? '',
+            'event_ground' => $venueInfo['ground'] ?? '',
+            'event_toss' => '', // Toss information not available in current API structure
             'outcome' => $status,
             'is_international' => $isInternational,
             'match_priority' => $matchPriority,
@@ -684,6 +711,7 @@ class CricketDataService
             'startTime' => $startTime,
             'state' => $state,
             'status' => $status,
+            'stateTitle' => $stateTitle,
             'isLive' => $isLive,
             'isCompleted' => $isCompleted,
             'isUpcoming' => $isUpcoming,
@@ -848,11 +876,36 @@ class CricketDataService
         if ($runs > 0 || $wickets > 0) {
             $score = $runs . '/' . $wickets;
             if ($overs > 0) {
-                $score .= ' (' . $overs . ' ov)';
+                // Convert decimal overs to proper overs format
+                $formattedOvers = $this->formatOvers($overs);
+                if ($formattedOvers) {
+                    $score .= ' (' . $formattedOvers . ' ov)';
+                }
             }
             return $score;
         }
         
         return '';
+    }
+
+    /**
+     * Convert decimal overs to proper overs format (19.6 = 20 overs, 1.6 = 2 overs)
+     */
+    private function formatOvers($overs)
+    {
+        if (!$overs || $overs === '0.0') return '';
+        
+        $decimalOvers = floatval($overs);
+        $fullOvers = floor($decimalOvers);
+        $balls = ($decimalOvers - $fullOvers) * 10;
+        
+        // If we have 6 balls, that's a complete over
+        if ($balls >= 6) {
+            $fullOvers += 1;
+            $balls = 0;
+        }
+        
+        // Return the total overs (19.6 becomes 20, 1.6 becomes 2)
+        return $fullOvers;
     }
 }

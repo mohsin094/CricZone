@@ -1,0 +1,6 @@
+{
+    "require": {
+        "pusher/pusher-php-server": "^7.0",
+        "pusher/pusher-js": "^7.0"
+    }
+}

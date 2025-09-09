@@ -6,7 +6,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>@yield('title', 'CricZone.pk - All Cricket in One Zone')</title>
-    <meta name="description" content="@yield('description', 'Live cricket scores, match details, fixtures, results, and more from around the world.')">
+    <meta name="description" content="@yield('description', '
+    cricket scores, match details, fixtures, results, and more from around the world.')">
     <meta name="keywords" content="cricket, live scores, match details, fixtures, results, teams, leagues">
     
     <!-- Open Graph Meta Tags -->
@@ -37,6 +38,67 @@
         /* Fixed navbar styles */
         body {
             scroll-padding-top: 4rem; /* 64px for navbar height */
+        }
+        
+        /* Ensure navbar items are visible */
+        .navbar-links {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: nowrap;
+            overflow: visible;
+        }
+        
+        .navbar-links a {
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        
+        /* Ensure navbar container doesn't cause overflow */
+        #top-navbar .max-w-7xl {
+            overflow: visible;
+        }
+        
+        #top-navbar .flex.justify-between {
+            overflow: visible;
+        }
+        
+        /* Responsive navbar adjustments */
+        @media (min-width: 1024px) and (max-width: 1280px) {
+            .navbar-links {
+                gap: 1rem;
+            }
+            
+            .navbar-links a {
+                padding: 0.5rem 0.75rem;
+                font-size: 0.875rem;
+            }
+        }
+        
+        @media (min-width: 1280px) {
+            .navbar-links {
+                gap: 1.5rem;
+            }
+        }
+        
+        /* Mobile navbar at bottom */
+        @media (max-width: 1023px) {
+            .mobile-navbar {
+                top: auto;
+                bottom: 0;
+                border-top: 1px solid #1d4ed8;
+                box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            body {
+                padding-bottom: 0; /* Let main handle padding */
+                scroll-padding-top: 0;
+            }
+            
+            main {
+                padding-top: 112px; /* 64px for top navbar + 48px for tabs */
+                padding-bottom: 80px; /* Extra space for bottom navbar */
+            }
         }
         
         /* Tab functionality styles */
@@ -280,46 +342,66 @@
 </head>
 <body class="font-sans antialiased bg-gray-50">
     <div id="app">
-        <!-- Navigation -->
-        <nav class="bg-green-600 shadow-xl fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="navbar">
+        <!-- Top Navigation -->
+        <nav class="bg-green-600 shadow-xl fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="top-navbar" style="z-index: 60;">
             <div class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
                 <div class="flex justify-between h-16">
-                    <div class="flex items-center min-w-0 flex-1">
-                        <div class="flex-shrink-0">
-                            <a href="{{ route('cricket.index') }}" class="text-white text-lg sm:text-xl lg:text-2xl font-bold">
-                                🏏 CricZone.pk
-                            </a>
-                        </div>
-                        <div class="ml-2 sm:ml-4 lg:ml-6 flex space-x-1 sm:space-x-2 lg:space-x-4 xl:space-x-8 overflow-x-auto flex-1 min-w-0">
-                            <a href="{{ route('cricket.index') }}" class="text-white hover:text-green-200 px-1 sm:px-2 lg:px-3 py-2 rounded-md text-xs sm:text-sm font-medium whitespace-nowrap flex-shrink-0 {{ request()->routeIs('cricket.index') ? 'bg-green-700' : '' }}">
-                                Home
-                            </a>
-                            <a href="{{ route('cricket.fixtures') }}" class="text-white hover:text-green-200 px-1 sm:px-2 lg:px-3 py-2 rounded-md text-xs sm:text-sm font-medium whitespace-nowrap flex-shrink-0 {{ request()->routeIs('cricket.fixtures') ? 'bg-green-700' : '' }}">
-                                Fixtures
-                            </a>
-                            <a href="{{ route('cricket.teams') }}" class="text-white hover:text-green-200 px-1 sm:px-2 lg:px-3 py-2 rounded-md text-xs sm:text-sm font-medium whitespace-nowrap flex-shrink-0 {{ request()->routeIs('cricket.teams*') ? 'bg-green-700' : '' }}">
-                                Teams
-                            </a>
-                            <a href="{{ route('rankings.index') }}" class="text-white hover:text-green-200 px-1 sm:px-2 lg:px-3 py-2 rounded-md text-xs sm:text-sm font-medium whitespace-nowrap flex-shrink-0 {{ request()->routeIs('rankings*') ? 'bg-green-700' : '' }}">
-                                Rankings
-                            </a>
-                            <a href="{{ route('cricket.news') }}" class="text-white hover:text-green-200 px-1 sm:px-2 lg:px-3 py-2 rounded-md text-xs sm:text-sm font-medium whitespace-nowrap flex-shrink-0 {{ request()->routeIs('cricket.news*') ? 'bg-green-700' : '' }}">
-                                News
-                            </a>
-                        </div>
+                    <!-- Logo -->
+                    <div class="flex items-center">
+                        <a href="{{ route('cricket.index') }}" class="text-white text-lg sm:text-xl lg:text-2xl font-bold">
+                            🏏 CricZone.pk
+                        </a>
                     </div>
                     
-                    <div class="flex items-center flex-shrink-0">
-                        <!-- Empty div for spacing -->
+                    <!-- Desktop Navigation Links -->
+                    <div class="hidden lg:flex navbar-links">
+                        <a href="{{ route('cricket.index') }}" class="text-white hover:text-green-200 px-3 py-2 rounded-md text-sm font-medium {{ request()->routeIs('cricket.index') ? 'bg-green-700' : '' }}">
+                            Home
+                        </a>
+                        <a href="{{ route('cricket.fixtures') }}" class="text-white hover:text-green-200 px-3 py-2 rounded-md text-sm font-medium {{ request()->routeIs('cricket.fixtures') ? 'bg-green-700' : '' }}">
+                            Fixtures
+                        </a>
+                        <!-- <a href="{{ route('cricket.teams') }}" class="text-white hover:text-green-200 px-3 py-2 rounded-md text-sm font-medium {{ request()->routeIs('cricket.teams*') ? 'bg-green-700' : '' }}">
+                            Teams
+                        </a> -->
+                        <a href="{{ route('rankings.index') }}" class="text-white hover:text-green-200 px-3 py-2 rounded-md text-sm font-medium {{ request()->routeIs('rankings*') ? 'bg-green-700' : '' }}">
+                            Rankings
+                        </a>
+                        <a href="{{ route('cricket.news') }}" class="text-white hover:text-green-200 px-3 py-2 rounded-md text-sm font-medium {{ request()->routeIs('cricket.news*') ? 'bg-green-700' : '' }}">
+                            News
+                        </a>
                     </div>
                 </div>
             </div>
-            
+        </nav>
 
+        <!-- Bottom Navigation (Mobile Only) -->
+        <nav class="bg-blue-600 shadow-xl fixed bottom-0 left-0 right-0 z-50 transition-all duration-300 lg:hidden mobile-navbar" id="bottom-navbar" style="z-index: 50;">
+            <div class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+                <div class="flex justify-center h-16">
+                    <div class="flex items-center space-x-1 sm:space-x-2 w-full">
+                        <a href="{{ route('cricket.index') }}" class="text-white hover:text-blue-200 px-2 sm:px-3 py-2 rounded-md text-xs sm:text-sm font-medium whitespace-nowrap flex-1 text-center {{ request()->routeIs('cricket.index') ? 'bg-blue-700' : '' }}">
+                            Home
+                        </a>
+                        <a href="{{ route('cricket.fixtures') }}" class="text-white hover:text-blue-200 px-2 sm:px-3 py-2 rounded-md text-xs sm:text-sm font-medium whitespace-nowrap flex-1 text-center {{ request()->routeIs('cricket.fixtures') ? 'bg-blue-700' : '' }}">
+                            Fixtures
+                        </a>
+                        <!-- <a href="{{ route('cricket.teams') }}" class="text-white hover:text-blue-200 px-2 sm:px-3 py-2 rounded-md text-xs sm:text-sm font-medium whitespace-nowrap flex-1 text-center {{ request()->routeIs('cricket.teams*') ? 'bg-blue-700' : '' }}">
+                            Teams
+                        </a> -->
+                        <a href="{{ route('rankings.index') }}" class="text-white hover:text-blue-200 px-2 sm:px-3 py-2 rounded-md text-xs sm:text-sm font-medium whitespace-nowrap flex-1 text-center {{ request()->routeIs('rankings*') ? 'bg-blue-700' : '' }}">
+                            Rankings
+                        </a>
+                        <a href="{{ route('cricket.news') }}" class="text-white hover:text-blue-200 px-2 sm:px-3 py-2 rounded-md text-xs sm:text-sm font-medium whitespace-nowrap flex-1 text-center {{ request()->routeIs('cricket.news*') ? 'bg-blue-700' : '' }}">
+                            News
+                        </a>
+                    </div>
+                </div>
+            </div>
         </nav>
 
         <!-- Page Content -->
-        <main class="pt-24 pb-6">
+        <main class="pt-16 pb-6 lg:pt-20">
             @if(session('success'))
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6">
                     <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative">
@@ -340,46 +422,48 @@
         </main>
 
         <!-- Footer -->
-        <footer class="bg-gray-800 text-white">
+        <footer class="bg-gray-800 text-white hidden lg:block">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                    <div>
-                        <h3 class="text-lg font-semibold mb-4">CricZone.pk</h3>
-                        <p class="text-gray-300 text-sm">
-                            All cricket in one zone. Live scores, match details, and more from around the world.
-                        </p>
-                    </div>
-                    
-                    <div>
-                        <h4 class="text-md font-semibold mb-4">Quick Links</h4>
-                        <ul class="space-y-2 text-sm text-gray-300">
-                            <li><a href="{{ route('cricket.index') }}" class="hover:text-white">Home</a></li>
-                            <li><a href="{{ route('cricket.fixtures') }}" class="hover:text-white">Fixtures</a></li>
-                            <li><a href="{{ route('cricket.news') }}" class="hover:text-white">News</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div>
-                        <h4 class="text-md font-semibold mb-4">More</h4>
-                        <ul class="space-y-2 text-sm text-gray-300">
-                            <li><a href="{{ route('cricket.teams') }}" class="hover:text-white">Teams</a></li>
-                            <li><a href="{{ route('rankings.index') }}" class="hover:text-white">Rankings</a></li>
-                            <li><a href="{{ route('cricket.search') }}" class="hover:text-white">Search</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div>
-                        <h4 class="text-md font-semibold mb-4">Connect</h4>
-                        <div class="flex space-x-4">
-                            <a href="#" class="text-gray-300 hover:text-white text-xl">📘</a>
-                            <a href="#" class="text-gray-300 hover:text-white text-xl">🐦</a>
-                            <a href="#" class="text-gray-300 hover:text-white text-xl">📷</a>
+                <!-- Desktop Footer -->
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                        <div>
+                            <h3 class="text-lg font-semibold mb-4">CricZone.pk</h3>
+                            <p class="text-gray-300 text-sm">
+                                All cricket in one zone. Live scores, match details, and more from around the world.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-md font-semibold mb-4">Quick Links</h4>
+                            <ul class="space-y-2 text-sm text-gray-300">
+                                <li><a href="{{ route('cricket.index') }}" class="hover:text-white">Home</a></li>
+                                <li><a href="{{ route('cricket.fixtures') }}" class="hover:text-white">Fixtures</a></li>
+                                <li><a href="{{ route('cricket.news') }}" class="hover:text-white">News</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-md font-semibold mb-4">More</h4>
+                            <ul class="space-y-2 text-sm text-gray-300">
+                                <!-- <li><a href="{{ route('cricket.teams') }}" class="hover:text-white">Teams</a></li> -->
+                                <li><a href="{{ route('rankings.index') }}" class="hover:text-white">Rankings</a></li>
+                                <li><a href="{{ route('cricket.search') }}" class="hover:text-white">Search</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-md font-semibold mb-4">Connect</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="text-gray-300 hover:text-white text-xl">📘</a>
+                                <a href="#" class="text-gray-300 hover:text-white text-xl">🐦</a>
+                                <a href="#" class="text-gray-300 hover:text-white text-xl">📷</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                
-                <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-300">
-                    <p>&copy; {{ date('Y') }} CricZone.pk. All rights reserved.</p>
+                    
+                    <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-300">
+                        <p>&copy; {{ date('Y') }} CricZone.pk. All rights reserved.</p>
+                    </div>
                 </div>
             </div>
         </footer>
@@ -402,14 +486,6 @@
                 }
             });
         });
-
-        // Auto-refresh live scores every 30 seconds
-        @if(request()->routeIs('cricket.index') || request()->routeIs('cricket.index'))
-        setInterval(function() {
-            // You can implement AJAX refresh here
-            console.log('Auto-refresh triggered');
-        }, 30000);
-        @endif
         
         // Tab switching functionality for series sections
         function switchTab(button, tabId) {
