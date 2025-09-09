@@ -283,8 +283,9 @@ if (!empty($match['event_away_team_image_id'])) {
 }
 @endphp
 
-<div class="mobile-match-card bg-white rounded-lg shadow-sm border border-gray-200 mb-1 overflow-hidden {{ $isLive || $isFinished ? 'cursor-pointer hover:shadow-md transition-shadow' : '' }}" 
-     @if($isLive || $isFinished) data-match-url="{{ route('cricket.match-detail', $match['event_key']) }}" @endif>
+<div class="mobile-match-card bg-white rounded-lg shadow-sm border border-gray-200 mb-1 overflow-hidden {{ $isLive || $isFinished ? 'cursor-pointer hover:shadow-md transition-shadow' : '' }} {{ $isLive ? 'live-match-card' : '' }}" 
+     @if($isLive || $isFinished) data-match-url="{{ route('cricket.match-detail', $match['event_key']) }}" @endif
+     @if($isLive) data-match-key="{{ $match['event_key'] }}" data-match-type="live" @endif>
     
     <!-- Match Header -->
     <div class="px-2 py-1 bg-gray-50 border-b border-gray-200">
@@ -399,7 +400,7 @@ if (!empty($match['event_away_team_image_id'])) {
                         @if($isUpcoming)
                             <div class="text-sm font-bold text-gray-400">-</div>
                         @else
-                            <div class="text-sm font-bold text-gray-900">{{ $formattedHomeScore ?: '-' }}</div>
+                            <div class="text-sm font-bold text-gray-900 home-score">{{ $formattedHomeScore ?: '-' }}</div>
                         @endif
                     </div>
                 </div>
@@ -431,7 +432,7 @@ if (!empty($match['event_away_team_image_id'])) {
                         @if($isUpcoming)
                             <div class="text-sm font-bold text-gray-400">-</div>
                         @else
-                            <div class="text-sm font-bold text-gray-900">{{ $formattedAwayScore ?: '-' }}</div>
+                            <div class="text-sm font-bold text-gray-900 away-score">{{ $formattedAwayScore ?: '-' }}</div>
                         @endif
                     </div>
                 </div>
@@ -442,7 +443,7 @@ if (!empty($match['event_away_team_image_id'])) {
         <div class="mt-2 pt-2 border-t border-gray-100">
             @if($isLive)
                 <div class="text-center bg-red-50 rounded p-2">
-                    <div class="text-xs font-semibold text-red-600">
+                    <div class="text-xs font-semibold text-red-600 match-status">
                         {{ $match['status'] ?? $match['event_status_info'] ?? $match['event_state_title'] ?? 'Match in Progress' }}
                     </div>
                     @if($isTest)

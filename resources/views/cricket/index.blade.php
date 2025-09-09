@@ -5,32 +5,32 @@
 
 @section('content')
 
-    <style>
-        @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0.3; }
-        }
+<style>
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0.3; }
+}
 
-        .blink-dot {
-            animation: blink 1.5s infinite;
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            background-color: #ef4444;
-            border-radius: 50%;
-            margin-right: 4px;
-        }
+.blink-dot {
+    animation: blink 1.5s infinite;
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #ef4444;
+        border-radius: 50%;
+    margin-right: 4px;
+}
 
         /* Mobile tab styles */
-        .mobile-tab-container {
-            position: fixed;
-            top: 64px; /* Below the top navbar */
-            left: 0;
-            right: 0;
-            z-index: 40;
-            background: white;
-            border-bottom: 1px solid #e5e7eb;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    .mobile-tab-container {
+        position: fixed;
+        top: 64px; /* Below the top navbar */
+        left: 0;
+        right: 0;
+        z-index: 40;
+        background: white;
+        border-bottom: 1px solid #e5e7eb;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             height: 48px;
         }
         
@@ -67,11 +67,11 @@
             border-bottom-color: #ef4444;
         }
         
-        .mobile-content {
+    .mobile-content {
             margin-top: 48px; /* Height of the tab bar */
-            padding-top: 0;
-        }
-        
+        padding-top: 0;
+    }
+    
         .tab-content {
             display: none;
         }
@@ -81,81 +81,254 @@
         }
         
         /* Match card styles */
-        .mobile-match-card {
-            background: white;
+    .mobile-match-card {
+        background: white;
             border-radius: 8px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
             margin: 10px;
-            overflow: hidden;
-        }
-        
-        .series-header {
+        overflow: hidden;
+    }
+    
+    .series-header {
             background: #f8fafc;
             padding: 10px 12px;
-            border-bottom: 1px solid #e5e7eb;
-            font-weight: 600;
-            color: #374151;
-            font-size: 12px;
-        }
-        
-        .match-item {
+        border-bottom: 1px solid #e5e7eb;
+        font-weight: 600;
+        color: #374151;
+        font-size: 12px;
+    }
+    
+    .match-item {
             padding: 12px;
-            border-bottom: 1px solid #f3f4f6;
-        }
-        
-        .match-item:last-child {
-            border-bottom: none;
-        }
-        
-        .team-row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+        border-bottom: 1px solid #f3f4f6;
+    }
+    
+    .match-item:last-child {
+        border-bottom: none;
+    }
+    
+    .team-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
             margin-bottom: 6px;
-        }
-        
-        .team-info {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .team-flag {
+    }
+    
+    .team-info {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .team-flag {
             width: 20px;
             height: 20px;
-            border-radius: 50%;
-            object-fit: cover;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    
+    .team-name {
+        font-weight: 500;
+        color: #111827;
+        font-size: 14px;
+    }
+    
+    .team-score {
+        font-weight: 600;
+        color: #111827;
+        font-size: 14px;
+    }
+    
+    .match-status {
+        text-align: right;
+        font-size: 12px;
+        color: #6b7280;
+    }
+    
+    .live-indicator {
+        color: #ef4444;
+        font-weight: 600;
+    }
+    
+    .venue-info {
+        font-size: 12px;
+        color: #6b7280;
+        margin-top: 4px;
+    }
+    
+        /* Live Match Update Animations */
+        .score-updated {
+            animation: scorePulse 0.6s ease-in-out;
+            background-color: #fef3c7;
+            border-radius: 4px;
+            padding: 2px 4px;
         }
-        
-        .team-name {
-            font-weight: 500;
-            color: #111827;
-            font-size: 14px;
+
+        @keyframes scorePulse {
+            0% {
+                transform: scale(1);
+                background-color: #fef3c7;
+            }
+            50% {
+                transform: scale(1.05);
+                background-color: #fde68a;
+            }
+            100% {
+                transform: scale(1);
+                background-color: #fef3c7;
+            }
         }
-        
-        .team-score {
-            font-weight: 600;
-            color: #111827;
-            font-size: 14px;
+
+        .live-updated {
+            animation: liveUpdate 1.5s ease-in-out;
+            position: relative;
         }
-        
-        .match-status {
-            text-align: right;
+
+        @keyframes liveUpdate {
+            0% {
+                background-color: transparent;
+            }
+            25% {
+                background-color: #dcfce7;
+            }
+            50% {
+                background-color: #bbf7d0;
+            }
+            75% {
+                background-color: #dcfce7;
+            }
+            100% {
+                background-color: transparent;
+            }
+        }
+
+        .live-match-card {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .live-match-card.updating {
+            box-shadow: 0 0 0 2px #22c55e;
+            transform: scale(1.02);
+        }
+
+        .connection-status {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            padding: 6px 10px;
+            border-radius: 15px;
+            font-size: 11px;
+            font-weight: bold;
+            z-index: 999;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Connection status when in news sidebar */
+        .news-sidebar .connection-status {
+            position: static;
+            margin-bottom: 1rem;
+            padding: 8px 12px;
+            border-radius: 8px;
             font-size: 12px;
-            color: #6b7280;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         }
-        
-        .live-indicator {
-            color: #ef4444;
-            font-weight: 600;
+
+        .connection-status.connected {
+            background-color: #22c55e;
+            color: white;
         }
-        
-        .venue-info {
-            font-size: 12px;
-            color: #6b7280;
-            margin-top: 4px;
+
+        .connection-status.disconnected {
+            background-color: #ef4444;
+            color: white;
         }
-    </style>
+
+        .connection-status.connecting {
+            background-color: #f59e0b;
+            color: white;
+        }
+
+        /* Responsive connection status positioning */
+        @media (max-width: 1024px) {
+            .connection-status {
+                top: 70px;
+                right: 10px;
+                padding: 4px 8px;
+                font-size: 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .connection-status {
+                top: 60px;
+                right: 10px;
+                padding: 3px 6px;
+                font-size: 9px;
+            }
+        }
+
+        /* News Sidebar Styles */
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .news-item:hover {
+            transform: translateY(-1px);
+            transition: transform 0.2s ease;
+        }
+
+        .news-number {
+            background: linear-gradient(135deg, #10b981, #3b82f6);
+        }
+
+        .quick-stats-item {
+            transition: all 0.2s ease;
+        }
+
+        .quick-stats-item:hover {
+            background-color: rgba(16, 185, 129, 0.05);
+            border-radius: 4px;
+            padding: 2px 4px;
+            margin: -2px -4px;
+        }
+
+        /* News Image Styles */
+        .news-image {
+            transition: transform 0.2s ease;
+        }
+
+        .news-item:hover .news-image {
+            transform: scale(1.05);
+        }
+
+        .news-fallback {
+            background: linear-gradient(135deg, #10b981, #3b82f6);
+        }
+
+        /* Ensure proper desktop layout */
+        @media (min-width: 1024px) {
+            .desktop-layout {
+                display: flex !important;
+                gap: 1.5rem;
+            }
+            
+            .main-content {
+                flex: 1;
+                min-width: 0;
+            }
+            
+            .news-sidebar {
+                width: 20rem;
+                flex-shrink: 0;
+    }
+}
+</style>
     <!-- Page Loading Overlay - Shows until content is fully loaded -->
     <div id="pageLoader" class="fixed inset-0 bg-gradient-to-br from-green-50 to-blue-50 z-50 flex items-center justify-center">
     <div class="text-center">
@@ -191,7 +364,6 @@
 </div>
 
 <div class="max-w-7xl mx-auto px-0 lg:px-6 pt-0 lg:pt-2">
-
     <!-- Mobile Navigation Tabs -->
     <div class="mobile-tab-container lg:hidden">
         <div class="mobile-tab-scroll">
@@ -742,9 +914,14 @@
             @endif
         </div>
     </div>
+    </div> <!-- End Mobile Tab Content -->
 
-    <!-- Desktop Tab Content -->
+    <!-- Desktop Layout with News Sidebar -->
     <div class="hidden lg:block">
+        <div class="flex gap-6">
+            <!-- Main Content Area -->
+            <div class="flex-1">
+                <!-- Desktop Tab Content -->
     <div id="tab-content-all" class="tab-content active">
         <!-- All Matches Section -->
         <div class="mb-4 sm:mb-8">
@@ -871,7 +1048,7 @@
                 'pageParam' => 'all_page'
             ])
         </div>
-    </div>
+                </div> <!-- End tab-content-all -->
 
     <div id="tab-content-live" class="tab-content hidden">
     <!-- Live Matches Section -->
@@ -1370,8 +1547,129 @@
                 </div>
             </div>
         @endif
+                </div> <!-- End tab-content-recent -->
+            </div> <!-- End Main Content Area -->
+            
+            <!-- News Sidebar -->
+            <div class="w-80 flex-shrink-0">
+                <div class="sticky top-6">
+                    <!-- Live Updates Status -->
+                    <div class="mb-4">
+                        <div id="connection-status" class="connection-status connecting" style="position: static; margin-bottom: 0;">
+                            <div class="flex items-center justify-center space-x-2">
+                                <div class="w-2 h-2 bg-yellow-500 rounded-full animate-pulse"></div>
+                                <span>Live Updates</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-lg font-semibold text-gray-900">📰 Featured News</h3>
+                            <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
     </div>
-    </div> <!-- End Desktop Tab Content -->
+                    
+                        @if(isset($featuredNews['news']) && count($featuredNews['news']) > 0)
+                            <div class="space-y-4">
+                                @foreach($featuredNews['news'] as $index => $news)
+                                    <div class="news-item border-b border-gray-100 pb-4 {{ $index === count($featuredNews['news']) - 1 ? 'border-b-0 pb-0' : '' }}">
+                                        <div class="flex items-start space-x-3">
+                                            <!-- News Image -->
+                                            <div class="flex-shrink-0">
+                                                @if(!empty($news['cover_image']))
+                                                    <img src="{{ $news['cover_image'] }}" 
+                                                         alt="{{ $news['title'] ?? 'News Image' }}"
+                                                         class="w-16 h-16 object-cover rounded-lg news-image"
+                                                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                                    <div class="w-16 h-16 news-fallback rounded-lg flex items-center justify-center text-white text-xs font-bold" style="display: none;">
+                                                        {{ $index + 1 }}
+                                                    </div>
+                                                @else
+                                                    <div class="w-16 h-16 news-fallback rounded-lg flex items-center justify-center text-white text-xs font-bold">
+                                                        {{ $index + 1 }}
+                                                    </div>
+                                                @endif
+                                            </div>
+                                            
+                                            <!-- News Content -->
+                                            <div class="flex-1 min-w-0">
+                                                <h4 class="text-sm font-medium text-gray-900 line-clamp-2 mb-1">
+                                                    <a href="{{ $news['link'] ?? '#' }}" target="_blank" class="hover:text-green-600 transition-colors">
+                                                        {{ $news['title'] ?? 'News Title' }}
+                                                    </a>
+                                                </h4>
+                                                <p class="text-xs text-gray-500 line-clamp-2 mb-2">
+                                                    {{ $news['excerpt'] ?? $news['description'] ?? 'News description...' }}
+                                                </p>
+                                                <div class="flex items-center justify-between">
+                                                    <div class="flex items-center space-x-2">
+                                                        <span class="text-xs text-gray-400">
+                                                            @if(isset($news['published_at_human']))
+                                                                {{ $news['published_at_human'] }}
+                                                            @elseif(isset($news['pubDate']))
+                                                                {{ \Carbon\Carbon::parse($news['pubDate'])->diffForHumans() }}
+                                                            @else
+                                                                Recently
+                                                            @endif
+                                                        </span>
+                                                        <span class="text-xs text-gray-300">•</span>
+                                                        <span class="text-xs text-green-600 font-medium">ESPN</span>
+                                                    </div>
+                                                    <div class="flex items-center text-xs text-gray-400">
+                                                        <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                                        </svg>
+                                                        Read
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                            
+                            <div class="mt-4 pt-4 border-t border-gray-200">
+                                <a href="{{ route('cricket.news') }}" class="inline-flex items-center text-sm font-medium text-green-600 hover:text-green-700 transition-colors">
+                                    View All News
+                                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        @else
+                            <div class="text-center py-8">
+                                <div class="text-4xl mb-2">📰</div>
+                                <p class="text-sm text-gray-500">No news available at the moment</p>
+                            </div>
+                        @endif
+                    </div>
+                    
+                    <!-- Quick Stats Card -->
+                    <div class="mt-4 bg-gradient-to-br from-green-50 to-blue-50 rounded-lg border border-gray-200 p-4">
+                        <h4 class="text-sm font-semibold text-gray-900 mb-3">🏏 Quick Stats</h4>
+                        <div class="space-y-2">
+                            <div class="quick-stats-item flex justify-between text-xs">
+                                <span class="text-gray-600">Live Matches</span>
+                                <span class="font-medium text-green-600">{{ count($liveMatches ?? []) }}</span>
+                            </div>
+                            <div class="quick-stats-item flex justify-between text-xs">
+                                <span class="text-gray-600">Today's Matches</span>
+                                <span class="font-medium text-blue-600">{{ count($todayMatches ?? []) }}</span>
+                            </div>
+                            <div class="quick-stats-item flex justify-between text-xs">
+                                <span class="text-gray-600">Upcoming</span>
+                                <span class="font-medium text-purple-600">{{ count($upcomingMatches ?? []) }}</span>
+                            </div>
+                            <div class="quick-stats-item flex justify-between text-xs">
+                                <span class="text-gray-600">Recent Completed</span>
+                                <span class="font-medium text-gray-600">{{ count($recentCompletedMatches ?? []) }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- End News Sidebar -->
+        </div> <!-- End Desktop Layout -->
+    </div> <!-- End Desktop Layout with News Sidebar -->
 
     <!-- No Search Results Message -->
     <div id="noSearchResults" class="mb-4 sm:mb-8 text-center py-6 sm:py-12" style="display: none;">
@@ -1697,6 +1995,284 @@
         // Trigger filter update
         filterMatches();
     }
+
+    // Live Match Updater
+    class LiveMatchUpdater {
+        constructor() {
+            this.liveMatches = new Map();
+            this.updateInterval = null;
+            this.isConnected = false;
+            this.retryCount = 0;
+            this.maxRetries = 5;
+            
+            this.init();
+        }
+
+        init() {
+            // Start periodic updates
+            this.startPeriodicUpdates();
+            
+            // Listen for visibility changes
+            this.handleVisibilityChange();
+            
+            // Add connection status indicator
+            this.addConnectionStatus();
+        }
+
+        async fetchLiveMatches() {
+            try {
+                const response = await fetch('/api/live-matches', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                if (data.success) {
+                    this.handleLiveMatchesUpdate(data.data);
+                    this.updateConnectionStatus('connected');
+                    this.retryCount = 0;
+                } else {
+                    throw new Error(data.message || 'Failed to fetch live matches');
+                }
+            } catch (error) {
+                console.error('Error fetching live matches:', error);
+                this.updateConnectionStatus('disconnected');
+                this.retryCount++;
+                
+                if (this.retryCount >= this.maxRetries) {
+                    console.error('Max retries reached, stopping updates');
+                    this.stopUpdates();
+                }
+            }
+        }
+
+        handleLiveMatchesUpdate(data) {
+            const { live_matches, timestamp } = data;
+            
+            console.log('Live matches updated:', live_matches.length, 'matches');
+            
+            // If no live matches, stop updates
+            if (live_matches.length === 0) {
+                console.log('No live matches found, stopping updates');
+                this.stopUpdates();
+                this.updateConnectionStatus('disconnected');
+                return;
+            }
+            
+            // Update all live matches
+            live_matches.forEach(match => {
+                const matchKey = match.event_key;
+                if (matchKey) {
+                    this.liveMatches.set(matchKey, {
+                        ...match,
+                        last_updated: timestamp
+                    });
+                    
+                    // Update the UI
+                    this.updateMatchInUI(matchKey, match);
+                }
+            });
+        }
+
+        updateMatchInUI(matchKey, matchData) {
+            // Find the match card element
+            const matchCard = document.querySelector(`[data-match-key="${matchKey}"]`);
+            if (!matchCard) {
+                return;
+            }
+
+            // Add updating class
+            matchCard.classList.add('updating');
+            setTimeout(() => {
+                matchCard.classList.remove('updating');
+            }, 2000);
+
+            // Update scores
+            this.updateMatchScores(matchCard, matchData);
+            
+            // Update status
+            this.updateMatchStatus(matchCard, matchData);
+            
+            // Update overs
+            this.updateMatchOvers(matchCard, matchData);
+        }
+
+        updateMatchScores(matchCard, matchData) {
+            // Update home team score
+            const homeScoreElement = matchCard.querySelector('.home-score');
+            if (homeScoreElement && matchData.event_home_final_result) {
+                const newScore = matchData.event_home_final_result;
+                if (homeScoreElement.textContent !== newScore) {
+                    this.animateScoreChange(homeScoreElement, newScore);
+                }
+            }
+
+            // Update away team score
+            const awayScoreElement = matchCard.querySelector('.away-score');
+            if (awayScoreElement && matchData.event_away_final_result) {
+                const newScore = matchData.event_away_final_result;
+                if (awayScoreElement.textContent !== newScore) {
+                    this.animateScoreChange(awayScoreElement, newScore);
+                }
+            }
+        }
+
+        updateMatchStatus(matchCard, matchData) {
+            const statusElement = matchCard.querySelector('.match-status');
+            if (statusElement) {
+                const newStatus = matchData.status || matchData.event_status_info || matchData.event_state_title || 'Match in Progress';
+                if (statusElement.textContent !== newStatus) {
+                    statusElement.textContent = newStatus;
+                    this.showUpdateIndicator(statusElement);
+                }
+            }
+        }
+
+        updateMatchOvers(matchCard, matchData) {
+            // Update home team overs
+            const homeOversElement = matchCard.querySelector('.home-overs');
+            if (homeOversElement && matchData.event_home_overs) {
+                const newOvers = this.formatOvers(matchData.event_home_overs);
+                if (homeOversElement.textContent !== newOvers) {
+                    homeOversElement.textContent = newOvers;
+                    this.showUpdateIndicator(homeOversElement);
+                }
+            }
+
+            // Update away team overs
+            const awayOversElement = matchCard.querySelector('.away-overs');
+            if (awayOversElement && matchData.event_away_overs) {
+                const newOvers = this.formatOvers(matchData.event_away_overs);
+                if (awayOversElement.textContent !== newOvers) {
+                    awayOversElement.textContent = newOvers;
+                    this.showUpdateIndicator(awayOversElement);
+                }
+            }
+        }
+
+        formatOvers(overs) {
+            if (!overs || overs === '0.0') return '';
+            
+            const decimalOvers = parseFloat(overs);
+            const fullOvers = Math.floor(decimalOvers);
+            const balls = (decimalOvers - fullOvers) * 10;
+            
+            if (balls >= 6) {
+                return (fullOvers + 1).toString();
+            }
+            
+            return fullOvers.toString();
+        }
+
+        animateScoreChange(element, newScore) {
+            // Add animation class
+            element.classList.add('score-updated');
+            
+            // Update the score
+            element.textContent = newScore;
+            
+            // Remove animation class after animation
+            setTimeout(() => {
+                element.classList.remove('score-updated');
+            }, 1000);
+        }
+
+        showUpdateIndicator(element) {
+            // Add update indicator
+            element.classList.add('live-updated');
+            
+            // Remove after animation
+            setTimeout(() => {
+                element.classList.remove('live-updated');
+            }, 2000);
+        }
+
+        startPeriodicUpdates() {
+            // Update every 20 seconds
+            this.updateInterval = setInterval(() => {
+                this.fetchLiveMatches();
+            }, 20000);
+            
+            // Initial fetch
+            this.fetchLiveMatches();
+        }
+
+        stopUpdates() {
+            if (this.updateInterval) {
+                clearInterval(this.updateInterval);
+                this.updateInterval = null;
+            }
+        }
+
+        handleVisibilityChange() {
+            document.addEventListener('visibilitychange', () => {
+                if (document.hidden) {
+                    // Page is hidden, reduce update frequency
+                    this.stopUpdates();
+                    this.updateInterval = setInterval(() => {
+                        this.fetchLiveMatches();
+                    }, 120000); // 2 minutes when hidden
+                } else {
+                    // Page is visible, resume normal updates
+                    this.stopUpdates();
+                    this.startPeriodicUpdates();
+                }
+            });
+        }
+
+        addConnectionStatus() {
+            // Connection status is already in the HTML, just update it
+            const statusElement = document.getElementById('connection-status');
+            if (statusElement) {
+                statusElement.className = 'connection-status connecting';
+                statusElement.innerHTML = '<div class="flex items-center justify-center space-x-2"><div class="w-2 h-2 bg-yellow-500 rounded-full animate-pulse"></div><span>Connecting...</span></div>';
+            }
+        }
+
+        updateConnectionStatus(status) {
+            const statusElement = document.getElementById('connection-status');
+            if (statusElement) {
+                statusElement.className = `connection-status ${status}`;
+                switch (status) {
+                    case 'connected':
+                        statusElement.innerHTML = '<div class="flex items-center justify-center space-x-2"><div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div><span>Live Updates</span></div>';
+                        break;
+                    case 'disconnected':
+                        statusElement.innerHTML = '<div class="flex items-center justify-center space-x-2"><div class="w-2 h-2 bg-red-500 rounded-full"></div><span>Offline</span></div>';
+                        break;
+                    case 'connecting':
+                        statusElement.innerHTML = '<div class="flex items-center justify-center space-x-2"><div class="w-2 h-2 bg-yellow-500 rounded-full animate-pulse"></div><span>Connecting...</span></div>';
+                        break;
+                }
+            }
+        }
+    }
+
+    // Initialize live match updater when DOM is ready
+    document.addEventListener('DOMContentLoaded', function() {
+        // Only initialize on pages with live matches
+        const liveMatchCards = document.querySelectorAll('.live-match-card, [data-match-type="live"]');
+        if (liveMatchCards.length > 0) {
+            console.log('Found', liveMatchCards.length, 'live matches, starting updater');
+            window.liveMatchUpdater = new LiveMatchUpdater();
+        } else {
+            console.log('No live matches found on page, skipping updater initialization');
+        }
+    });
+
+    // Cleanup when page unloads
+    window.addEventListener('beforeunload', function() {
+        if (window.liveMatchUpdater) {
+            window.liveMatchUpdater.stopUpdates();
+        }
+    });
 
 </script>
 @endsection

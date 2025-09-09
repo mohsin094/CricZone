@@ -6,7 +6,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>@yield('title', 'CricZone.pk - All Cricket in One Zone')</title>
-    <meta name="description" content="@yield('description', 'Live cricket scores, match details, fixtures, results, and more from around the world.')">
+    <meta name="description" content="@yield('description', '
+    cricket scores, match details, fixtures, results, and more from around the world.')">
     <meta name="keywords" content="cricket, live scores, match details, fixtures, results, teams, leagues">
     
     <!-- Open Graph Meta Tags -->
@@ -37,6 +38,47 @@
         /* Fixed navbar styles */
         body {
             scroll-padding-top: 4rem; /* 64px for navbar height */
+        }
+        
+        /* Ensure navbar items are visible */
+        .navbar-links {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: nowrap;
+            overflow: visible;
+        }
+        
+        .navbar-links a {
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        
+        /* Ensure navbar container doesn't cause overflow */
+        #top-navbar .max-w-7xl {
+            overflow: visible;
+        }
+        
+        #top-navbar .flex.justify-between {
+            overflow: visible;
+        }
+        
+        /* Responsive navbar adjustments */
+        @media (min-width: 1024px) and (max-width: 1280px) {
+            .navbar-links {
+                gap: 1rem;
+            }
+            
+            .navbar-links a {
+                padding: 0.5rem 0.75rem;
+                font-size: 0.875rem;
+            }
+        }
+        
+        @media (min-width: 1280px) {
+            .navbar-links {
+                gap: 1.5rem;
+            }
         }
         
         /* Mobile navbar at bottom */
@@ -312,7 +354,7 @@
                     </div>
                     
                     <!-- Desktop Navigation Links -->
-                    <div class="hidden lg:flex items-center space-x-6">
+                    <div class="hidden lg:flex navbar-links">
                         <a href="{{ route('cricket.index') }}" class="text-white hover:text-green-200 px-3 py-2 rounded-md text-sm font-medium {{ request()->routeIs('cricket.index') ? 'bg-green-700' : '' }}">
                             Home
                         </a>
@@ -444,14 +486,6 @@
                 }
             });
         });
-
-        // Auto-refresh live scores every 30 seconds
-        @if(request()->routeIs('cricket.index') || request()->routeIs('cricket.index'))
-        setInterval(function() {
-            // You can implement AJAX refresh here
-            console.log('Auto-refresh triggered');
-        }, 30000);
-        @endif
         
         // Tab switching functionality for series sections
         function switchTab(button, tabId) {

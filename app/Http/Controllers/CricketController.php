@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Services\CricketApiService;
+use App\Services\NewsService;
 use App\Models\Team;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
@@ -12,10 +13,12 @@ use Illuminate\Support\Facades\Http; // Added for direct API testing
 class CricketController extends Controller
 {
     protected $cricketApi;
+    protected $newsService;
 
-    public function __construct(CricketApiService $cricketApi)
+    public function __construct(CricketApiService $cricketApi, NewsService $newsService)
     {
         $this->cricketApi = $cricketApi;
+        $this->newsService = $newsService;
     }
     
         public function index(Request $request)
@@ -44,11 +47,15 @@ class CricketController extends Controller
             // Process today's matches to fix template placeholders
             $todayMatches = $this->processTodayMatches($todayMatches);
             
+            // Fetch featured news
+            $featuredNews = $this->newsService->getNews(5, 1);
+            
             return view('cricket.index', compact(
                 'liveMatches', 
                 'todayMatches', 
                 'upcomingMatches',
-                'recentCompletedMatches'
+                'recentCompletedMatches',
+                'featuredNews'
             ));
             
         } catch (\Exception $e) {
