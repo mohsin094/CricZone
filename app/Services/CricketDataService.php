@@ -335,7 +335,7 @@ class CricketDataService
         $isCancelled = in_array($state, ['Abandon', 'Cancelled', 'No Result']);
 
         // Create unique event key
-        $eventKey = 'match_' . ($matchInfo['matchId'] ?? uniqid());
+        $eventKey = $matchInfo['matchId'] ?? uniqid();
 
         // Convert timestamp to date format with proper timezone handling
         $startDate = '';
@@ -636,48 +636,34 @@ class CricketDataService
     }
 
 
-    public function getMatchCommentary($matchId)
+    /**
+     * Get match commentary
+     * return match details including commentary, squads
+     */
+    public function getMatchDetails($matchId, $iid)
     {
-        $cacheKey = "cricket_match_commentary_{$matchId}_iid{$iid}";
+        try {
+            // Fetch commentary from API
+            $commentary = $this->cricketApi->getMatchCommentary($matchId, $iid);
+            $scoreCard = $this->cricketApi->getMatchScorecard($matchId);
+            $squads = $this->cricketApi->getMatchSquads($matchId);
 
-        return Cache::remember($cacheKey, $this->cacheTtl, function () use ($matchId, $iid) {
-            try {
-                $endpoint = "/mcenter/v1/{$matchId}/comm?iid={$iid}&tms=" . time();
-
-                $response = Http::timeout(30)
-                    ->withHeaders([
-                        'X-RapidAPI-Key' => $this->apiKey,
-                        'X-RapidAPI-Host' => $this->apiHost
-                    ])
-                    ->get($this->baseUrl . $endpoint);
-
-                Log::info('Cricbuzz Commentary API call', [
-                    'endpoint' => $endpoint,
-                    'status' => $response->status()
-                ]);
-
-                if ($response->successful()) {
-                    $data = $response->json();
-
-                    // store raw response for debugging
-                    $this->logApiResponse('match_commentary_' . $matchId, $data);
-
-                    return $data;
-                }
-
-                Log::error('Failed to fetch commentary from Cricbuzz API', [
-                    'status' => $response->status(),
-                    'response' => $response->body()
-                ]);
-
-                return [];
-            } catch (\Exception $e) {
-                Log::error('Exception fetching match commentary', [
-                    'match_id' => $matchId,
-                    'error' => $e->getMessage()
-                ]);
+            if (!is_array($commentary)) {
+                Log::error('CricketDataService: Invalid commentary data');
                 return [];
             }
-        });
+
+            return [
+                'commentary' => $commentary,
+                'scoreCard' => $scoreCard,
+                'squads' => $squads,
+            ];
+        } catch (\Exception $e) {
+            Log::error('CricketDataService: Error fetching match commentary', [
+                'match_id' => $matchId,
+                'error' => $e->getMessage()
+            ]);
+            return [];
+        }
     }
 }

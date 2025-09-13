@@ -18,7 +18,7 @@ class CricketApiService
         $this->apiKey = config('services.cricbuzz.api_key');
         $this->baseUrl = config('services.cricbuzz.base_url');
         $this->apiHost = config('services.cricbuzz.api_host');
-        $this->cacheTtl = 30000; // 5 minutes cache for API data
+        $this->cacheTtl = 30000;
     }
 
 
@@ -64,47 +64,6 @@ class CricketApiService
             }
         });
     }
-    /**
-     * Get ball-by-ball commentary for a specific match
-     */
-    public function getCommentary($eventKey)
-    {
-        $cacheKey = 'cricket_commentary_' . $eventKey;
-
-        return Cache::remember($cacheKey, $this->cacheTtl, function () use ($eventKey) { // Cache for 5 minutes
-            try {
-                $params = [
-                    'method' => 'get_commentary',
-                    'APIkey' => $this->apiKey,
-                    'event_key' => $eventKey
-                ];
-
-                $response = Http::timeout(30)->get($this->baseUrl, $params);
-
-                if ($response->successful()) {
-                    $data = $response->json();
-                    if ($data['success'] == 1) {
-                        return $data['result'];
-                    }
-                }
-
-                Log::warning('Failed to fetch commentary from Cricket API', [
-                    'event_key' => $eventKey,
-                    'response' => $response->body(),
-                    'status' => $response->status()
-                ]);
-
-                return [];
-            } catch (\Exception $e) {
-                Log::error('Exception while fetching commentary', [
-                    'event_key' => $eventKey,
-                    'error' => $e->getMessage()
-                ]);
-                return [];
-            }
-        });
-    }
-
 
     /**
      * Get live matches from Cricbuzz API
@@ -241,6 +200,168 @@ class CricketApiService
     }
 
     /**
+     * Get match commentary from Cricbuzz API
+     */
+    public function getMatchCommentary($matchId, $iid = 2)
+    {
+        // Use default value if iid is null
+        $iid = $iid ?? 2;
+        $cacheKey = "cricket_match_commentary_{$matchId}_{$iid}";
+
+        return Cache::remember($cacheKey, $this->cacheTtl, function () use ($matchId, $iid) {
+            try {
+                $endpoint = "/mcenter/v1/{$matchId}/comm?iid={$iid}";
+
+                $response = Http::timeout(30)
+                    ->withHeaders([
+                        'X-RapidAPI-Key' => $this->apiKey,
+                        'X-RapidAPI-Host' => $this->apiHost
+                    ])
+                    ->get($this->baseUrl . $endpoint);
+
+                Log::info('Cricbuzz Commentary API call', [
+                    'endpoint' => $endpoint,
+                    'status' => $response->status()
+                ]);
+
+                if ($response->successful()) {
+                    $data = $response->json();
+
+                    // Debug if empty
+                    if (empty($data)) {
+                        Log::warning('No commentary data returned', [
+                            'match_id' => $matchId,
+                            'iid' => $iid,
+                            'body' => $response->body()
+                        ]);
+                    }
+
+                    return $data;
+                }
+
+                Log::error('Failed to fetch commentary from Cricbuzz API', [
+                    'status' => $response->status(),
+                    'response' => $response->body()
+                ]);
+
+                return [];
+            } catch (\Exception $e) {
+                Log::error('Exception fetching match commentary', [
+                    'match_id' => $matchId,
+                    'error' => $e->getMessage()
+                ]);
+                return [];
+            }
+        });
+    }
+
+    /**
+     * Get match Scorecard from Cricbuzz API
+     */
+    public function getMatchScorecard($matchId)
+    {
+        $cacheKey = "cricket_match_scorecard_{$matchId}";
+
+        return Cache::remember($cacheKey, $this->cacheTtl, function () use ($matchId) {
+            try {
+                $endpoint = "/mcenter/v1/{$matchId}/scard";
+
+                $response = Http::timeout(30)
+                    ->withHeaders([
+                        'X-RapidAPI-Key' => $this->apiKey,
+                        'X-RapidAPI-Host' => $this->apiHost
+                    ])
+                    ->get($this->baseUrl . $endpoint);
+
+                Log::info('Cricbuzz Scorecard API call', [
+                    'endpoint' => $endpoint,
+                    'status' => $response->status()
+                ]);
+
+                if ($response->successful()) {
+                    $data = $response->json();
+
+                    // Debug if empty
+                    if (empty($data)) {
+                        Log::warning('No Scorecard data returned', [
+                            'match_id' => $matchId,
+                            'body' => $response->body()
+                        ]);
+                    }
+
+                    return $data;
+                }
+
+                Log::error('Failed to fetch Scorecard from Cricbuzz API', [
+                    'status' => $response->status(),
+                    'response' => $response->body()
+                ]);
+
+                return [];
+            } catch (\Exception $e) {
+                Log::error('Exception fetching match Scorecard', [
+                    'match_id' => $matchId,
+                    'error' => $e->getMessage()
+                ]);
+                return [];
+            }
+        });
+    }
+
+    /**
+     * Get match Scorecard from Cricbuzz API
+     */
+    public function getMatchSquads($matchId)
+    {
+        $cacheKey = "cricket_match_squads_{$matchId}";
+
+        return Cache::remember($cacheKey, now()->addDays(5), function () use ($matchId) {
+            try {
+                $endpoint = "/mcenter/v1/{$matchId}/teams";
+
+                $response = Http::timeout(30)
+                    ->withHeaders([
+                        'X-RapidAPI-Key' => $this->apiKey,
+                        'X-RapidAPI-Host' => $this->apiHost
+                    ])
+                    ->get($this->baseUrl . $endpoint);
+
+                Log::info('Cricbuzz squads API call', [
+                    'endpoint' => $endpoint,
+                    'status' => $response->status()
+                ]);
+
+                if ($response->successful()) {
+                    $data = $response->json();
+
+                    // Debug if empty
+                    if (empty($data)) {
+                        Log::warning('No squads data returned', [
+                            'match_id' => $matchId,
+                            'body' => $response->body()
+                        ]);
+                    }
+
+                    return $data;
+                }
+
+                Log::error('Failed to fetch squads from Cricbuzz API', [
+                    'status' => $response->status(),
+                    'response' => $response->body()
+                ]);
+
+                return [];
+            } catch (\Exception $e) {
+                Log::error('Exception fetching match squads', [
+                    'match_id' => $matchId,
+                    'error' => $e->getMessage()
+                ]);
+                return [];
+            }
+        });
+    }
+
+    /**
      * Log API response for future mock data
      */
     private function logApiResponse($endpoint, $data)
@@ -265,7 +386,8 @@ class CricketApiService
             Log::info('API response logged for mock data', [
                 'endpoint' => $endpoint,
                 'filepath' => $filepath,
-                'data_size' => strlen(json_encode($data))
+                'data_size' => strlen(json_encode($data)),
+                'data' => $data,
             ]);
         } catch (\Exception $e) {
             Log::error('Failed to log API response', [

@@ -25,7 +25,7 @@ Route::get('/', function () {
 Route::prefix('cricket')->name('cricket.')->group(function () {
     Route::get('/', [CricketController::class, 'index'])->name('index');
     Route::get('/fixtures', [CricketController::class, 'fixtures'])->name('fixtures');
-    Route::get('/match/{eventKey}', [CricketController::class, 'matchDetail'])->name('match-detail');
+    Route::get('/match/{eventKey}/{iid?}', [CricketController::class, 'matchDetail'])->name('match-detail');
 
     // News Routes
     Route::get('/news', [NewsController::class, 'index'])->name('news');
@@ -44,7 +44,6 @@ Route::redirect('/', '/cricket');
 
 // Live Match API Routes
 Route::prefix('api')->group(function () {
-    Route::get('/live-matches', [LiveMatchController::class, 'live-matches']);
     Route::get('/live-matches/{matchKey}', [LiveMatchController::class, 'show']);
     Route::get('/live-matches/{matchKey}/is-live', [LiveMatchController::class, 'isLive']);
     Route::post('/live-matches/update', [LiveMatchController::class, 'update']);

@@ -6,7 +6,7 @@ use App\Services\CricketApiService;
 use App\Services\NewsService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Facades\Log; // Added for logging
+use Illuminate\Support\Facades\Log;
 
 class CricketController extends Controller
 {
@@ -135,36 +135,6 @@ class CricketController extends Controller
         return array_values($filteredMatches);
     }
 
-    public function matchDetail($eventKey)
-    {
-        try {
-            \Log::info('Fetching match details', ['event_key' => $eventKey]);
-
-            $cricketData = app(\App\Services\CricketDataService::class);
-            $matchData = $cricketData->getMatchDetails($eventKey);
-
-            if (empty($matchData)) {
-                Log::warning('Match not found', ['event_key' => $eventKey]);
-                abort(404, 'Match not found');
-            }
-
-            \Log::info('Match details prepared successfully', [
-                'event_key' => $eventKey,
-                'match_name' => $matchData,
-            ]);
-
-            return view('cricket.match-detail', compact('match', 'matchData'));
-        } catch (\Exception $e) {
-            \Log::error('Error in matchDetail method', [
-                'event_key' => $eventKey,
-                'error' => $e->getMessage(),
-                'trace' => $e->getTraceAsString()
-            ]);
-
-            abort(500, 'Error loading match details');
-        }
-    }
-
     public function fixtures(Request $request)
     {
         // Debug: Log the date range being used
@@ -177,7 +147,7 @@ class CricketController extends Controller
 
         // Ensure we have valid data
         if (!is_array($upcomingMatches)) {
-            \Log::error('Fixtures: API returned invalid data type', [
+            Log::error('Fixtures: API returned invalid data type', [
                 'type' => gettype($upcomingMatches),
                 'value' => $upcomingMatches
             ]);
@@ -185,7 +155,7 @@ class CricketController extends Controller
         }
 
         // Debug: Log the raw response
-        \Log::info('Fixtures: Raw API response', [
+        Log::info('Fixtures: Raw API response', [
             'total_matches' => count($upcomingMatches),
             'sample_match' => $upcomingMatches[0] ?? 'No matches found',
             'data_type' => gettype($upcomingMatches)
@@ -284,5 +254,32 @@ class CricketController extends Controller
         }
 
         return $statusInfo;
+    }
+
+    /**
+     * Get match Details
+     */
+    public function matchDetail($matchId, $iid = null)
+    {
+        try {
+
+            Log::info('Fetching match match', [
+                'match_id' => $matchId,
+            ]);
+
+            $cricketData = app(\App\Services\CricketDataService::class);
+            $detail = $cricketData->getMatchDetails($matchId, $iid);
+            return response()->json([
+                'success' => true,
+                'data' => $detail,
+                'match_id' => $matchId,
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Error loading match commentary',
+                'error' => $e->getMessage()
+            ], 500);
+        }
     }
 }
