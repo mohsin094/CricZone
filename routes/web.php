@@ -24,19 +24,9 @@ Route::get('/', function () {
 // Cricket Routes
 Route::prefix('cricket')->name('cricket.')->group(function () {
     Route::get('/', [CricketController::class, 'index'])->name('index');
-    Route::get('/live-scores', [CricketController::class, 'liveScores'])->name('live-scores');
-    Route::get('/match/{eventKey}', [CricketController::class, 'matchDetail'])->name('match-detail');
-    Route::get('/match/{eventKey}/live-update', [CricketController::class, 'liveUpdate'])->name('match-live-update');
     Route::get('/fixtures', [CricketController::class, 'fixtures'])->name('fixtures');
-    Route::get('/news', [NewsController::class, 'index'])->name('news');
-    Route::get('/results', [CricketController::class, 'results'])->name('results');
-    Route::get('/teams', [CricketController::class, 'teams'])->name('teams');
-    Route::get('/team/{teamKey}', [CricketController::class, 'teamDetail'])->name('team-detail');
-    Route::get('/search', [CricketController::class, 'search'])->name('search');
-    Route::post('/refresh', [CricketController::class, 'refreshData'])->name('refresh');
-    Route::get('/mock/enable', [CricketController::class, 'enableMock'])->name('mock-enable');
-    Route::get('/mock/disable', [CricketController::class, 'disableMock'])->name('mock-disable');
-    
+    Route::get('/match/{eventKey}', [CricketController::class, 'matchDetail'])->name('match-detail');
+
     // News Routes
     Route::get('/news', [NewsController::class, 'index'])->name('news');
     Route::get('/news/latest', [NewsController::class, 'getLatest'])->name('news.latest');
@@ -47,7 +37,6 @@ Route::prefix('cricket')->name('cricket.')->group(function () {
 Route::prefix('rankings')->name('rankings.')->group(function () {
     Route::get('/', [RankingController::class, 'index'])->name('index');
     Route::get('/update', [RankingController::class, 'updateRankings'])->name('update');
-    Route::get('/stats', [RankingController::class, 'getRankingStats'])->name('stats');
 });
 
 // Redirect root to cricket index
@@ -55,7 +44,7 @@ Route::redirect('/', '/cricket');
 
 // Live Match API Routes
 Route::prefix('api')->group(function () {
-    Route::get('/live-matches', [LiveMatchController::class, 'index']);
+    Route::get('/live-matches', [LiveMatchController::class, 'live-matches']);
     Route::get('/live-matches/{matchKey}', [LiveMatchController::class, 'show']);
     Route::get('/live-matches/{matchKey}/is-live', [LiveMatchController::class, 'isLive']);
     Route::post('/live-matches/update', [LiveMatchController::class, 'update']);

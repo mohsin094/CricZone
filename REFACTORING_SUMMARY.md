@@ -51,14 +51,12 @@ resources/views/partials/
 
 ### Before
 ```php
-Route::get('/live-scores', [CricketController::class, 'liveScores']);
 Route::get('/fixtures', [CricketController::class, 'fixtures']);
 Route::get('/teams', [CricketController::class, 'teams']);
 ```
 
 ### After
 ```php
-Route::get('/live-scores', [LiveScoreController::class, 'index']);
 Route::get('/fixtures', [FixtureController::class, 'index']);
 Route::get('/teams', [TeamController::class, 'index']);
 ```

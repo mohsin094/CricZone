@@ -543,7 +543,6 @@
         @include('cricket.partials.breadcrumb', [
             'items' => [
                 ['url' => route('cricket.index'), 'label' => 'Home'],
-                ['url' => route('cricket.live-scores'), 'label' => 'Live Scores'],
                 ['url' => '#', 'label' => 'Match Details']
             ]
         ])

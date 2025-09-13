@@ -319,7 +319,8 @@ $isFirstInningsComplete = $homeWickets >= 10 ||
         $isUpcoming = !$homeScore && !$awayScore;
         @endphp
 
-        <div class="match-card {{ $type === 'upcoming' ? '' : 'cursor-pointer transform transition-all duration-300 hover:scale-[1.02] hover:shadow-lg' }}"
+        <div class="match-card {{ $type === 'live' ? 'live-match-card' : '' }} {{ $type === 'upcoming' ? '' : 'cursor-pointer transform transition-all duration-300 hover:scale-[1.02] hover:shadow-lg' }}"
+            data-match-key="{{ $match['event_key'] ?? '' }}"
             data-league="{{ $match['league_name'] ?? '' }}"
             data-match-type="{{ $match['event_type'] ?? '' }}"
             data-home-team="{{ $match['event_home_team'] ?? '' }}"
@@ -384,9 +385,9 @@ $isFirstInningsComplete = $homeWickets >= 10 ||
                                 </div>
                             </div>
                             <div class="text-right">
-                                <div class="text-base sm:text-lg font-bold text-gray-900">{{ $homeScore ?: '' }}</div>
+                                <div class="text-base sm:text-lg font-bold text-gray-900 home-score">{{ $homeScore ?: '' }}</div>
                                 @if($homeOvers)
-                                <div class="text-xs text-gray-600">({{ $homeOvers }} ov)</div>
+                                <div class="text-xs text-gray-600 home-overs">({{ $homeOvers }} ov)</div>
                                 @endif
                                 @if($type === 'live' && $target)
                                 <div class="text-xs text-orange-600 font-semibold">🎯 Target: {{ $target }}</div>
@@ -424,9 +425,9 @@ $isFirstInningsComplete = $homeWickets >= 10 ||
                         </div>
                     </div>
                     <div class="text-right">
-                        <div class="text-base sm:text-lg font-bold text-gray-900">{{ $awayScore ?: '' }}</div>
+                        <div class="text-base sm:text-lg font-bold text-gray-900 away-score">{{ $awayScore ?: '' }}</div>
                         @if($awayOvers)
-                        <div class="text-xs text-gray-600">({{ $awayOvers }} ov)</div>
+                        <div class="text-xs text-gray-600 away-overs">({{ $awayOvers }} ov)</div>
                         @endif
                         @if($type === 'live' && $isHundredBall && $isSecondInningsStarted && $remainingBalls !== null)
                         <div class="text-xs text-blue-600">⚡ {{ 100 - $remainingBalls }}/100 balls</div>
@@ -523,7 +524,7 @@ $isFirstInningsComplete = $homeWickets >= 10 ||
             @if($type === 'live')
             <!-- Live Match Info - Show only status -->
             <div class="bg-gray-50 rounded p-2 mb-2 text-center border border-gray-200">
-                <div class="text-sm font-semibold text-gray-700">
+                <div class="text-sm font-semibold text-gray-700 match-status">
                     🏏 {{ $match['status'] ?? $match['event_status_info'] ?? $match['event_state_title'] ?? 'Match in Progress' }}
                 </div>
                 @if($isTest)

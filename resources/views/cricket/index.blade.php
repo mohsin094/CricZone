@@ -418,28 +418,6 @@
             </div>
             <div id="searchStatus" class="text-sm text-gray-600 mt-2" style="display: none;"></div>
         </div>
-        
-        <!-- Mock Data Controls -->
-        <div class="mt-4">
-            <div class="bg-yellow-50 rounded-lg border border-yellow-200 p-4">
-                <div class="flex items-center justify-between">
-                    <div>
-                        <h3 class="text-sm font-medium text-yellow-800">🔄 Mock Data Controls</h3>
-                        <p class="text-xs text-yellow-700 mt-1">Enable/disable mock data for testing</p>
-                    </div>
-                    <div class="flex space-x-2">
-                        <a href="{{ route('cricket.mock-enable') }}" 
-                           class="inline-flex items-center px-3 py-2 border border-transparent text-xs font-medium rounded-md text-yellow-800 bg-yellow-100 hover:bg-yellow-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500">
-                            ✅ Enable Mock
-                        </a>
-                        <a href="{{ route('cricket.mock-disable') }}" 
-                           class="inline-flex items-center px-3 py-2 border border-transparent text-xs font-medium rounded-md text-gray-800 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
-                            ❌ Disable Mock
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
         
     <!-- Mobile Tab Content -->
@@ -2085,8 +2063,11 @@
             // Find the match card element
             const matchCard = document.querySelector(`[data-match-key="${matchKey}"]`);
             if (!matchCard) {
+                console.log(`Match card not found for key: ${matchKey}`);
                 return;
             }
+            
+            console.log(`Updating match card for key: ${matchKey}`, matchData);
 
             // Add updating class
             matchCard.classList.add('updating');
@@ -2107,8 +2088,11 @@
         updateMatchScores(matchCard, matchData) {
             // Update home team score
             const homeScoreElement = matchCard.querySelector('.home-score');
+            console.log('Home score element:', homeScoreElement);
+            console.log('Home score data:', matchData.event_home_final_result);
             if (homeScoreElement && matchData.event_home_final_result) {
                 const newScore = matchData.event_home_final_result;
+                console.log('Current home score:', homeScoreElement.textContent, 'New score:', newScore);
                 if (homeScoreElement.textContent !== newScore) {
                     this.animateScoreChange(homeScoreElement, newScore);
                 }
@@ -2116,8 +2100,11 @@
 
             // Update away team score
             const awayScoreElement = matchCard.querySelector('.away-score');
+            console.log('Away score element:', awayScoreElement);
+            console.log('Away score data:', matchData.event_away_final_result);
             if (awayScoreElement && matchData.event_away_final_result) {
                 const newScore = matchData.event_away_final_result;
+                console.log('Current away score:', awayScoreElement.textContent, 'New score:', newScore);
                 if (awayScoreElement.textContent !== newScore) {
                     this.animateScoreChange(awayScoreElement, newScore);
                 }
