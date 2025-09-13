@@ -21,8 +21,8 @@ class DatabaseSeeder extends Seeder
         ]);
 
         // Seed teams from API
-        $this->call([
-            TeamsSeeder::class,
-        ]);
+        // $this->call([
+        //     TeamsSeeder::class,
+        // ]);
     }
 }
